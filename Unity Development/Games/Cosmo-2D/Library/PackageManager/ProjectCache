@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638444034390736129
-    m_Hash: 534505468
+      ticks: 638444090203265496
+    m_Hash: 2471832712
   m_LockFileStatus:
     m_FilePath: D:/Game Development/PixelLab-part-III/Unity Development/Games/Cosmo-2D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638444034390772343
-    m_Hash: 3190540224
+      ticks: 638444090203265496
+    m_Hash: 231322059
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
