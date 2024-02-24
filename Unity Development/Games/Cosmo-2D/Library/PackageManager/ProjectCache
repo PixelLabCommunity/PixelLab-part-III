@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638442973282467018
-    m_Hash: 602859339
+      ticks: 638444034390736129
+    m_Hash: 534505468
   m_LockFileStatus:
     m_FilePath: D:/Game Development/PixelLab-part-III/Unity Development/Games/Cosmo-2D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638442974715289174
-    m_Hash: 170276041
+      ticks: 638444034390772343
+    m_Hash: 3190540224
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -518,6 +518,153 @@ m_ResolvedPackages:
     warnings.\n- Mark referenced assemblies as private (to not copy extra files to
     output directory when building).\n- Add Unity capability to SDK-Style projects.\n-
     Prevent circular dependency errors with SDK-Style projects."}'
+  assetStore:
+    productId: 
+- packageId: com.unity.inputsystem@1.7.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.7.0
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.inputsystem@1.7.0
+  assetPath: Packages/com.unity.inputsystem
+  name: com.unity.inputsystem
+  displayName: Input System
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: A new input system which can be used as a more extensible and customizable
+    alternative to Unity's classic input system in UnityEngine.Input.
+  errors: []
+  versions:
+    all:
+    - 0.1.2-preview
+    - 0.2.0-preview
+    - 0.2.1-preview
+    - 0.2.6-preview
+    - 0.2.8-preview
+    - 0.2.10-preview
+    - 0.9.0-preview
+    - 0.9.1-preview
+    - 0.9.2-preview
+    - 0.9.3-preview
+    - 0.9.4-preview
+    - 0.9.5-preview
+    - 0.9.6-preview
+    - 1.0.0-preview
+    - 1.0.0-preview.1
+    - 1.0.0-preview.2
+    - 1.0.0-preview.3
+    - 1.0.0-preview.4
+    - 1.0.0-preview.5
+    - 1.0.0-preview.6
+    - 1.0.0-preview.7
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
+    - 1.1.0-pre.5
+    - 1.1.0-pre.6
+    - 1.1.0-preview.1
+    - 1.1.0-preview.2
+    - 1.1.0-preview.3
+    - 1.1.1
+    - 1.2.0
+    - 1.3.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4
+    - 1.5.0
+    - 1.5.1
+    - 1.6.1
+    - 1.6.3
+    - 1.7.0
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    compatible:
+    - 1.7.0
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    recommended: 1.7.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.uielements
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.uielements
+    version: 1.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.hierarchycore
+    version: 1.0.0
+  keywords:
+  - input
+  - events
+  - keyboard
+  - mouse
+  - gamepad
+  - touch
+  - vr
+  - xr
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638277060810000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/InputSystem.git
+    revision: e29989176f3a8473ba30854e4bfae953083eba28
+    path: 
+  unityLifecycle:
+    version: 1.7.0
+    nextVersion: 1.8.0-pre.1
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Added\n- Preliminary support for visionOS.\n- Show
+    a list of `Derived Bindings` underneath the Binding Path editor to show all controls
+    that matched.\n\n### Changed\n- Changed the `InputAction` constructors so it
+    generates an ID for the action and the optional binding parameter. This is intended
+    to improve the serialization of input actions on behaviors when created through
+    API when the property drawer in the Inspector window does not have a chance to
+    generate an ID.\n\n### Fixed\n- Fixed missing prefab errors in InputDeviceTester
+    project ([case ISXB-420](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-420)).\n-
+    Fixed serialization migration in the Tracked Pose Driver component causing bindings
+    to clear when prefabs are used in some cases ([case ISXB-512](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-512),
+    [case ISXB-521](https://issuetracker.unity3d.com/product/unity/issues/guid/ISXB-521)).\n-
+    Fixed Tracked Pose Driver to use `Transform.SetLocalPositionAndRotation` when
+    available to improve performance. Based on the user contribution from [DevDunk](https://forum.unity.com/members/devdunk.4432119/)
+    in a [forum post](https://forum.unity.com/threads/more-performant-tracked-pose-driver-solution-included.1462691).\n-
+    Fixed the `Clone` methods of `InputAction` and `InputActionMap` so it copies
+    the Initial State Check flag (`InputAction.wantsInitialStateCheck`) of input
+    actions.\n- Fixed the \"Release tests throws exception in InputSystem\" bug ([case
+    ISXB-581](https://issuetracker.unity3d.com/issues/release-tests-fail-when-input-system-package-is-installed)).\n-
+    Fixed issues with generating Precompiled Layouts for devices which are not defined
+    in a namespace\n- Fixed an issue where some controls like `QuaternionControl`
+    could not be included in a Precompiled Layout because the generated code could
+    not access a setter on child control properties."}'
   assetStore:
     productId: 
 - packageId: com.unity.render-pipelines.universal@16.0.5
