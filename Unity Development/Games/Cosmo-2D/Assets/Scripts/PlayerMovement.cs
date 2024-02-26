@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private const float FlipTrigger = 0f;
+    private const float PositionYZero = 0f;
+    private const float GravityBase = 0.01f;
     private const int MaxJumps = 2;
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float movementSpeed = 5f;
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded()) _jumpCount = 0;
 
         if (_jumpCount >= MaxJumps) return;
-        _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, 0f);
+        _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, PositionYZero);
         _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         _jumpCount++;
     }
@@ -49,6 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Mathf.Abs(_rigidbody2D.velocity.y) < 0.01f;
+        return Mathf.Abs(_rigidbody2D.velocity.y) < GravityBase;
     }
 }
