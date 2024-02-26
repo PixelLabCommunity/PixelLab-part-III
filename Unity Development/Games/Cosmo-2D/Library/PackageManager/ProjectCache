@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638444090203265496
-    m_Hash: 2471832712
+      ticks: 638445704072714745
+    m_Hash: 3571836042
   m_LockFileStatus:
     m_FilePath: D:/Game Development/PixelLab-part-III/Unity Development/Games/Cosmo-2D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638444090203265496
-    m_Hash: 231322059
+      ticks: 638445704072750814
+    m_Hash: 988226367
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -307,6 +307,126 @@ m_ResolvedPackages:
     hash: 
     revision: 
   upmReserved: '{"quickstart":"https://docs.unity3d.com/2021.2/Documentation/Manual/2DFeature.html"}'
+  assetStore:
+    productId: 
+- packageId: com.unity.feature.cinematic@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.feature.cinematic@1.0.0
+  assetPath: Packages/com.unity.feature.cinematic
+  name: com.unity.feature.cinematic
+  displayName: Cinematic Studio
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: feature
+  description: Create films, TV shows, and other animated linear content. Organize
+    and assemble your assets in structured sequences. Automate complex camera movements.
+    Export data for round-trip and review, and output your final cut. Work with common
+    film industry formats.
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.timeline
+    version: default
+  - name: com.unity.sequences
+    version: default
+  - name: com.unity.formats.fbx
+    version: default
+  - name: com.unity.formats.alembic
+    version: default
+  - name: com.unity.cinemachine
+    version: default
+  - name: com.unity.recorder
+    version: default
+  resolvedDependencies:
+  - name: com.unity.timeline
+    version: 1.8.6
+  - name: com.unity.modules.director
+    version: 1.0.0
+  - name: com.unity.modules.audio
+    version: 1.0.0
+  - name: com.unity.modules.animation
+    version: 1.0.0
+  - name: com.unity.modules.particlesystem
+    version: 1.0.0
+  - name: com.unity.sequences
+    version: 2.1.1
+  - name: com.unity.recorder
+    version: 5.0.0
+  - name: com.unity.settings-manager
+    version: 2.0.1
+  - name: com.unity.ugui
+    version: 2.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.formats.fbx
+    version: 5.1.0
+  - name: com.autodesk.fbx
+    version: 5.1.0
+  - name: com.unity.formats.alembic
+    version: 2.3.2
+  - name: com.unity.modules.unityanalytics
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.cloth
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  - name: com.unity.cinemachine
+    version: 2.9.5
+  - name: com.unity.test-framework
+    version: 1.3.9
+  - name: com.unity.ext.nunit
+    version: 2.0.5
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"quickstart":"https://docs.unity3d.com/2021.2/Documentation/Manual/CinematicStudioFeature.html"}'
   assetStore:
     productId: 
 - packageId: com.unity.ide.rider@3.0.27
@@ -4345,6 +4465,679 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
+- packageId: com.unity.sequences@2.1.1
+  testable: 0
+  isDirectDependency: 0
+  version: 2.1.1
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.sequences@2.1.1
+  assetPath: Packages/com.unity.sequences
+  name: com.unity.sequences
+  displayName: Sequences
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: 'Efficiently create movies, game cinematics or any other linear content.
+
+    Organize
+    your project''s editorial structure and your creative content, assemble the elements
+    for easy authoring and collaboration, and try out new ideas in a non-destructive
+    way.'
+  errors: []
+  versions:
+    all:
+    - 1.0.0-pre.4
+    - 1.0.0-pre.5
+    - 1.0.0-pre.6
+    - 1.0.0
+    - 1.0.2
+    - 1.0.3
+    - 1.0.4
+    - 1.1.0-pre.1
+    - 1.1.0-pre.2
+    - 1.1.0
+    - 2.0.0-pre.1
+    - 2.0.0-pre.2
+    - 2.0.0
+    - 2.0.1
+    - 2.1.0-pre.1
+    - 2.1.0
+    - 2.1.1
+    compatible:
+    - 2.1.1
+    recommended: 2.1.1
+    deprecated: []
+  dependencies:
+  - name: com.unity.timeline
+    version: 1.6.3
+  - name: com.unity.recorder
+    version: 2.5.5
+  - name: com.unity.settings-manager
+    version: 1.0.3
+  - name: com.unity.ugui
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.timeline
+    version: 1.8.6
+  - name: com.unity.modules.director
+    version: 1.0.0
+  - name: com.unity.modules.audio
+    version: 1.0.0
+  - name: com.unity.modules.animation
+    version: 1.0.0
+  - name: com.unity.modules.particlesystem
+    version: 1.0.0
+  - name: com.unity.recorder
+    version: 5.0.0
+  - name: com.unity.settings-manager
+    version: 2.0.1
+  - name: com.unity.ugui
+    version: 2.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638348667960000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.sequences@2.1/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.sequences.git
+    revision: 15614c605852d6c3143fd62db4ca99e067847e22
+    path: 
+  unityLifecycle:
+    version: 2.1.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Fixed\n* Prevent unexpected path error when switching
+    the Editor from dark theme to light theme."}'
+  assetStore:
+    productId: 
+- packageId: com.unity.formats.fbx@5.1.0
+  testable: 0
+  isDirectDependency: 0
+  version: 5.1.0
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.formats.fbx@5.1.0
+  assetPath: Packages/com.unity.formats.fbx
+  name: com.unity.formats.fbx
+  displayName: FBX Exporter
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: "The FBX Exporter package enables round-trip workflows between Unity
+    and 3D modeling software. Send geometry, Lights, Cameras, and animation from
+    Unity to Autodesk\xAE Maya\xAE, Autodesk\xAE Maya LT\u2122, or Autodesk\xAE 3ds
+    Max\xAE, and back to Unity again, with minimal effort."
+  errors: []
+  versions:
+    all:
+    - 2.0.1-preview.2
+    - 2.0.1-preview.3
+    - 2.0.1-preview.4
+    - 2.0.1-preview.5
+    - 2.0.1-preview.11
+    - 2.0.2-preview.1
+    - 2.0.3-preview.3
+    - 3.0.0-preview.2
+    - 3.0.1-preview.2
+    - 3.1.0-preview.1
+    - 3.2.0-preview.2
+    - 3.2.1-preview.2
+    - 4.0.0-pre.1
+    - 4.0.0-pre.4
+    - 4.0.1
+    - 4.1.0-pre.2
+    - 4.1.0
+    - 4.1.1
+    - 4.1.2
+    - 4.1.3
+    - 4.2.0-pre.1
+    - 4.2.0
+    - 4.2.1
+    - 5.0.0-pre.1
+    - 5.0.0
+    - 5.1.0-pre.1
+    - 5.1.0
+    compatible:
+    - 5.1.0
+    recommended: 5.1.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.timeline
+    version: 1.7.1
+  - name: com.autodesk.fbx
+    version: 5.1.0
+  resolvedDependencies:
+  - name: com.unity.timeline
+    version: 1.8.6
+  - name: com.unity.modules.director
+    version: 1.0.0
+  - name: com.unity.modules.audio
+    version: 1.0.0
+  - name: com.unity.modules.animation
+    version: 1.0.0
+  - name: com.unity.modules.particlesystem
+    version: 1.0.0
+  - name: com.autodesk.fbx
+    version: 5.1.0
+  keywords:
+  - fbx
+  - animation
+  - modeling
+  - maya
+  - max
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638320170700000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.formats.fbx@5.1/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.formats.fbx.git
+    revision: 0103f586fdc38cd3ba850da758b63866dc224393
+    path: 
+  unityLifecycle:
+    version: 5.1.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Changed\n- Updated the FBX SDK bindings to 5.1.0.\n-
+    Refactored the whole user manual to consolidate the content and improve usability."}'
+  assetStore:
+    productId: 
+- packageId: com.unity.formats.alembic@2.3.2
+  testable: 0
+  isDirectDependency: 0
+  version: 2.3.2
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.formats.alembic@2.3.2
+  assetPath: Packages/com.unity.formats.alembic
+  name: com.unity.formats.alembic
+  displayName: Alembic
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: 'Import and export Alembic files (.abc), record and stream animations
+    in the Alembic format directly in Unity.
+
+    NOTE: Supported build platforms:
+    only Windows 64, MacOS X, Linux 64, and Stadia.
+
+
+    The Alembic format is commonly
+    used in animation to transfer facial, cloth, and other simulation between applications
+    in the form of baked data.'
+  errors: []
+  versions:
+    all:
+    - 0.1.2-preview
+    - 1.0.0-preview.2
+    - 1.0.0-preview.7
+    - 1.0.0-preview.8
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
+    - 1.0.3
+    - 1.0.4
+    - 1.0.5
+    - 1.0.6
+    - 1.0.7
+    - 2.0.0-preview.1
+    - 2.0.1-preview.1
+    - 2.1.0-preview.3
+    - 2.1.1-pre.1
+    - 2.1.2
+    - 2.1.3
+    - 2.2.0-exp.1
+    - 2.2.0-exp.2
+    - 2.2.0-pre.3
+    - 2.2.0-pre.4
+    - 2.2.0
+    - 2.2.1
+    - 2.2.2
+    - 2.3.0-pre.1
+    - 2.3.0-pre.2
+    - 2.3.0-pre.3
+    - 2.3.0
+    - 2.3.2
+    - 2.3.3
+    - 2.3.4
+    compatible:
+    - 2.3.2
+    - 2.3.3
+    - 2.3.4
+    recommended: 2.3.4
+    deprecated: []
+  dependencies:
+  - name: com.unity.timeline
+    version: 1.0.0
+  - name: com.unity.modules.unityanalytics
+    version: 1.0.0
+  - name: com.unity.modules.cloth
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.timeline
+    version: 1.8.6
+  - name: com.unity.modules.director
+    version: 1.0.0
+  - name: com.unity.modules.audio
+    version: 1.0.0
+  - name: com.unity.modules.animation
+    version: 1.0.0
+  - name: com.unity.modules.particlesystem
+    version: 1.0.0
+  - name: com.unity.modules.unityanalytics
+    version: 1.0.0
+  - name: com.unity.modules.unitywebrequest
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.modules.cloth
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  keywords:
+  - alembic
+  - abc
+  - animation
+  - facial
+  - cloth
+  - simulation
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638193058490000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.formats.alembic@2.3/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.formats.alembic.git
+    revision: 7a5ae5f5959a395d8fa04ca724a202f124a7dad7
+    path: 
+  unityLifecycle:
+    version: 2.3.2
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Added\n- At import, additional data is added to
+    GameObject cameras to conform with URP or HDRP rendering pipelines.\n\n### Fixed\n-
+    Fixed an issue where a mesh from an Alembic file with visibility samples gets
+    wrongly serialized in scenes.\n- Fixed the Normals import settings of the Importer.\n-
+    When a user changes HDRP quality settings, the Editor no longer re-imports Alembic
+    assets."}'
+  assetStore:
+    productId: 
+- packageId: com.unity.cinemachine@2.9.5
+  testable: 0
+  isDirectDependency: 0
+  version: 2.9.5
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.cinemachine@2.9.5
+  assetPath: Packages/com.unity.cinemachine
+  name: com.unity.cinemachine
+  displayName: Cinemachine
+  author:
+    name: 
+    email: 
+    url: 
+  category: cinematography
+  type: asset
+  description: "Smart camera tools for passionate creators. \n\nNew starting from
+    2.7.1: Are you looking for the Cinemachine menu? It has moved to the GameObject
+    menu.\n\nIMPORTANT NOTE: If you are upgrading from the legacy Asset Store version
+    of Cinemachine, delete the Cinemachine asset from your project BEFORE installing
+    this version from the Package Manager."
+  errors: []
+  versions:
+    all:
+    - 2.1.11-beta.1
+    - 2.1.12
+    - 2.1.13
+    - 2.2.0
+    - 2.2.7
+    - 2.2.8
+    - 2.2.9
+    - 2.2.10-preview.3
+    - 2.2.10-preview.4
+    - 2.3.1
+    - 2.3.3
+    - 2.3.4
+    - 2.3.5-preview.3
+    - 2.4.0-preview.3
+    - 2.4.0-preview.4
+    - 2.4.0-preview.6
+    - 2.4.0-preview.7
+    - 2.4.0-preview.8
+    - 2.4.0-preview.9
+    - 2.4.0-preview.10
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0-preview.2
+    - 2.6.0-preview.3
+    - 2.6.0-preview.5
+    - 2.6.0-preview.8
+    - 2.6.0
+    - 2.6.1-preview.6
+    - 2.6.1
+    - 2.6.2-preview.1
+    - 2.6.2
+    - 2.6.3-preview.2
+    - 2.6.3
+    - 2.6.4
+    - 2.6.5
+    - 2.6.9
+    - 2.6.10
+    - 2.6.11
+    - 2.6.14
+    - 2.6.15
+    - 2.6.17
+    - 2.7.1
+    - 2.7.2
+    - 2.7.3
+    - 2.7.4
+    - 2.7.5
+    - 2.7.8
+    - 2.7.9
+    - 2.8.0-exp.1
+    - 2.8.0-exp.2
+    - 2.8.0-pre.1
+    - 2.8.0
+    - 2.8.1
+    - 2.8.2
+    - 2.8.3
+    - 2.8.4
+    - 2.8.6
+    - 2.8.9
+    - 2.9.0-pre.1
+    - 2.9.0-pre.6
+    - 2.9.1
+    - 2.9.2
+    - 2.9.4
+    - 2.9.5
+    - 2.9.7
+    - 3.0.0-pre.3
+    - 3.0.0-pre.4
+    - 3.0.0-pre.5
+    - 3.0.0-pre.6
+    - 3.0.0-pre.7
+    - 3.0.0-pre.8
+    - 3.0.0-pre.9
+    - 3.0.1
+    compatible:
+    - 2.9.5
+    - 2.9.7
+    - 3.0.0-pre.3
+    - 3.0.0-pre.4
+    - 3.0.0-pre.5
+    - 3.0.0-pre.6
+    - 3.0.0-pre.7
+    - 3.0.0-pre.8
+    - 3.0.0-pre.9
+    - 3.0.1
+    recommended: 2.9.7
+    deprecated: []
+  dependencies:
+  - name: com.unity.test-framework
+    version: 1.1.31
+  resolvedDependencies:
+  - name: com.unity.test-framework
+    version: 1.3.9
+  - name: com.unity.ext.nunit
+    version: 2.0.5
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords:
+  - camera
+  - follow
+  - rig
+  - fps
+  - cinematography
+  - aim
+  - orbit
+  - cutscene
+  - cinematic
+  - collision
+  - freelook
+  - cinemachine
+  - compose
+  - composition
+  - dolly
+  - track
+  - clearshot
+  - noise
+  - framing
+  - handheld
+  - lens
+  - impulse
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638102365180000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.cinemachine@2.9/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.cinemachine.git
+    revision: 4b4405b9505ecfa1cb2d2b03df8f3309c12f3b0d
+    path: 
+  unityLifecycle:
+    version: 2.9.5
+    nextVersion: 3.0.0-pre.3
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"- Unity 2022.2 and up: FocusDistance added to lens
+    settings and is pushed to the camera.\n- Optimized path gizmo drawing.  Now 3-5
+    times faster.\n- TargetGroup now ignores members whose gameObjects are inactive.\n-
+    Bugfix: CinemachinePathBase search radius fixed for not looped paths.\n- Regression
+    fix: POV was not handling ReferenceUp correctly\n- Bugfix: priority ordering
+    was wrong when the difference between any priority values were smaller than integer
+    min or bigger than integer max values.\n- Bugfix: Extensions were not respecting
+    execution order on domain reload."}'
+  assetStore:
+    productId: 
+- packageId: com.unity.recorder@5.0.0
+  testable: 0
+  isDirectDependency: 0
+  version: 5.0.0
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.recorder@5.0.0
+  assetPath: Packages/com.unity.recorder
+  name: com.unity.recorder
+  displayName: Recorder
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: 'The Recorder allows you to capture and save data from the Unity Editor
+    during Play mode: animations, videos, images, audio, and more.'
+  errors: []
+  versions:
+    all:
+    - 2.0.0-preview.6
+    - 2.0.1-preview.1
+    - 2.0.2-preview.3
+    - 2.0.3-preview.1
+    - 2.1.0-preview.1
+    - 2.2.0-preview.4
+    - 2.3.0-preview.3
+    - 2.4.0-preview.1
+    - 2.5.0-pre.1
+    - 2.5.2
+    - 2.5.4
+    - 2.5.5
+    - 2.5.7
+    - 2.6.0-exp.3
+    - 2.6.0-exp.4
+    - 3.0.0-pre.1
+    - 3.0.0-pre.2
+    - 3.0.0
+    - 3.0.1
+    - 3.0.2
+    - 3.0.3
+    - 4.0.0-pre.1
+    - 4.0.0-pre.2
+    - 4.0.0-pre.3
+    - 4.0.0-pre.4
+    - 4.0.0-pre.5
+    - 4.0.0
+    - 4.0.1
+    - 4.0.2
+    - 5.0.0-pre.1
+    - 5.0.0
+    - 5.1.0-pre.1
+    compatible:
+    - 5.0.0
+    - 5.1.0-pre.1
+    recommended: 5.0.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.timeline
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.timeline
+    version: 1.8.6
+  - name: com.unity.modules.director
+    version: 1.0.0
+  - name: com.unity.modules.audio
+    version: 1.0.0
+  - name: com.unity.modules.animation
+    version: 1.0.0
+  - name: com.unity.modules.particlesystem
+    version: 1.0.0
+  keywords:
+  - unity
+  - recorder
+  - recording
+  - capture
+  - video
+  - animation
+  - clip
+  - images
+  - render
+  - pass
+  - layer
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638320170720000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.recorder@5.0/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.recorder.git
+    revision: cd750a66bf75ef56d93106b65f5ff599a8eb0016
+    path: 
+  unityLifecycle:
+    version: 5.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"### Added\n- Tutorial in documentation to set up a
+    Unity project with API scripting for starting recordings via a command line. 
+    \n\n### Changed\n- Removed resolution automatic rounding to the nearest even
+    number when Movie Recorder uses MP4 codec and \"Match Window Size\" output resolution.\n\n###
+    Fixed\n- Prevent video output from being corrupted when generated via a Recorder
+    Clip run through a Scene loaded in Play mode.\n- Ensure the project uses the
+    right RenderPipeline settings at all time: quality RenderPipeline settings or
+    default RenderPipeline settings.\n- Ensure that the status messages at the bottom
+    of the Recorder window are always readable even if the window is small."}'
+  assetStore:
+    productId: 
 - packageId: com.unity.2d.animation@10.1.0
   testable: 0
   isDirectDependency: 0
@@ -5568,6 +6361,142 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+- packageId: com.autodesk.fbx@5.1.0
+  testable: 0
+  isDirectDependency: 0
+  version: 5.1.0
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.autodesk.fbx@5.1.0
+  assetPath: Packages/com.autodesk.fbx
+  name: com.autodesk.fbx
+  displayName: Autodesk FBX SDK for Unity
+  author:
+    name: Unity
+    email: 
+    url: 
+  category: 
+  type: 
+  description: "This package provides Unity C# bindings to the Autodesk\xAE FBX\xAE
+    SDK."
+  errors: []
+  versions:
+    all:
+    - 5.1.0
+    compatible:
+    - 5.1.0
+    recommended: 5.1.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - fbx
+  - animation
+  - modeling
+  - maya
+  - max
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://docs.unity3d.com/Packages/com.autodesk.fbx@5.1/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.autodesk.fbx.git
+    revision: b2100717fcd3ca653d33c99b8451ea96de451419
+    path: 
+  unityLifecycle:
+    version: 5.1.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: '{"changelog":"* Updated package version number for release."}'
+  assetStore:
+    productId: 
+- packageId: com.unity.settings-manager@2.0.1
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.1
+  source: 1
+  resolvedPath: D:\Game Development\PixelLab-part-III\Unity Development\Games\Cosmo-2D\Library\PackageCache\com.unity.settings-manager@2.0.1
+  assetPath: Packages/com.unity.settings-manager
+  name: com.unity.settings-manager
+  displayName: Settings Manager
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: A framework for making any serializable field a setting, complete
+    with a pre-built settings interface.
+  errors: []
+  versions:
+    all:
+    - 0.1.0-preview.4
+    - 0.1.0-preview.8
+    - 1.0.0
+    - 1.0.1
+    - 1.0.2
+    - 1.0.3
+    - 2.0.0
+    - 2.0.1
+    compatible:
+    - 2.0.1
+    recommended: 2.0.1
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637744099390000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
+    revision: 9b7c12d04ef880168151c127fd6b37b5931197dc
+    path: 
+  unityLifecycle:
+    version: 2.0.1
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0

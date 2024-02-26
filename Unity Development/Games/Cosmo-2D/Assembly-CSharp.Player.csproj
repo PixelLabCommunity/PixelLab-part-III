@@ -648,6 +648,10 @@
       <Project>{937c23d1-13af-c19f-b087-f98db5e06b8e}</Project>
       <Name>Unity.InputSystem.ForUI.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Player.csproj">
+      <Project>{2a2d94dd-3c97-8ae7-4db7-b282b378ff1f}</Project>
+      <Name>Unity.Recorder.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
       <Project>{0314188c-6c27-0edd-fd38-d9c5296ad0a3}</Project>
       <Name>Unity.RenderPipeline.Universal.ShaderLibrary.Player</Name>
@@ -680,9 +684,21 @@
       <Project>{9e8789f5-2c48-8b17-6308-40d1cee7ce2e}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Sequences.Player.csproj">
+      <Project>{10bb4693-3cba-21df-3f55-41c27fe9f350}</Project>
+      <Name>Unity.Sequences.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Autodesk.Fbx.Player.csproj">
+      <Project>{d8a59dfb-ab0b-a281-67c8-600e1af976bc}</Project>
+      <Name>Autodesk.Fbx.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
       <Project>{2cd347da-ff17-de86-9ec0-17486ec819c0}</Project>
       <Name>Unity.Collections.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Base.Player.csproj">
+      <Project>{eb75e197-de69-08f4-7999-54858fc524ff}</Project>
+      <Name>Unity.Recorder.Base.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
       <Project>{da6bf5db-fb91-af12-ab88-8a27c8812036}</Project>
@@ -716,6 +732,10 @@
       <Project>{3f270540-2b70-5d33-05d1-3f0777f6c75a}</Project>
       <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.Player.csproj">
+      <Project>{349bfa66-a865-a8d1-be90-6ae96a2a02d7}</Project>
+      <Name>Cinemachine.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
       <Project>{f9ee1f6e-4e9e-d9dd-2147-0212960c073c}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
@@ -723,6 +743,14 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{3b6cf19d-4a0e-c709-6a92-2afda21e059e}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Formats.Fbx.Runtime.Player.csproj">
+      <Project>{dd8e57e8-3177-d602-eb50-140d941fdb39}</Project>
+      <Name>Unity.Formats.Fbx.Runtime.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Formats.Alembic.Runtime.Player.csproj">
+      <Project>{08261564-901c-8819-63ad-da652832ee34}</Project>
+      <Name>Unity.Formats.Alembic.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.PixelPerfect.Player.csproj">
       <Project>{e56c0404-23e8-1d0b-b89e-e29f53f63cba}</Project>
