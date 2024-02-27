@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private static readonly int Run = Animator.StringToHash(PlayerRun);
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float movementSpeed = 5f;
-    private readonly float _baseValue = 0f;
+    private const float BaseValue = 0f;
     private int _jumpCount;
     private Animator _playerAnimator;
 
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         };
 
         var isMoving =
-            moveInput.magnitude > _baseValue;
+            moveInput.magnitude > BaseValue;
 
         _playerAnimator.SetBool(Run, isMoving);
     }
