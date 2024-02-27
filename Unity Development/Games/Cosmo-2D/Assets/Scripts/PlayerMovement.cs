@@ -7,12 +7,13 @@ public class PlayerMovement : MonoBehaviour
     private const float PositionYZero = 0f;
     private const float GravityBase = 0.01f;
     private const int MaxJumps = 2;
-    private const string PlayerRun = "Run";
-    private static readonly int Run = Animator.StringToHash(PlayerRun);
+    private const string PlayerMove = "MovementState";
+    private const float BaseValue = 0f;
+    private static readonly int State = Animator.StringToHash(PlayerMove);
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float movementSpeed = 5f;
-    private const float BaseValue = 0f;
     private int _jumpCount;
+    private MovementState _movementState;
     private Animator _playerAnimator;
 
 
@@ -53,14 +54,22 @@ public class PlayerMovement : MonoBehaviour
             _ => _spriteRenderer.flipX
         };
 
-        var isMoving =
+        /*var isMoving =
             moveInput.magnitude > BaseValue;
 
-        _playerAnimator.SetBool(Run, isMoving);
+        _playerAnimator.SetInteger(State, isMoving);*/
     }
 
     private bool IsGrounded()
     {
         return Mathf.Abs(_rigidbody2D.velocity.y) < GravityBase;
+    }
+
+    private enum MovementState
+    {
+        Idle,
+        Run,
+        Jump,
+        Falls
     }
 }
