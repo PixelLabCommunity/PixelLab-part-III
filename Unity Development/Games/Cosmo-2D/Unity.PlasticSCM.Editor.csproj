@@ -114,8 +114,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\AssetOverlays\Cache\RemoteStatusCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\AssetsUtils\Processor\AssetPostprocessor.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\UI\GUIActionRunner.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Inspector\InspectorAssetSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\AssetsUtils\SaveAssets.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Inspector\InspectorAssetSelection.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesViewMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\UI\DrawUserIcon.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.2.0\Editor\PlasticSCM\Configuration\WriteLogConfiguration.cs" />

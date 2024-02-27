@@ -172,8 +172,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\Camera\ISerializedCamera.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\RemoveComponentUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\Lighting\IESImporterEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\Utilities\SerializedBitArray.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\ExpandedState.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\Utilities\SerializedBitArray.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\LookDev\DisplayWindow.EnvironmentLibrarySidePanel.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\ShaderGenerator\CSharpToHLSL.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Editor\Lighting\ProbeVolume\ProbeVolumeEditor.cs" />

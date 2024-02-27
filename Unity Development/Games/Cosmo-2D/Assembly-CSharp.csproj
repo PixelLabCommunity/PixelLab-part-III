@@ -957,17 +957,17 @@
       <Project>{e746f1a2-38ee-219d-aa6f-773ea7c8fcb7}</Project>
       <Name>Unity.Mathematics.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
-      <Project>{4dd58e8e-0c6e-e3f2-7a10-095182fd299b}</Project>
-      <Name>Unity.InternalAPIEditorBridge.001</Name>
+    <ProjectReference Include="Autodesk.Fbx.csproj">
+      <Project>{82fc8186-96bd-4c20-6fc4-6509f2f5ced2}</Project>
+      <Name>Autodesk.Fbx</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
       <Project>{30631368-8205-ab02-4af4-c4bbbadfcf9f}</Project>
       <Name>Unity.2D.Animation.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Autodesk.Fbx.csproj">
-      <Project>{82fc8186-96bd-4c20-6fc4-6509f2f5ced2}</Project>
-      <Name>Autodesk.Fbx</Name>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
+      <Project>{4dd58e8e-0c6e-e3f2-7a10-095182fd299b}</Project>
+      <Name>Unity.InternalAPIEditorBridge.001</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.csproj">
       <Project>{8cf1e434-38cd-d92b-a85c-84edba05831c}</Project>
@@ -1089,13 +1089,13 @@
       <Project>{9caa0cde-517e-d5bd-c544-2a2c3868bb7d}</Project>
       <Name>Unity.2D.SpriteShape.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
-      <Project>{e02c7486-824c-ebb6-1971-13ea050b4b7f}</Project>
-      <Name>Unity.2D.Sprite.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Formats.Fbx.Runtime.csproj">
       <Project>{e211b7e7-9e28-9255-fb4b-26aa0031ac3a}</Project>
       <Name>Unity.Formats.Fbx.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{e02c7486-824c-ebb6-1971-13ea050b4b7f}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.005.csproj">
       <Project>{5e94e001-1cf4-eb5b-5b4c-275af147db78}</Project>
@@ -1109,13 +1109,17 @@
       <Project>{6c507c68-8d33-0d50-8d8d-392fd07f6142}</Project>
       <Name>Unity.Formats.Alembic.Runtime</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{adfea003-abf9-2ebd-d178-67226e956895}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{41746225-aa79-85ab-4e29-9bd28b9e6818}</Project>
+      <Name>Unity.Recorder.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Editor.csproj">
       <Project>{19e5bd58-6ba2-b159-fd83-98de50210f2f}</Project>
       <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{adfea003-abf9-2ebd-d178-67226e956895}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
       <Project>{5f81bb12-26c2-ee9a-676a-b95e2929da6a}</Project>
@@ -1133,17 +1137,13 @@
       <Project>{2e9f7ae3-bf93-d5a0-59cc-95ae4b2422f1}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Recorder.Editor.csproj">
-      <Project>{41746225-aa79-85ab-4e29-9bd28b9e6818}</Project>
-      <Name>Unity.Recorder.Editor</Name>
+    <ProjectReference Include="Unity.Sequences.Editor.csproj">
+      <Project>{80230f72-b74c-5472-c855-f82940a35754}</Project>
+      <Name>Unity.Sequences.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
       <Project>{d7296156-36bb-a546-b649-9e4b50cfa846}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Sequences.Editor.csproj">
-      <Project>{80230f72-b74c-5472-c855-f82940a35754}</Project>
-      <Name>Unity.Sequences.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{683dbc83-da1c-b976-1c03-ed7c77b03f23}</Project>

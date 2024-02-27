@@ -452,8 +452,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Threading\ThreadableAssetWrapper.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Windows\Sidebars\SidebarAnchor.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Description\MacroDescriptor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqCore\Changelog_1_2_3.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\ReorderableList\ElementAdderMenu\IElementAdder.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqCore\Changelog_1_2_3.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Plugin\Changelogs\LegacyLudiqGraphs\Changelog_1_0_2.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Documentation\XmlDocumentationTags.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Interface\Dropdowns\DropdownSeparator.cs" />
