@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private const float GravityBase = 0.01f;
     private const int MaxJumps = 2;
     private const float BaseValue = 0f;
+    private static readonly int State = Animator.StringToHash("state");
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float movementSpeed = 5f;
-    private readonly float _baseValueX = 0f;
     private int _jumpCount;
+    private bool _jumping;
     private MovementState _movementState;
     private bool _moving;
     private Animator _playerAnimator;
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, PositionYZero);
         _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         _jumpCount++;
+        _jumping = true;
     }
 
     private void OnMove(InputValue inputValue)
@@ -59,21 +61,21 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
+        _jumping = false;
         return Mathf.Abs(_rigidbody2D.velocity.y) < GravityBase;
     }
 
     private void AnimationState()
     {
-        MovementState state;
-        if (_moving)
-            state = MovementState.Run;
-        else
-            state = MovementState.Idle;
+        var state = _rigidbody2D.velocity.y switch
+        {
+            > 0.1f => MovementState.Jump,
+            < -0.1f when IsGrounded() => MovementState.Idle,
+            < -0.1f => MovementState.Falls,
+            _ => _moving ? MovementState.Run : MovementState.Idle
+        };
 
-        /*if (_rigidbody2D.velocity.y > 0.1f)
-            state = MovementState.Jump;
-        else if (_rigidbody2D.velocity.y < 0.1f) state = MovementState.Falls;*/
-        _playerAnimator.SetInteger("state", (int)state);
+        _playerAnimator.SetInteger(State, (int)state);
     }
 
     private enum MovementState
