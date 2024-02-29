@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private const int MaxJumps = 2;
     private const float BaseValue = 0f;
     private static readonly int State = Animator.StringToHash("state");
-    [SerializeField] private float jumpPower = 5f;
-    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float jumpPower = 6f;
+    [SerializeField] private float movementSpeed = 6f;
     private int _jumpCount;
     private bool _jumping;
     private MovementState _movementState;
@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         _jumping = false;
         return Mathf.Abs(_rigidbody2D.velocity.y) < GravityBase;
     }
+
 
     private void AnimationState()
     {
