@@ -2890,6 +2890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPower: 7
   movementSpeed: 6
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &1034106068
 MonoBehaviour:
   m_ObjectHideFlags: 0

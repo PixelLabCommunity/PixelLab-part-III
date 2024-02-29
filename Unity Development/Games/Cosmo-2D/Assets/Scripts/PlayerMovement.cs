@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private static readonly int State = Animator.StringToHash("state");
     [SerializeField] private float jumpPower = 6f;
     [SerializeField] private float movementSpeed = 6f;
+    [SerializeField] private LayerMask groundLayer;
+
     private int _jumpCount;
     private bool _jumping;
     private MovementState _movementState;
@@ -63,7 +65,11 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         _jumping = false;
-        return Mathf.Abs(_rigidbody2D.velocity.y) < GravityBase;
+
+        var raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down,
+            GravityBase, groundLayer);
+
+        return raycastHit2D.collider != null;
     }
 
 
