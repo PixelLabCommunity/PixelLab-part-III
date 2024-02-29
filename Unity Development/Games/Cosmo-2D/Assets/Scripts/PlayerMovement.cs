@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         _moving = moveInput.magnitude > BaseValue;
     }
 
+
     private bool IsGrounded()
     {
         _jumping = false;
