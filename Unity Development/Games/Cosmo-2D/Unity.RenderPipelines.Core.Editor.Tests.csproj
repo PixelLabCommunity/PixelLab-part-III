@@ -47,13 +47,13 @@
     <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\ShaderStripping\Results\UI_Default_Sprites_Default_5_0.json" />
     <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\Unity.RenderPipelines.Core.Editor.Tests.asmdef" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.11f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.11f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.11f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.12f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
