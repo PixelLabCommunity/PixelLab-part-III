@@ -30,9 +30,15 @@ public class PlayerMovement : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        Debug.Log(_jumping);
+    }
+
     private void Update()
     {
-        Debug.Log("Player Position: " + transform.position);
+        /*Debug.Log("Player Position: " + transform.position);*/
+
         AnimationState();
     }
 

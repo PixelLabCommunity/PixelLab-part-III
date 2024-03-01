@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\InputSystem\PlayerControls.cs" />
+    <Compile Include="Assets\Scripts\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <None Include="Library\PackageCache\com.unity.settings-manager@2.0.1\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.subsystems@1.0.0\package.json" />
@@ -86,7 +87,7 @@
     <None Include="Library\PackageCache\com.unity.rendering.light-transport@1.0.1\package.json" />
     <None Include="Library\PackageCache\com.unity.shadergraph@16.0.5\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.unityanalytics@1.0.0\package.json" />
-    <None Include="Library\PackageCache\com.unity.ide.rider@3.0.27\package.json" />
+    <None Include="Library\PackageCache\com.unity.ide.rider@3.0.28\package.json" />
     <None Include="Library\PackageCache\com.unity.searcher@4.9.2\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.video@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.shadergraph@16.0.5\ValidationConfig.json" />

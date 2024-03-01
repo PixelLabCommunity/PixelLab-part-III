@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\InputSystem\PlayerControls.cs" />
+    <Compile Include="Assets\Scripts\ItemCollector.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.11f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.dll</HintPath>
