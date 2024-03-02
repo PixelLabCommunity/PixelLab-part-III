@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private bool _doubleJumpAvailable = true;
 
     private int _jumpCount;
-    private bool _jumping;
     private MovementState _movementState;
     private bool _moving;
     private Animator _playerAnimator;
@@ -31,15 +30,8 @@ public class PlayerMovement : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        Debug.Log(_jumping);
-    }
-
     private void Update()
     {
-        /*Debug.Log("Player Position: " + transform.position);*/
-
         AnimationState();
     }
 
@@ -60,8 +52,6 @@ public class PlayerMovement : MonoBehaviour
         _jumpCount++;
 
         if (_jumpCount > 1) _doubleJumpAvailable = false;
-
-        _jumping = true;
     }
 
     private void OnMove(InputValue inputValue)
@@ -81,8 +71,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        _jumping = false;
-
         var raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down,
             GravityBase, groundLayer);
 
