@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fruit
   - DamageDeal
+  - FallCollider
   layers:
   - Default
   - TransparentFX
