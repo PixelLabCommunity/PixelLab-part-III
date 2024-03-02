@@ -86,6 +86,10 @@ public class PlayerMovement : MonoBehaviour
         var raycastHit2D = Physics2D.Raycast(transform.position, Vector2.down,
             GravityBase, groundLayer);
 
+        if (raycastHit2D.collider == null) return raycastHit2D.collider != null;
+        _jumpCount = 0;
+        _doubleJumpAvailable = true;
+
         return raycastHit2D.collider != null;
     }
 
@@ -100,7 +104,13 @@ public class PlayerMovement : MonoBehaviour
             _ => _moving ? MovementState.Run : MovementState.Idle
         };
 
-        if (_jumpCount > 1) state = MovementState.DoubleJump;
+        if (_jumpCount > 1)
+        {
+            if (_rigidbody2D.velocity.y > 0.1f)
+                state = MovementState.DoubleJump;
+            else
+                state = IsGrounded() ? MovementState.Idle : MovementState.Fall;
+        }
 
         _playerAnimator.SetInteger(State, (int)state);
     }
