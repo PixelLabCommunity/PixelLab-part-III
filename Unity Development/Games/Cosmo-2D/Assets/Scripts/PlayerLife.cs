@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -22,5 +23,10 @@ public class PlayerLife : MonoBehaviour
     {
         _rigidbody2D.bodyType = RigidbodyType2D.Static;
         _animator.SetTrigger(Death);
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

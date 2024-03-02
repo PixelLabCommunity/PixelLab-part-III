@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower = 6f;
     [SerializeField] private float movementSpeed = 6f;
     [SerializeField] private LayerMask groundLayer;
+    private bool _doubleJumpAvailable = true;
 
     private int _jumpCount;
     private bool _jumping;
@@ -44,12 +45,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnJump()
     {
-        if (IsGrounded()) _jumpCount = 0;
+        if (IsGrounded())
+        {
+            _jumpCount = 0;
+            _doubleJumpAvailable = true;
+        }
 
-        if (_jumpCount >= MaxJumps) return;
+        if (_jumpCount >= MaxJumps || (!_doubleJumpAvailable && _jumpCount > 0))
+            return;
+
         _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, PositionYZero);
         _rigidbody2D.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+
         _jumpCount++;
+
+        if (_jumpCount > 1) _doubleJumpAvailable = false;
+
         _jumping = true;
     }
 
@@ -85,9 +96,11 @@ public class PlayerMovement : MonoBehaviour
         {
             > 0.1f => MovementState.Jump,
             < -0.1f when IsGrounded() => MovementState.Idle,
-            < -0.1f => MovementState.Falls,
+            < -0.1f => MovementState.Fall,
             _ => _moving ? MovementState.Run : MovementState.Idle
         };
+
+        if (_jumpCount > 1) state = MovementState.DoubleJump;
 
         _playerAnimator.SetInteger(State, (int)state);
     }
@@ -97,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         Idle,
         Run,
         Jump,
-        Falls
+        DoubleJump,
+        Fall
     }
 }
