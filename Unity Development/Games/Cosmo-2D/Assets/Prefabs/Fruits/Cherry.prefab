@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6251776572327846677}
   - component: {fileID: 8437457565339780580}
   - component: {fileID: 9020112340246272409}
+  - component: {fileID: 8540043871767903268}
   m_Layer: 0
   m_Name: Cherry
   m_TagString: Fruit
@@ -156,3 +157,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7380276, y: 0.7191924}
   m_EdgeRadius: 0
+--- !u!114 &8540043871767903268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711031263587763515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1717ee0aa4ecf945b06cf1c9f8a032d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

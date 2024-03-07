@@ -4,6 +4,7 @@ public class SoundMachine : MonoBehaviour
 {
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private AudioSource collectSoundEffect;
 
     private void Update()
     {
@@ -17,6 +18,9 @@ public class SoundMachine : MonoBehaviour
 
         if (PlayerLife.Instance.death)
             PlaySound(deathSoundEffect, ref PlayerLife.Instance.death, "PlayerDeath Sound Effect");
+
+        if (ItemCollector.Instance.collected)
+            PlaySound(collectSoundEffect, ref ItemCollector.Instance.collected, "PlayerCollect Sound Effect");
     }
 
     private static void PlaySound(AudioSource soundEffect, ref bool condition, string warningMessage)
