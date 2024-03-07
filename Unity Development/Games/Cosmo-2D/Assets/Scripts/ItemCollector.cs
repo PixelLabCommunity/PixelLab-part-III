@@ -10,12 +10,9 @@ public class ItemCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(CollectableItem))
-        {
-            Destroy(other.gameObject);
-            _count++;
-        }
-
-        fruitCount.text = "Fruits:" + _count;
+        if (!other.gameObject.CompareTag(CollectableItem)) return;
+        Destroy(other.gameObject);
+        _count++;
+        fruitCount.text = "Fruits: " + _count; // Update text here
     }
 }

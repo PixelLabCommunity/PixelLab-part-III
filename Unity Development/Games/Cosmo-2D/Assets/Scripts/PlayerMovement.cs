@@ -9,9 +9,14 @@ public class PlayerMovement : MonoBehaviour
     private const int MaxJumps = 2;
     private const float BaseValue = 0f;
     private static readonly int State = Animator.StringToHash("state");
+
     [SerializeField] private float jumpPower = 6f;
     [SerializeField] private float movementSpeed = 6f;
+
     [SerializeField] private LayerMask groundLayer;
+
+    public bool jumping;
+
     private bool _doubleJumpAvailable = true;
 
     private int _jumpCount;
@@ -22,9 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
     private SpriteRenderer _spriteRenderer;
+    public static PlayerMovement Instance { get; private set; }
 
     private void Awake()
     {
+        Instance = this;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerAnimator = GetComponent<Animator>();
@@ -52,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         _jumpCount++;
 
         if (_jumpCount > 1) _doubleJumpAvailable = false;
+
+        jumping = true;
     }
 
     private void OnMove(InputValue inputValue)

@@ -7,11 +7,14 @@ public class PlayerLife : MonoBehaviour
     private const string DamageDeal = "DamageDeal";
     private const string FallCollider = "FallCollider";
     private static readonly int Death = Animator.StringToHash("death");
+    public bool death;
     private Animator _animator;
     private PlayerInput _playerInput;
+    public static PlayerLife Instance { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
+        Instance = this;
         _animator = GetComponent<Animator>();
         _playerInput = GetComponent<PlayerInput>();
     }
@@ -25,6 +28,7 @@ public class PlayerLife : MonoBehaviour
     {
         _playerInput.enabled = false;
         _animator.SetTrigger(Death);
+        death = true;
     }
 
     private void RestartLevel()
