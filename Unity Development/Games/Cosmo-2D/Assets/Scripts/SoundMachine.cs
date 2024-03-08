@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class SoundMachine : MonoBehaviour
 {
-    [SerializeField] private AudioSource jumpSoundEffect;
-    [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource collectSoundEffect;
+    [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private AudioSource finishSoundEffect;
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     private void Update()
     {
@@ -21,6 +22,9 @@ public class SoundMachine : MonoBehaviour
 
         if (ItemCollector.Instance.collected)
             PlaySound(collectSoundEffect, ref ItemCollector.Instance.collected, "PlayerCollect Sound Effect");
+
+        if (Finish.Instance.finished)
+            PlaySound(finishSoundEffect, ref Finish.Instance.finished, "Finish Sound Effect");
     }
 
     private static void PlaySound(AudioSource soundEffect, ref bool condition, string warningMessage)

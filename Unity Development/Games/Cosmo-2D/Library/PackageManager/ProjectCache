@@ -20,7 +20,7 @@ m_EmbeddedPackageManifests:
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: D:/Game Development/Unity/PixelLab-part-III/Unity Development/Games/Cosmo-2D/Packages
-m_EditorVersion: 2023.2.12f1 (19eeb3b320af)
+m_EditorVersion: 2023.2.13f1 (70197a359f36)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@2.2.0
   testable: 0
