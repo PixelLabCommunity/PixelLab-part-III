@@ -26,4 +26,8 @@ public class Finish : MonoBehaviour
 
         finished = true;
     }
+
+    public void LevelComplete()
+    {
+    }
 }
