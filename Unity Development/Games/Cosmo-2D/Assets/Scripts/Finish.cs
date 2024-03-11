@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,9 @@ public class Finish : MonoBehaviour
     private static readonly int FinishTouched = Animator.StringToHash("finishTouched");
     private static readonly int FinishedPlayer = Animator.StringToHash("finishedPlayer");
     public bool finished;
+    [SerializeField] private TextMeshProUGUI finishText;
     private Animator _animator;
+
     private bool _playFinished; // Added variable to track if play has finished
     public static Finish Instance { get; private set; }
 
@@ -27,6 +30,7 @@ public class Finish : MonoBehaviour
 
         if (_playFinished) return;
         _playFinished = true;
+        finishText.enabled = true;
         Invoke(nameof(LevelComplete), DelayTimer);
     }
 
