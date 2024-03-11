@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start Scene.unity
+    guid: 2fc1739605b231f4e8798bd345ee4436
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -14,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 9a26b4b2d076dc344a34995bb218468f
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 3f24824d6e9640144876f6e983f6fa96
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

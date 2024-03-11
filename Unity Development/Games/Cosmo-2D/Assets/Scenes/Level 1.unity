@@ -6769,8 +6769,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -380930061
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -7720,6 +7720,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 662191515643552333, guid: 373b0699e60788c47b1bbce7917151e9, type: 3}
       propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 662191515643552333, guid: 373b0699e60788c47b1bbce7917151e9, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 662191515643552333, guid: 373b0699e60788c47b1bbce7917151e9, type: 3}
@@ -120590,14 +120594,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1900559402}
     m_Modifications:
-    - target: {fileID: 662191515643552333, guid: 373b0699e60788c47b1bbce7917151e9, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 662191515643552333, guid: 373b0699e60788c47b1bbce7917151e9, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -380930061
-      objectReference: {fileID: 0}
     - target: {fileID: 662609849926544042, guid: 373b0699e60788c47b1bbce7917151e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.67
@@ -120655,14 +120651,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 396710164}
     m_Modifications:
-    - target: {fileID: 874758102107000624, guid: c97dab566479601429295ef89c8ff933, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 173.9843
-      objectReference: {fileID: 0}
-    - target: {fileID: 874758102107000624, guid: c97dab566479601429295ef89c8ff933, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -61.992123
-      objectReference: {fileID: 0}
     - target: {fileID: 4181622341248061236, guid: c97dab566479601429295ef89c8ff933, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -120968,10 +120956,6 @@ PrefabInstance:
     - target: {fileID: 6037865162161151483, guid: ad3e7bcca05163c4cbffb54d3f3790e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8058233149260874986, guid: ad3e7bcca05163c4cbffb54d3f3790e1, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
