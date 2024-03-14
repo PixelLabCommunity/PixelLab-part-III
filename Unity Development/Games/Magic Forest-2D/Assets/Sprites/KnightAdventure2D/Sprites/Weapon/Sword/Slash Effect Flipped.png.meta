@@ -1,10 +1,34 @@
 fileFormatVersion: 2
-guid: c42d1ff901e2a1946b75ac5c54fea17c
+guid: 7af80d8ec98c28f48a583b0ed65593c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7807952054443111765
-    second: chest_01_0
+      213: -6006743632452028064
+    second: Slash Effect Flipped_0
+  - first:
+      213: -8514640461492126471
+    second: Slash Effect Flipped_1
+  - first:
+      213: 6689011180840558988
+    second: Slash Effect Flipped_2
+  - first:
+      213: 3812399004885631552
+    second: Slash Effect Flipped_3
+  - first:
+      213: -9101215569571038138
+    second: Slash Effect Flipped_4
+  - first:
+      213: -304422834059476517
+    second: Slash Effect Flipped_5
+  - first:
+      213: -876431336802082004
+    second: Slash Effect Flipped_6
+  - first:
+      213: 1798732707927530634
+    second: Slash Effect Flipped_7
+  - first:
+      213: -3066298263513844961
+    second: Slash Effect Flipped_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,13 +163,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chest_01_0
+      name: Slash Effect Flipped_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 222
+        y: 7
+        width: 28
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,71 +177,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 555fc54760b6b5c60800000000000000
-      internalID: 7807952054443111765
+      spriteID: 0697bdacd72c3aca0800000000000000
+      internalID: -6006743632452028064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_1
+      name: Slash Effect Flipped_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
+        x: 292
+        y: 8
+        width: 22
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c324e14156f6e424b87dc6912e220504
-      internalID: 1422448676
+      spriteID: 9fcf79edc9be5d980800000000000000
+      internalID: -8514640461492126471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_2
+      name: Slash Effect Flipped_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
+        x: 345
+        y: 10
+        width: 33
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 21f7d26b33db12d4ca36b589eb9d12ed
-      internalID: -1331221973
+      spriteID: c812e94aa3424dc50800000000000000
+      internalID: 6689011180840558988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_3
+      name: Slash Effect Flipped_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
+        x: 407
+        y: 20
+        width: 35
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ca1d3bf6a606f534289c249340bdb969
-      internalID: -1421333848
+      spriteID: 042c24c22bc58e430800000000000000
+      internalID: 3812399004885631552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash Effect Flipped_4
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 27
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64cb677e8acf1b180800000000000000
+      internalID: -9101215569571038138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash Effect Flipped_5
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 32
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd10e5a9b0976cbf0800000000000000
+      internalID: -304422834059476517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash Effect Flipped_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 6
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2324ebb75a46d3f0800000000000000
+      internalID: -876431336802082004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash Effect Flipped_7
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 6
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c95e52ed166f810800000000000000
+      internalID: 1798732707927530634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slash Effect Flipped_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 7
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f133cdba9f15275d0800000000000000
+      internalID: -3066298263513844961
       vertices: []
       indices: 
       edges: []
@@ -225,18 +354,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 93a5cecd13a1bf245822b002ee08fe10
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      chest_01_0: 7807952054443111765
-      chest_01_1: 1422448676
-      chest_01_2: -1331221973
-      chest_01_3: -1421333848
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

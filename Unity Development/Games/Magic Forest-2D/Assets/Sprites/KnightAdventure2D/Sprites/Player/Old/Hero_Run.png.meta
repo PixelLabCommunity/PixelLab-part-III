@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: c42d1ff901e2a1946b75ac5c54fea17c
+guid: 040d011a4027c754b8d565dd3fb5d122
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7807952054443111765
-    second: chest_01_0
+      213: -2472566826670189440
+    second: Hero_Run_0
+  - first:
+      213: -3435544232207097774
+    second: Hero_Run_1
+  - first:
+      213: -2939011289849822754
+    second: Hero_Run_2
+  - first:
+      213: -8014000782766767174
+    second: Hero_Run_3
+  - first:
+      213: 781698502116008853
+    second: Hero_Run_4
+  - first:
+      213: 5543987149395541339
+    second: Hero_Run_5
+  - first:
+      213: 5921935232530533456
+    second: Hero_Run_6
+  - first:
+      213: 7699825690762244204
+    second: Hero_Run_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chest_01_0
+      name: Hero_Run_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 41
+        y: 29
         width: 16
-        height: 16
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,71 +174,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 555fc54760b6b5c60800000000000000
-      internalID: 7807952054443111765
+      spriteID: 08498e4429dafadd0800000000000000
+      internalID: -2472566826670189440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_1
+      name: Hero_Run_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 137
+        y: 29
         width: 16
-        height: 16
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c324e14156f6e424b87dc6912e220504
-      internalID: 1422448676
+      spriteID: 250672d19be7250d0800000000000000
+      internalID: -3435544232207097774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_2
+      name: Hero_Run_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 233
+        y: 29
         width: 16
-        height: 16
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 21f7d26b33db12d4ca36b589eb9d12ed
-      internalID: -1331221973
+      spriteID: ed183adadc88637d0800000000000000
+      internalID: -2939011289849822754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_3
+      name: Hero_Run_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 329
+        y: 29
         width: 16
-        height: 16
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ca1d3bf6a606f534289c249340bdb969
-      internalID: -1421333848
+      spriteID: ab30c718fbc88c090800000000000000
+      internalID: -8014000782766767174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 29
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593641465a629da00800000000000000
+      internalID: 781698502116008853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 29
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d3d0760f230fc40800000000000000
+      internalID: 5543987149395541339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_6
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 29
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c4addd7b0fe2250800000000000000
+      internalID: 5921935232530533456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_7
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 29
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c607f4a9ba64bda60800000000000000
+      internalID: 7699825690762244204
       vertices: []
       indices: 
       edges: []
@@ -225,18 +330,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 93a5cecd13a1bf245822b002ee08fe10
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      chest_01_0: 7807952054443111765
-      chest_01_1: 1422448676
-      chest_01_2: -1331221973
-      chest_01_3: -1421333848
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
