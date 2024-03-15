@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 324f631053f605a459faa7076129af09
+guid: 70b7d096ed8393a41a22a6623e9d5438
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4579995763778260910
-    second: dust_particles_01_0
+      213: -2431324439429015123
+    second: spr_Blue_slime_idle_0
   - first:
-      213: -1168218012597344523
-    second: dust_particles_01_1
+      213: 4790929059473589353
+    second: spr_Blue_slime_idle_1
+  - first:
+      213: 5033143574008915852
+    second: spr_Blue_slime_idle_2
+  - first:
+      213: 7395003766207570404
+    second: spr_Blue_slime_idle_3
+  - first:
+      213: 739003766399583020
+    second: spr_Blue_slime_idle_4
+  - first:
+      213: -5808409036815140552
+    second: spr_Blue_slime_idle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dust_particles_01_0
+      name: spr_Blue_slime_idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 12
+        x: 23
+        y: 22
+        width: 19
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 250f3336e169070c0800000000000000
-      internalID: -4579995763778260910
+      spriteID: da99b16dd43324ed0800000000000000
+      internalID: -2431324439429015123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_1
+      name: spr_Blue_slime_idle_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 12
-        height: 12
+        x: 87
+        y: 22
+        width: 19
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,29 +189,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f62ce238e7a9cfe0800000000000000
-      internalID: -1168218012597344523
+      spriteID: 964050e989ccc7240800000000000000
+      internalID: 4790929059473589353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_2
+      name: spr_Blue_slime_idle_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 12
-        height: 12
+        x: 151
+        y: 22
+        width: 19
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 786836f9622bb7c42bf2dc4a5abe2933
-      internalID: 1058106698
+      spriteID: c876750f96159d540800000000000000
+      internalID: 5033143574008915852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_idle_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 22
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e16a75beb450a660800000000000000
+      internalID: 7395003766207570404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_idle_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 22
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c234ce79208714a00800000000000000
+      internalID: 739003766399583020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_idle_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 22
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839f67a51c2646fa0800000000000000
+      internalID: -5808409036815140552
       vertices: []
       indices: 
       edges: []
@@ -207,7 +282,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ff94771adf5b15d4cbda03c6b6698a07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -215,9 +290,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dust_particles_01_0: -4579995763778260910
-      dust_particles_01_1: -1168218012597344523
-      dust_particles_01_2: 1058106698
+      spr_Blue_slime_idle_0: -2431324439429015123
+      spr_Blue_slime_idle_1: 4790929059473589353
+      spr_Blue_slime_idle_2: 5033143574008915852
+      spr_Blue_slime_idle_3: 7395003766207570404
+      spr_Blue_slime_idle_4: 739003766399583020
+      spr_Blue_slime_idle_5: -5808409036815140552
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

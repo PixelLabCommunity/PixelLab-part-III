@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 324f631053f605a459faa7076129af09
+guid: 244db861ff5f9334faa42b1c8a6560f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4579995763778260910
-    second: dust_particles_01_0
+      213: 492553918043663835
+    second: spr_Blue_slime_idle_shadowless_0
   - first:
-      213: -1168218012597344523
-    second: dust_particles_01_1
+      213: -8936358202842396415
+    second: spr_Blue_slime_idle_shadowless_1
+  - first:
+      213: -7799830453453564913
+    second: spr_Blue_slime_idle_shadowless_2
+  - first:
+      213: 9144623239960893097
+    second: spr_Blue_slime_idle_shadowless_3
+  - first:
+      213: -3941246189462992593
+    second: spr_Blue_slime_idle_shadowless_4
+  - first:
+      213: 9135671421383481450
+    second: spr_Blue_slime_idle_shadowless_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dust_particles_01_0
+      name: spr_Blue_slime_idle_shadowless_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 12
+        x: 25
+        y: 25
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 250f3336e169070c0800000000000000
-      internalID: -4579995763778260910
+      spriteID: bdd28b5cd27e5d600800000000000000
+      internalID: 492553918043663835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_1
+      name: spr_Blue_slime_idle_shadowless_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 12
-        height: 12
+        x: 89
+        y: 25
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,29 +189,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f62ce238e7a9cfe0800000000000000
-      internalID: -1168218012597344523
+      spriteID: 1094ee5bf8dabf380800000000000000
+      internalID: -8936358202842396415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_2
+      name: spr_Blue_slime_idle_shadowless_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 12
-        height: 12
+        x: 152
+        y: 25
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 786836f9622bb7c42bf2dc4a5abe2933
-      internalID: 1058106698
+      spriteID: f0450a1278f61c390800000000000000
+      internalID: -7799830453453564913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_idle_shadowless_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 25
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a696aee26a38ee70800000000000000
+      internalID: 9144623239960893097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_idle_shadowless_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 25
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2942b8e871ed49c0800000000000000
+      internalID: -3941246189462992593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_idle_shadowless_5
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 25
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68104041cc68ce70800000000000000
+      internalID: 9135671421383481450
       vertices: []
       indices: 
       edges: []
@@ -207,17 +282,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ff94771adf5b15d4cbda03c6b6698a07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      dust_particles_01_0: -4579995763778260910
-      dust_particles_01_1: -1168218012597344523
-      dust_particles_01_2: 1058106698
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

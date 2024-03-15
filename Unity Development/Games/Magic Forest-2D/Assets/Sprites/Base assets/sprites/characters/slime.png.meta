@@ -133,7 +133,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -147,7 +147,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -171,7 +171,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -937,7 +937,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slime_0: 368543389579951487
+      slime_1: -458641133534639524
+      slime_10: 574139385759250185
+      slime_11: -1071876908328471809
+      slime_12: 7065398221910334755
+      slime_13: 5088725752757704037
+      slime_14: 2446715294408889903
+      slime_15: -6455651614561120216
+      slime_16: 1700843758525247274
+      slime_17: -1893580178282796242
+      slime_18: 8878132033782264596
+      slime_19: 4963280553436401018
+      slime_2: 2542698315722941828
+      slime_20: 3519091041362292632
+      slime_21: -3395474172157937565
+      slime_22: 6932627294812020299
+      slime_23: 4223093693952456910
+      slime_24: 7427473825912618326
+      slime_25: 1540438928351404177
+      slime_26: -572565752260146881
+      slime_27: 7540427358155989450
+      slime_28: -3433080256221142714
+      slime_29: -8263499900113843028
+      slime_3: -3711818451352614709
+      slime_30: -3746336789924475392
+      slime_31: 4541736877509699167
+      slime_32: -1622549613547736378
+      slime_4: -6875693984060724655
+      slime_5: 8065215198520230363
+      slime_6: 292511346337569837
+      slime_7: -6776676135277293862
+      slime_8: 5879532933249936704
+      slime_9: 1702944112137351692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

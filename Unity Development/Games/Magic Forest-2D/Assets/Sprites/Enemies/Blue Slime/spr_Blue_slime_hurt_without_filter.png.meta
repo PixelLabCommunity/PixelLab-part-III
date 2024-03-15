@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 324f631053f605a459faa7076129af09
+guid: c6a80015e75f2b742b060f22f0bee2f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4579995763778260910
-    second: dust_particles_01_0
+      213: 5929151017160450700
+    second: spr_Blue_slime_hurt_without_filter_0
   - first:
-      213: -1168218012597344523
-    second: dust_particles_01_1
+      213: -2068294631979061078
+    second: spr_Blue_slime_hurt_without_filter_1
+  - first:
+      213: -6881989116126751424
+    second: spr_Blue_slime_hurt_without_filter_2
+  - first:
+      213: -3057870193649274786
+    second: spr_Blue_slime_hurt_without_filter_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dust_particles_01_0
+      name: spr_Blue_slime_hurt_without_filter_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 12
+        x: 23
+        y: 24
+        width: 19
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 250f3336e169070c0800000000000000
-      internalID: -4579995763778260910
+      spriteID: c82ae75af63984250800000000000000
+      internalID: 5929151017160450700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_1
+      name: spr_Blue_slime_hurt_without_filter_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 12
-        height: 12
+        x: 88
+        y: 25
+        width: 17
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,29 +183,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f62ce238e7a9cfe0800000000000000
-      internalID: -1168218012597344523
+      spriteID: aa07a029df0fb43e0800000000000000
+      internalID: -2068294631979061078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_2
+      name: spr_Blue_slime_hurt_without_filter_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 12
-        height: 12
+        x: 154
+        y: 25
+        width: 13
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 786836f9622bb7c42bf2dc4a5abe2933
-      internalID: 1058106698
+      spriteID: 04519297c534e70a0800000000000000
+      internalID: -6881989116126751424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_hurt_without_filter_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 25
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50b74a92434095d0800000000000000
+      internalID: -3057870193649274786
       vertices: []
       indices: 
       edges: []
@@ -207,7 +234,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ff94771adf5b15d4cbda03c6b6698a07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -215,9 +242,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dust_particles_01_0: -4579995763778260910
-      dust_particles_01_1: -1168218012597344523
-      dust_particles_01_2: 1058106698
+      spr_Blue_slime_hurt_without_filter_0: 5929151017160450700
+      spr_Blue_slime_hurt_without_filter_1: -2068294631979061078
+      spr_Blue_slime_hurt_without_filter_2: -6881989116126751424
+      spr_Blue_slime_hurt_without_filter_3: -3057870193649274786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

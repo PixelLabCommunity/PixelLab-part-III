@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 324f631053f605a459faa7076129af09
+guid: 9386b19caecc5fe43bbe6b26cd18a25f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4579995763778260910
-    second: dust_particles_01_0
+      213: 8085143833605022259
+    second: spr_Blue_slime_walk_0
   - first:
-      213: -1168218012597344523
-    second: dust_particles_01_1
+      213: -1213376895010643947
+    second: spr_Blue_slime_walk_1
+  - first:
+      213: -3036810995338415006
+    second: spr_Blue_slime_walk_2
+  - first:
+      213: -7013142190536670755
+    second: spr_Blue_slime_walk_3
+  - first:
+      213: 6179986714681800415
+    second: spr_Blue_slime_walk_4
+  - first:
+      213: -2305282644430848052
+    second: spr_Blue_slime_walk_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dust_particles_01_0
+      name: spr_Blue_slime_walk_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 12
+        x: 23
+        y: 22
+        width: 19
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 250f3336e169070c0800000000000000
-      internalID: -4579995763778260910
+      spriteID: 332a7ffca73343070800000000000000
+      internalID: 8085143833605022259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_1
+      name: spr_Blue_slime_walk_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 12
-        height: 12
+        x: 87
+        y: 22
+        width: 19
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,29 +189,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f62ce238e7a9cfe0800000000000000
-      internalID: -1168218012597344523
+      spriteID: 510693a8428392fe0800000000000000
+      internalID: -1213376895010643947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dust_particles_01_2
+      name: spr_Blue_slime_walk_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 12
-        height: 12
+        x: 151
+        y: 22
+        width: 19
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 786836f9622bb7c42bf2dc4a5abe2933
-      internalID: 1058106698
+      spriteID: 2647adc4d741bd5d0800000000000000
+      internalID: -3036810995338415006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_walk_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 22
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1c1cdb5505cae90800000000000000
+      internalID: -7013142190536670755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_walk_4
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 22
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6fd3d8c29b3c550800000000000000
+      internalID: 6179986714681800415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_Blue_slime_walk_5
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 22
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf73d716adf100e0800000000000000
+      internalID: -2305282644430848052
       vertices: []
       indices: 
       edges: []
@@ -207,7 +282,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ff94771adf5b15d4cbda03c6b6698a07
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -215,9 +290,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dust_particles_01_0: -4579995763778260910
-      dust_particles_01_1: -1168218012597344523
-      dust_particles_01_2: 1058106698
+      spr_Blue_slime_walk_0: 8085143833605022259
+      spr_Blue_slime_walk_1: -1213376895010643947
+      spr_Blue_slime_walk_2: -3036810995338415006
+      spr_Blue_slime_walk_3: -7013142190536670755
+      spr_Blue_slime_walk_4: 6179986714681800415
+      spr_Blue_slime_walk_5: -2305282644430848052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
