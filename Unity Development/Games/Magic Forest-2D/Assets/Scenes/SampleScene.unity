@@ -5424,6 +5424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 507339930429421908, guid: dd95a2ce6ff1302448f65d9aca89efe4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4868475602716726731, guid: dd95a2ce6ff1302448f65d9aca89efe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.26

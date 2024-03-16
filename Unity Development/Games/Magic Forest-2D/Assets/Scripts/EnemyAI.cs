@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
+    private const float WaitSeconds = 2f;
     private EnemyPathfinding _enemyPathfinding;
     private SpriteRenderer _spriteRenderer;
 
@@ -33,13 +34,15 @@ public class EnemyAI : MonoBehaviour
         {
             var wanderingPosition = GetWanderingPosition();
             _enemyPathfinding.MoveTo(wanderingPosition);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(WaitSeconds);
         }
     }
 
     private static Vector2 GetWanderingPosition()
     {
-        return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        var randomX = Random.Range(-1f, 1f);
+        var randomY = Random.Range(-1f, 1f);
+        return new Vector2(randomX, randomY);
     }
 
     private void EnemyRenderFlip()
