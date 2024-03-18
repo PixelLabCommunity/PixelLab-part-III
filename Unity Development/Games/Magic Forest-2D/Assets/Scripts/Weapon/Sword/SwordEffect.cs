@@ -6,6 +6,8 @@ public class SwordEffect : MonoBehaviour
     private static readonly int Attack1 = Animator.StringToHash("Attack");
     [SerializeField] private GameObject slashEffectPrefab;
     [SerializeField] private Transform slashEffectSpawnPoint;
+    private readonly Vector3 _spawnDown = new(0, 0, 0);
+    private readonly Vector3 _spawnUp = new(180, 0, 0);
 
     private ActiveWeapon _activeWeapon;
     private PlayerController _playerController;
@@ -55,14 +57,14 @@ public class SwordEffect : MonoBehaviour
     public void SlashEffectSpawnDown()
     {
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
-            Quaternion.Euler(0, 0, 0));
+            Quaternion.Euler(_spawnDown));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
     }
 
     public void SlashEffectSpawnUp()
     {
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
-            Quaternion.Euler(180, 0, 0));
+            Quaternion.Euler(_spawnUp));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
     }
 
