@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Sword : MonoBehaviour
+public class SwordEffect : MonoBehaviour
 {
     private static readonly int Attack1 = Animator.StringToHash("Attack");
+    [SerializeField] private GameObject slashEffectPrefab;
+    [SerializeField] private Transform slashEffectSpawnPoint;
+
     private ActiveWeapon _activeWeapon;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
+    private GameObject _slashEffect;
     private Animator _swordAnimator;
 
     private void Awake()
@@ -25,6 +29,7 @@ public class Sword : MonoBehaviour
     private void Update()
     {
         FlipWeapon();
+        SlashEffectFlip();
     }
 
     private void OnEnable()
@@ -36,6 +41,31 @@ public class Sword : MonoBehaviour
     {
         _swordAnimator.SetTrigger(Attack1);
     }
+
+
+    private void SlashEffectFlip()
+    {
+        if (_slashEffect == null) return;
+        var playerScaleX = _playerController.transform.localScale.x;
+        var effectScale = _slashEffect.transform.localScale;
+        effectScale.x = Mathf.Sign(playerScaleX) * Mathf.Abs(effectScale.x);
+        _slashEffect.transform.localScale = effectScale;
+    }
+
+    public void SlashEffectSpawnDown()
+    {
+        _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
+            Quaternion.Euler(0, 0, 0));
+        _slashEffect.transform.parent = slashEffectSpawnPoint;
+    }
+
+    public void SlashEffectSpawnUp()
+    {
+        _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
+            Quaternion.Euler(180, 0, 0));
+        _slashEffect.transform.parent = slashEffectSpawnPoint;
+    }
+
 
     private void FlipWeapon()
     {

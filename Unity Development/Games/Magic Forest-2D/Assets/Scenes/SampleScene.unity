@@ -492,6 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd70cbc81b3d24c4990087e1a8df7f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slashEffectPrefab: {fileID: 4147875791629511559, guid: 4315605d120fdd94b9e993082e3d5d9a, type: 3}
+  slashEffectSpawnPoint: {fileID: 1237469769}
 --- !u!1 &1015287066
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1237469769}
   m_Layer: 0
-  m_Name: Slash Spawn Point
+  m_Name: Slash Effect Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -549,13 +551,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237469768}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.3754917, w: 0.92682576}
-  m_LocalPosition: {x: 0.30118632, y: 0.20602345, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.6653241, w: 0.7465547}
+  m_LocalPosition: {x: 0.33, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1015287067}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 44.109}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 83.414}
 --- !u!1 &1535280605
 GameObject:
   m_ObjectHideFlags: 0
