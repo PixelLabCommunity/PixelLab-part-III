@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        EnemyRenderFlip();
+        EnemyFlipRender();
     }
 
     private IEnumerator WanderingRoutine()
@@ -45,7 +45,7 @@ public class EnemyAI : MonoBehaviour
         return new Vector2(randomX, randomY);
     }
 
-    private void EnemyRenderFlip()
+    private void EnemyFlipRender()
     {
         var movementDirection = _enemyPathfinding.GetMovementDirection();
         _spriteRenderer.flipX = movementDirection.x < 0;
