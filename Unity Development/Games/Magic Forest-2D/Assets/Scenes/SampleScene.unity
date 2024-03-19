@@ -825,6 +825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1778418416}
   - component: {fileID: 1778418417}
+  - component: {fileID: 1778418418}
   m_Layer: 0
   m_Name: Sword Effect Collider
   m_TagString: Untagged
@@ -907,6 +908,19 @@ PolygonCollider2D:
       - {x: 1.941323, y: 0.38183546}
       - {x: 1.7641072, y: 1.2471535}
   m_UseDelaunayMesh: 0
+--- !u!114 &1778418418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778418415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff6f0a9e7e8ef144a79ffcc996df55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordDamage: 1
 --- !u!1 &1854444595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5832,6 +5846,10 @@ PrefabInstance:
     - target: {fileID: 4868475602716726731, guid: dd95a2ce6ff1302448f65d9aca89efe4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532926385530814728, guid: dd95a2ce6ff1302448f65d9aca89efe4, type: 3}
+      propertyPath: spawnEnemyHealth
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
