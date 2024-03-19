@@ -494,7 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashEffectPrefab: {fileID: 4147875791629511559, guid: 4315605d120fdd94b9e993082e3d5d9a, type: 3}
   slashEffectSpawnPoint: {fileID: 1237469769}
-  slashEffectColliderPoint: {fileID: 1778418416}
+  swordEffectColliderObject: {fileID: 1778418416}
 --- !u!1 &1015287066
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1778418416
 Transform:
   m_ObjectHideFlags: 0

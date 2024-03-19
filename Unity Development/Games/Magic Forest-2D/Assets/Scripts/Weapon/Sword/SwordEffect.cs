@@ -6,7 +6,7 @@ public class SwordEffect : MonoBehaviour
     private static readonly int Attack1 = Animator.StringToHash("Attack");
     [SerializeField] private GameObject slashEffectPrefab;
     [SerializeField] private Transform slashEffectSpawnPoint;
-    [SerializeField] private Transform slashEffectColliderPoint;
+    [SerializeField] private Transform swordEffectColliderObject;
     private readonly Vector3 _spawnDown = new(0, 0, 0);
     private readonly Vector3 _spawnUp = new(180, 0, 0);
 
@@ -22,6 +22,7 @@ public class SwordEffect : MonoBehaviour
         _playerController = GetComponentInParent<PlayerController>();
         _playerControls = new PlayerControls();
         _swordAnimator = GetComponent<Animator>();
+        /*SwordEffectColliderDisable();*/
     }
 
     private void Start()
@@ -43,6 +44,17 @@ public class SwordEffect : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         _swordAnimator.SetTrigger(Attack1);
+        SwordEffectColliderEnable();
+    }
+
+    private void SwordEffectColliderEnable()
+    {
+        swordEffectColliderObject.gameObject.SetActive(true);
+    }
+
+    private void SwordEffectColliderDisable()
+    {
+        swordEffectColliderObject.gameObject.SetActive(false);
     }
 
 
@@ -60,7 +72,7 @@ public class SwordEffect : MonoBehaviour
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.Euler(_spawnDown));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        slashEffectColliderPoint.transform.rotation = Quaternion.Euler(_spawnDown);
+        swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
 
     public void SlashEffectSpawnUp()
@@ -68,7 +80,7 @@ public class SwordEffect : MonoBehaviour
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.Euler(_spawnUp));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        slashEffectColliderPoint.transform.rotation = Quaternion.Euler(_spawnDown);
+        swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
 
 
