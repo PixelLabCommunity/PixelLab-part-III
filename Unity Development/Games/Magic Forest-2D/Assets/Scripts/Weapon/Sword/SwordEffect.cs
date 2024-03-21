@@ -22,7 +22,6 @@ public class SwordEffect : MonoBehaviour
         _playerController = GetComponentInParent<PlayerController>();
         _playerControls = new PlayerControls();
         _swordAnimator = GetComponent<Animator>();
-        /*SwordEffectColliderDisable();*/
     }
 
     private void Start()

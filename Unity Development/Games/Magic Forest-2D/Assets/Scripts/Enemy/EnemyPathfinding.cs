@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyPathfinding : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
+    private Animator _animator;
     private EnemyKnockBack _enemyKnockBack;
     private Vector2 _moveDir;
     private Rigidbody2D _rigidbody2D;
