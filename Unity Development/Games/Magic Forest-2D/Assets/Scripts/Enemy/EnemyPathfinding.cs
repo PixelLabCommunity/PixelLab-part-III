@@ -3,16 +3,19 @@ using UnityEngine;
 public class EnemyPathfinding : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
+    private EnemyKnockBack _enemyKnockBack;
     private Vector2 _moveDir;
     private Rigidbody2D _rigidbody2D;
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _enemyKnockBack = GetComponent<EnemyKnockBack>();
     }
 
     private void FixedUpdate()
     {
+        if (_enemyKnockBack.gettingKnockBack) return;
         _rigidbody2D.MovePosition(_rigidbody2D.position + _moveDir * (moveSpeed * Time.fixedDeltaTime));
     }
 

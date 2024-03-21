@@ -5,6 +5,14 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int spawnEnemyHealth = 3;
 
     private int _currentEnemyHealth;
+    private EnemyKnockBack _enemyKnockBack;
+    private PlayerController _playerController;
+
+    private void Awake()
+    {
+        _enemyKnockBack = GetComponent<EnemyKnockBack>();
+        _playerController = FindFirstObjectByType<PlayerController>();
+    }
 
     private void Start()
     {
@@ -15,6 +23,10 @@ public class EnemyHealth : MonoBehaviour
     {
         _currentEnemyHealth -= damage;
         Debug.LogWarning(_currentEnemyHealth);
+        if (_playerController != null)
+            _enemyKnockBack.GetKnockBack(_playerController.transform, 15f);
+        else
+            Debug.LogError("PlayerController not found!");
         EnemyDeath();
     }
 
