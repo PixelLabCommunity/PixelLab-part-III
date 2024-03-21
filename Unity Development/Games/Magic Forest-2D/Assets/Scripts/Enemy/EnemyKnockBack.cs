@@ -13,10 +13,10 @@ public class EnemyKnockBack : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    public void GetKnockBack(Transform damageSource, float knockBackTrust)
+    public void GetKnockBack(Transform playerPosition, float knockBackPower)
     {
         gettingKnockBack = true;
-        Vector2 difference = (transform.position - damageSource.position).normalized * knockBackTrust
+        var difference = (transform.position - playerPosition.position).normalized * knockBackPower
             * _rigidbody2D.mass;
         _rigidbody2D.AddForce(difference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutine());
