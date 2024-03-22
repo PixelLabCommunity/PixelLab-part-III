@@ -11,16 +11,15 @@ public class EnemyHealth : MonoBehaviour
     private Animator _animator;
 
     private int _currentEnemyHealth;
-    private EnemyAI _enemyAI;
     private EnemyKnockBack _enemyKnockBack;
     private PlayerController _playerController;
+    public bool stateDying { get; private set; }
 
     private void Awake()
     {
         _enemyKnockBack = GetComponent<EnemyKnockBack>();
         _playerController = FindFirstObjectByType<PlayerController>();
         _animator = GetComponent<Animator>();
-        _enemyAI = GetComponent<EnemyAI>();
     }
 
     private void Start()
@@ -41,8 +40,8 @@ public class EnemyHealth : MonoBehaviour
         StartCoroutine(ResetDamageAnimation());
 
         if (_currentEnemyHealth > 0) return;
+        stateDying = true;
         _animator.SetBool(Death, true);
-        _enemyAI.SetEnemyWandering(false);
     }
 
     private IEnumerator ResetDamageAnimation()
