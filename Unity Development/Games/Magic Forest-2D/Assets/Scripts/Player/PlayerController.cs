@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -6,6 +7,12 @@ public class PlayerController : MonoBehaviour
     private static readonly int MoveY = Animator.StringToHash("moveY");
     [SerializeField] private float playerSpeed = 4f;
     [SerializeField] private ParticleSystem dust;
+    [SerializeField] private float dashSpeed = 4f;
+    [SerializeField] private TrailRenderer playerTrailRenderer;
+    private readonly float _dashCooldown = 0.25f;
+    private readonly float _dashTime = 0.2f;
+
+    private bool _isDashing;
     private bool _isMoving;
 
     private Vector2 _movement;
@@ -20,6 +27,11 @@ public class PlayerController : MonoBehaviour
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
         _playerAnimator = GetComponent<Animator>();
         _playerSpriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        _playerControls.Combat.Dash.performed += _ => StartDash(); // Register to the Dash action
     }
 
     private void Update()
@@ -75,5 +87,39 @@ public class PlayerController : MonoBehaviour
     {
         if (dust.isPlaying)
             dust.Stop();
+    }
+
+    private void StartDash()
+    {
+        if (_isDashing) return; // Check if already dashing
+        _isDashing = true;
+        StartCoroutine(DashRoutine());
+    }
+
+    private void EnableEmitting()
+    {
+        playerTrailRenderer.emitting = true;
+    }
+
+    private void DisableEmitting()
+    {
+        playerTrailRenderer.emitting = false;
+    }
+
+    private IEnumerator DashRoutine()
+    {
+        var trailWasEmitting = playerTrailRenderer.emitting;
+        EnableEmitting();
+        var initialSpeed = playerSpeed;
+        playerSpeed += dashSpeed;
+
+        yield return new WaitForSeconds(_dashTime);
+
+        DisableEmitting();
+        playerSpeed = initialSpeed;
+        playerTrailRenderer.emitting = trailWasEmitting;
+        yield return new WaitForSeconds(_dashCooldown);
+
+        _isDashing = false;
     }
 }
