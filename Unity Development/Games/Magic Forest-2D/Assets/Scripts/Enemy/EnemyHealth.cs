@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
         _currentEnemyHealth -= damage;
         _animator.SetBool(Damage1, true);
         Debug.LogWarning(_currentEnemyHealth);
+
         if (_playerController != null)
             _enemyKnockBack.GetKnockBack(_playerController.transform, KnockBackPower);
         else

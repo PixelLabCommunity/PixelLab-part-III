@@ -6,7 +6,6 @@ public class EnemyAI : MonoBehaviour
 {
     private const float WaitSeconds = 2f;
     private EnemyPathfinding _enemyPathfinding;
-    private bool _enemyWandering = true;
     private SpriteRenderer _spriteRenderer;
 
     private State _state;
@@ -31,7 +30,7 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator WanderingRoutine()
     {
-        while (_state == State.Wandering && _enemyWandering)
+        while (_state == State.Wandering)
         {
             var wanderingPosition = GetWanderingPosition();
             _enemyPathfinding.MoveTo(wanderingPosition);
@@ -50,11 +49,6 @@ public class EnemyAI : MonoBehaviour
     {
         var movementDirection = _enemyPathfinding.GetMovementDirection();
         _spriteRenderer.flipX = movementDirection.x < 0;
-    }
-
-    public void SetEnemyWandering(bool value)
-    {
-        _enemyWandering = value;
     }
 
     private enum State

@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private const float DashCooldown = 0.25f;
+    private const float DashTime = 0.2f;
     private static readonly int MoveX = Animator.StringToHash("moveX");
     private static readonly int MoveY = Animator.StringToHash("moveY");
     [SerializeField] private float playerSpeed = 4f;
     [SerializeField] private ParticleSystem dust;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer playerTrailRenderer;
-    private readonly float _dashCooldown = 0.25f;
-    private readonly float _dashTime = 0.2f;
 
     private bool _isDashing;
     private bool _isMoving;
@@ -113,12 +113,12 @@ public class PlayerController : MonoBehaviour
         var initialSpeed = playerSpeed;
         playerSpeed += dashSpeed;
 
-        yield return new WaitForSeconds(_dashTime);
+        yield return new WaitForSeconds(DashTime);
 
         DisableEmitting();
         playerSpeed = initialSpeed;
         playerTrailRenderer.emitting = trailWasEmitting;
-        yield return new WaitForSeconds(_dashCooldown);
+        yield return new WaitForSeconds(DashCooldown);
 
         _isDashing = false;
     }
