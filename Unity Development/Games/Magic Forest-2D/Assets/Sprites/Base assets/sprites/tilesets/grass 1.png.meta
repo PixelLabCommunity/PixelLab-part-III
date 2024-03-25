@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 10c24c748b3d60641a8166b30c264716
+guid: 7f2392679dd54474b83db4048b164188
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2061284315431252709
-    second: decor_16x16_0
+      213: -964624506582981212
+    second: grass 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: decor_16x16_0
+      name: grass 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,71 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1dc2a516d8d463e0800000000000000
-      internalID: -2061284315431252709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: decor_16x16_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3009ed0f4bf44b349b94997223aeabfb
-      internalID: -1810490812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: decor_16x16_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4145080aa356a4a44aac6068a4ea7a7e
-      internalID: -1514048560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: decor_16x16_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94b3f1aea7ecbaa4cbbb6aa343a16026
-      internalID: 121854599
+      spriteID: 4a52c7f3f17fc92f0800000000000000
+      internalID: -964624506582981212
       vertices: []
       indices: 
       edges: []
@@ -225,7 +162,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 4f82edb9cb84e1243b42bd5a7ffa272a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -233,10 +170,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      decor_16x16_0: -2061284315431252709
-      decor_16x16_1: -1810490812
-      decor_16x16_2: -1514048560
-      decor_16x16_3: 121854599
+      grass 1_0: -964624506582981212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
