@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: PixelLab
   productName: Magic Forest-2D
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -159,7 +159,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.PixelLab.Magic-Forest-2D
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -282,7 +283,14 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 507b16e1e45898b479cdb03fed8d81a4, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -695,8 +703,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Magic Forest-2D
-  metroPackageVersion: 
+  metroPackageName: MagicForest-2D
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -704,7 +712,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Magic Forest-2D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Magic Forest-2D
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
