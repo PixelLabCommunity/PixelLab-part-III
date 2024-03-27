@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     private const float WaitSeconds = 2f;
     private EnemyPathfinding _enemyPathfinding;
+    private Vector2 _spawnPosition;
     private SpriteRenderer _spriteRenderer;
 
     private State _state;
@@ -14,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     {
         _enemyPathfinding = GetComponent<EnemyPathfinding>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spawnPosition = transform.position;
 
         _state = State.Wandering;
     }
@@ -38,11 +40,11 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private static Vector2 GetWanderingPosition()
+    private Vector3 GetWanderingPosition()
     {
         var randomX = Random.Range(-1f, 1f);
         var randomY = Random.Range(-1f, 1f);
-        return new Vector2(randomX, randomY);
+        return _spawnPosition + new Vector2(randomX, randomY);
     }
 
     private void EnemyFlipRender()
