@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5931240959433977741}
   - component: {fileID: 8747286237482288785}
-  - component: {fileID: 4019493189860882929}
+  - component: {fileID: 8570357381633177414}
   - component: {fileID: 1915936836194605566}
   m_Layer: 0
-  m_Name: Bush
+  m_Name: Crate 2
   m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6713908096817707121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.37, y: -1.38, z: 0}
+  m_LocalPosition: {x: -2.37, y: -1.139, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4296193443984631328, guid: 6cc1db3521f1308408368ad1c97345f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8050f28f5adbc0242899125750325713, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!58 &4019493189860882929
-CircleCollider2D:
+--- !u!61 &8570357381633177414
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -122,8 +122,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.005556196, y: 0.028901458}
-  m_Radius: 0.3076054
+  m_Offset: {x: -0.023090482, y: -0.159323}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.83624816, y: 1.681354}
+  m_EdgeRadius: 0
 --- !u!114 &1915936836194605566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913c8486f8a6621438549d92dbf6d8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyVFX: {fileID: 3079077246638987100, guid: 037ec4bbc0311844288e5baaebb31993, type: 3}
+  destroyVFX: {fileID: 3079077246638987100, guid: c0ce6fc63b789d84db41f6aae08dfa18, type: 3}
