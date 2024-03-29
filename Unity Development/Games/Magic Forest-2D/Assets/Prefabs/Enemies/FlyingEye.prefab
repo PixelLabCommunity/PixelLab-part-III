@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8532926385530814728}
   - component: {fileID: 7083541692312643144}
   m_Layer: 0
-  m_Name: Blue Slime
+  m_Name: FlyingEye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,8 +34,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03, y: -0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 368543389579951487, guid: ec02fda4488f6c148ac4223ddc914db9, type: 3}
+  m_Sprite: {fileID: -4795363162621231457, guid: 5e328e0b5501f614489669027127d477, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 9.375, y: 9.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,7 +103,7 @@ Animator:
   m_GameObject: {fileID: 507339930429421908}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba05290dcde21e44e9f4de6e9dae6949, type: 2}
+  m_Controller: {fileID: 9100000, guid: ec0679a02f88d614c9530cf3b18d0bee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,8 +149,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.020001512, y: 0.3088402}
-  m_Size: {x: 1.0314494, y: 0.74895054}
+  m_Offset: {x: 0.3208895, y: -0.03610709}
+  m_Size: {x: 1.4145136, y: 1.325242}
   m_Direction: 1
 --- !u!50 &2395091296960636717
 Rigidbody2D:
