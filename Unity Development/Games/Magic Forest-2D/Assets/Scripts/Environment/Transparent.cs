@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Transparent : MonoBehaviour
 {
+    private const float ZeroTransparency = 1f;
     [Range(0, 1)] [SerializeField] private float transparencyValue = 0.8f;
     [SerializeField] private float fadeTime = 0.4f;
 
@@ -22,7 +23,7 @@ public class Transparent : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) StartCoroutine(FadeRoutine(1f));
+        if (other.CompareTag("Player")) StartCoroutine(FadeRoutine(ZeroTransparency));
     }
 
     private IEnumerator FadeRoutine(float targetAlpha)
