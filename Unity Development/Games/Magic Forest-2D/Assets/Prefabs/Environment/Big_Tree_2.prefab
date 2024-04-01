@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5265907973644739377}
   - component: {fileID: 7976458876813358279}
   - component: {fileID: 3899206253368007412}
+  - component: {fileID: 2698052309445339464}
+  - component: {fileID: 6423555081387775557}
   m_Layer: 0
   m_Name: Big_Tree_2
   m_TagString: Untagged
@@ -124,3 +126,74 @@ CapsuleCollider2D:
   m_Offset: {x: 0.016687, y: -0.06043223}
   m_Size: {x: 0.7212152, y: 0.31032607}
   m_Direction: 1
+--- !u!60 &2698052309445339464
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605258154828329940}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5058599, y: 0.14300042}
+    oldSize: {x: 1.4375, y: 2.625}
+    newSize: {x: 1.4375, y: 2.625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34224415, y: 2.2338223}
+      - {x: -0.11912584, y: 2.253277}
+      - {x: -0.41452152, y: 2.0444462}
+      - {x: -0.62424326, y: 1.2172353}
+      - {x: -0.5415366, y: 0.18813157}
+      - {x: -0.28277332, y: 0.19130528}
+      - {x: 0.31377047, y: 0.15710962}
+      - {x: 0.56865567, y: 0.17851281}
+      - {x: 0.5988617, y: 1.5242006}
+      - {x: 0.44652623, y: 2.1421497}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6423555081387775557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605258154828329940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae79264aeb832e48bf8e016f959fb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparencyValue: 0.8
+  fadeTime: 0.4

@@ -1,18 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Transparent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Range(0, 1)] [SerializeField] private float transparencyValue = 0.8f;
+    [SerializeField] private float fadeTime = 0.4f;
+
+    private Material _material;
+    private Renderer _renderer;
+
+    private void Awake()
     {
-        
+        _renderer = GetComponent<Renderer>();
+        _material = _renderer.material;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player")) StartCoroutine(FadeRoutine(transparencyValue));
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) StartCoroutine(FadeRoutine(1f));
+    }
+
+    private IEnumerator FadeRoutine(float targetAlpha)
+    {
+        var currentColor = _material.color;
+        var currentAlpha = currentColor.a;
+        var startTime = Time.time;
+
+        while (Time.time < startTime + fadeTime)
+        {
+            var transparency = (Time.time - startTime) / fadeTime;
+            var newColor = new Color(currentColor.r, currentColor.g, currentColor.b,
+                Mathf.Lerp(currentAlpha, targetAlpha, transparency));
+            _material.color = newColor;
+            yield return null;
+        }
+
+        _material.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
     }
 }
