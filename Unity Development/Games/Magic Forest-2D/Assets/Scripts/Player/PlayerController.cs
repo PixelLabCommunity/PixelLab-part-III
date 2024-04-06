@@ -21,8 +21,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
 
+    public static PlayerController instance { get; private set; }
+
     private void Awake()
     {
+        instance = this;
         _playerControls = new PlayerControls();
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
         _playerAnimator = GetComponent<Animator>();
@@ -31,36 +34,42 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _playerControls.Combat.Dash.performed += _ => StartDash(); // Register to the Dash action
+        _playerControls.Combat.Dash.performed += _ => StartDash();
     }
 
     private void Update()
     {
+        if (_playerAnimator == null) return;
         PlayerInput();
         PlayerFlipRender();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (_playerRigidbody2D != null)
+            Move();
     }
 
     private void OnEnable()
     {
-        _playerControls.Enable();
+        _playerControls?.Enable();
     }
 
     private void PlayerInput()
     {
         _movement = _playerControls.Movement.Move.ReadValue<Vector2>();
-        _playerAnimator.SetFloat(MoveX, _movement.x);
-        _playerAnimator.SetFloat(MoveY, _movement.y);
+        if (_playerAnimator != null)
+        {
+            _playerAnimator.SetFloat(MoveX, _movement.x);
+            _playerAnimator.SetFloat(MoveY, _movement.y);
+        }
 
         _isMoving = _movement.magnitude > 0;
     }
 
     private void Move()
     {
+        if (_playerRigidbody2D == null) return;
         _playerRigidbody2D.MovePosition(_playerRigidbody2D.position + _movement * (playerSpeed * Time.deltaTime));
 
         if (_isMoving)
@@ -71,43 +80,50 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerFlipRender()
     {
+        if (_playerSpriteRenderer == null ||
+            Camera.main ==
+            null) return;
         var mousePosition = Input.mousePosition;
-        if (Camera.main == null) return;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
         _playerSpriteRenderer.flipX = mousePosition.x < playerScreenPoint.x;
     }
 
     private void CreateDust()
     {
-        if (!dust.isPlaying)
+        if (dust != null &&
+            !dust.isPlaying)
             dust.Play();
     }
 
     private void StopDust()
     {
-        if (dust.isPlaying)
+        if (dust != null &&
+            dust.isPlaying)
             dust.Stop();
     }
 
     private void StartDash()
     {
-        if (_isDashing) return; // Check if already dashing
+        if (_isDashing) return;
         _isDashing = true;
         StartCoroutine(DashRoutine());
     }
 
     private void EnableEmitting()
     {
-        playerTrailRenderer.emitting = true;
+        if (playerTrailRenderer != null)
+            playerTrailRenderer.emitting = true;
     }
 
     private void DisableEmitting()
     {
-        playerTrailRenderer.emitting = false;
+        if (playerTrailRenderer != null)
+            playerTrailRenderer.emitting = false;
     }
 
     private IEnumerator DashRoutine()
     {
+        if (playerTrailRenderer == null) yield break;
         var trailWasEmitting = playerTrailRenderer.emitting;
         EnableEmitting();
         var initialSpeed = playerSpeed;

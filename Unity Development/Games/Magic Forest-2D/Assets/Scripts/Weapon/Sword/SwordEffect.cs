@@ -31,6 +31,7 @@ public class SwordEffect : MonoBehaviour
 
     private void Update()
     {
+        if (_swordAnimator == null) return;
         FlipWeapon();
         SlashEffectFlip();
     }
@@ -42,24 +43,29 @@ public class SwordEffect : MonoBehaviour
 
     private void Attack(InputAction.CallbackContext context)
     {
+        if (_swordAnimator == null) return;
         _swordAnimator.SetTrigger(Attack1);
         SwordEffectColliderEnable();
     }
 
     private void SwordEffectColliderEnable()
     {
-        swordEffectColliderObject.gameObject.SetActive(true);
+        if (swordEffectColliderObject != null)
+            swordEffectColliderObject.gameObject.SetActive(true);
     }
 
     private void SwordEffectColliderDisable()
     {
-        swordEffectColliderObject.gameObject.SetActive(false);
+        if (swordEffectColliderObject != null) // Check if the swordEffectColliderObject is not null before accessing it
+            swordEffectColliderObject.gameObject.SetActive(false);
     }
-
 
     private void SlashEffectFlip()
     {
         if (_slashEffect == null) return;
+        if (_playerController == null ||
+            _playerController.transform ==
+            null) return; // Check if the _playerController and its transform are not null before accessing them
         var playerScaleX = _playerController.transform.localScale.x;
         var effectScale = _slashEffect.transform.localScale;
         effectScale.x = Mathf.Sign(playerScaleX) * Mathf.Abs(effectScale.x);
@@ -68,20 +74,25 @@ public class SwordEffect : MonoBehaviour
 
     public void SlashEffectSpawnDown()
     {
+        if (slashEffectSpawnPoint == null) return;
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.Euler(_spawnDown));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
+        if (swordEffectColliderObject !=
+            null) // Check if the swordEffectColliderObject is not null before accessing it
+            swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
 
     public void SlashEffectSpawnUp()
     {
+        if (slashEffectSpawnPoint == null) return;
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.Euler(_spawnUp));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
+        if (swordEffectColliderObject !=
+            null) // Check if the swordEffectColliderObject is not null before accessing it
+            swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
-
 
     private void FlipWeapon()
     {
