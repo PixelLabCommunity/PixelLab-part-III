@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dust_small_0: -3598632568316464903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

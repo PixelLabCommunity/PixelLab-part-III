@@ -409,7 +409,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blast_big_0: -7246696864860440284
+      blast_big_1: 5283027641534830759
+      blast_big_10: -9027747822476868241
+      blast_big_2: -560396825640787449
+      blast_big_3: -2457741448415330225
+      blast_big_4: 8342771913077544700
+      blast_big_5: 7432755341828460592
+      blast_big_6: -4115205289342099058
+      blast_big_7: 4783334563275511818
+      blast_big_8: -256561163864530793
+      blast_big_9: 2361033280573438170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

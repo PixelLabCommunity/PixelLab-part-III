@@ -265,7 +265,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      beams_0: 8813226132166169265
+      beams_1: -342841500392956471
+      beams_2: -3008786985731672919
+      beams_3: -864346992521728030
+      beams_4: 2448983918405450708
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -433,7 +433,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      waterdrop_0: 5868612593429392887
+      waterdrop_1: 3542549478614447817
+      waterdrop_10: 1002755152244697497
+      waterdrop_11: 4295722209798602097
+      waterdrop_2: -5416647632203011763
+      waterdrop_3: 8819513979882670702
+      waterdrop_4: -8770725731014609026
+      waterdrop_5: -3900782821309577191
+      waterdrop_6: 5147085001944464771
+      waterdrop_7: -7728753280663622878
+      waterdrop_8: 1098133495484238163
+      waterdrop_9: 2408148307245263657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

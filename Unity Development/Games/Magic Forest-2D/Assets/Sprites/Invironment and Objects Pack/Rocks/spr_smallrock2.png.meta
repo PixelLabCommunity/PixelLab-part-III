@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_smallrock2_0: -3575073578400854558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

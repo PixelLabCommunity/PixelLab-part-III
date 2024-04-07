@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     private void StartDash()
     {
-        if (_isDashing) return;
+        if (_isDashing || this == null) return;
         _isDashing = true;
         StartCoroutine(DashRoutine());
     }

@@ -361,7 +361,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slash Effect Flipped_0: -6006743632452028064
+      Slash Effect Flipped_1: -8514640461492126471
+      Slash Effect Flipped_2: 6689011180840558988
+      Slash Effect Flipped_3: 3812399004885631552
+      Slash Effect Flipped_4: -9101215569571038138
+      Slash Effect Flipped_5: -304422834059476517
+      Slash Effect Flipped_6: -876431336802082004
+      Slash Effect Flipped_7: 1798732707927530634
+      Slash Effect Flipped_8: -3066298263513844961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

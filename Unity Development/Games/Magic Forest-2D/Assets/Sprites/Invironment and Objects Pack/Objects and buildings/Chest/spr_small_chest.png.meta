@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_small_chest_0: 1802906063953513598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

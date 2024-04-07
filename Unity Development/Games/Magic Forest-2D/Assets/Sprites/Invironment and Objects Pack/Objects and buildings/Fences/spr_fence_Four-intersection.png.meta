@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_fence_Four-intersection_0: 1638935837519508531
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

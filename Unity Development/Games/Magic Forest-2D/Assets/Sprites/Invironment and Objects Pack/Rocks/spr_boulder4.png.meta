@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_boulder4_0: 6272638305066531560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

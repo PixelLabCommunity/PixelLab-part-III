@@ -241,7 +241,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dust_mid_0: 7513262553491915468
+      dust_mid_1: -628499955558520553
+      dust_mid_2: -8663778398336990777
+      dust_mid_3: -4664288626423828310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

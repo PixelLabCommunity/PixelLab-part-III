@@ -313,7 +313,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blast_small_0: -2414654415535281501
+      blast_small_1: -5904419698765661666
+      blast_small_2: -7871355183929555789
+      blast_small_3: 5587059614505462677
+      blast_small_4: 342075244515511964
+      blast_small_5: -2412735441021412810
+      blast_small_6: 6456973662691361783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

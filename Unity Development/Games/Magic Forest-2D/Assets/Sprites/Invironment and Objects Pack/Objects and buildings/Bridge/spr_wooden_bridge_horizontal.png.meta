@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_wooden_bridge_horizontal_0: -1926632187182546713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

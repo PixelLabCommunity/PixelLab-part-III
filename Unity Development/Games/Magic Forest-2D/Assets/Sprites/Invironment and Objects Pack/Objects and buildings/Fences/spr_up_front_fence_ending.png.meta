@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_up_front_fence_ending_0: 1095123339667022730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

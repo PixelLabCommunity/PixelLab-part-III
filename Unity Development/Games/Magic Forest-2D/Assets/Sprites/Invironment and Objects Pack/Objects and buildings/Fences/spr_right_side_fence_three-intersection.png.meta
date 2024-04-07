@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_right_side_fence_three-intersection_0: -9044460921030859890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

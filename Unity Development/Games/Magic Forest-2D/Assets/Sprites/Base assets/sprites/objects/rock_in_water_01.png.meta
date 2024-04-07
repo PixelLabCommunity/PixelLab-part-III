@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rock_in_water_01_0: 5574211390383664710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
