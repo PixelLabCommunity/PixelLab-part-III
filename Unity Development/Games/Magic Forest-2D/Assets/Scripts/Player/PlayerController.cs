@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,15 +24,34 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
 
-    public static PlayerController instance { get; private set; }
+    public VectorValue startingPosition;
+
+    // Static variable to hold the reference to the player instance
+    private static PlayerController _instance;
 
     private void Awake()
     {
-        instance = this;
+        _instance = this;
+        // If an instance already exists, destroy this instance
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        DontDestroyOnLoad(gameObject);
+        
+
         _playerControls = new PlayerControls();
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
         _playerAnimator = GetComponent<Animator>();
         _playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        if (startingPosition != null)
+        {
+            transform.position = startingPosition.initialValue;
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded; // Register the scene loaded event
     }
 
     private void Start()
@@ -53,6 +75,29 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         _playerControls?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _playerControls?.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded; // Unregister the scene loaded event
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Ensure the player exists in the new scene
+        if (_instance == null)
+        {
+            _instance = Instantiate(this);
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void PlayerInput()

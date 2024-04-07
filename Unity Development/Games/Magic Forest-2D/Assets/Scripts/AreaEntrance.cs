@@ -6,7 +6,7 @@ public class AreaEntrance : MonoBehaviour
 
     private void Start()
     {
-        if (transitionName == SceneManagement.Instance.SceneTransitionName)
-            PlayerController.instance.transform.position = transform.position;
+        /*if (transitionName == SceneManagement.Instance.SceneTransitionName)*/
+            /*PlayerController._ins.transform.position = transform.position;*/
     }
 }

@@ -7,6 +7,11 @@ TagManager:
   - Enemy
   - Destructible
   - Damage
+  - Orange Portal
+  - Blue Portal
+  - Orange Scene Portal
+  - Blue Scene Portal
+  - Scene Portal
   layers:
   - Default
   - TransparentFX

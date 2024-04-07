@@ -6,11 +6,18 @@ public class Parallax : MonoBehaviour
 
     private Camera _camera;
     private Vector2 _startPosition;
-    private Vector2 travel => (Vector2)_camera.transform.position - _startPosition;
+    private Vector2 _travel;
 
     private void Awake()
     {
-        _camera = Camera.main;
+        if (Camera.main != null)
+        {
+            _camera = Camera.main;
+        }
+        else
+        {
+            Debug.LogWarning("Main camera is not found. Parallax effect will not work properly.");
+        }
     }
 
     private void Start()
@@ -20,6 +27,8 @@ public class Parallax : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = _startPosition + travel * parallaxOffset;
+        if (_camera == null) return;
+        _travel = (Vector2)_camera.transform.position - _startPosition;
+        transform.position = _startPosition + _travel * parallaxOffset;
     }
 }
