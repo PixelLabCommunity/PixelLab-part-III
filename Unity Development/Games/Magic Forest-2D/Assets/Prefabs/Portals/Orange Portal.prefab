@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &433798012637827165
+--- !u!1 &8296070978876343475
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3827477005692984050}
-  - component: {fileID: 7035705763552060364}
-  - component: {fileID: 2776363387823769634}
+  - component: {fileID: 6585934179934803808}
+  - component: {fileID: 5928125804837082725}
+  - component: {fileID: 4122179043230244526}
   m_Layer: 0
-  m_Name: Scene Portal
-  m_TagString: Blue Scene Portal
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Name: Orange Portal
+  m_TagString: Orange Portal
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3827477005692984050
+--- !u!4 &6585934179934803808
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433798012637827165}
+  m_GameObject: {fileID: 8296070978876343475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.31, y: 6.91, z: -0.048462477}
+  m_LocalPosition: {x: 18.780182, y: 8.041205, z: -0.048462477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &7035705763552060364
+--- !u!58 &5928125804837082725
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433798012637827165}
+  m_GameObject: {fileID: 8296070978876343475}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -69,18 +69,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &2776363387823769634
+--- !u!114 &4122179043230244526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433798012637827165}
+  m_GameObject: {fileID: 8296070978876343475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53eff961c244ed44f9275827cd826db5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c51857bbcf612645acb27f64baf92c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Scene2
-  destinationPortalName: Orange Scene Portal
+  enterPointName: Orange Portal
+  exitPointName: Blue Portal
+  isEnter: 1
   distance: 0.2
