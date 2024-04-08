@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -10,10 +8,13 @@ public class PlayerController : MonoBehaviour
     private const float DashTime = 0.2f;
     private static readonly int MoveX = Animator.StringToHash("moveX");
     private static readonly int MoveY = Animator.StringToHash("moveY");
+    private static PlayerController _instance;
     [SerializeField] private float playerSpeed = 4f;
     [SerializeField] private ParticleSystem dust;
     [SerializeField] private float dashSpeed = 4f;
     [SerializeField] private TrailRenderer playerTrailRenderer;
+
+    public VectorValue startingPosition;
 
     private bool _isDashing;
     private bool _isMoving;
@@ -24,34 +25,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
 
-    public VectorValue startingPosition;
-
-    // Static variable to hold the reference to the player instance
-    private static PlayerController _instance;
-
     private void Awake()
     {
-        _instance = this;
-        // If an instance already exists, destroy this instance
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
-        DontDestroyOnLoad(gameObject);
-        
-
+        PlayerControllerEnable();
         _playerControls = new PlayerControls();
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
         _playerAnimator = GetComponent<Animator>();
         _playerSpriteRenderer = GetComponent<SpriteRenderer>();
-        if (startingPosition != null)
-        {
-            transform.position = startingPosition.initialValue;
-        }
-
-        SceneManager.sceneLoaded += OnSceneLoaded; // Register the scene loaded event
+        PlayerControllerTracker();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void Start()
@@ -84,20 +66,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded; // Unregister the scene loaded event
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Ensure the player exists in the new scene
         if (_instance == null)
-        {
             _instance = Instantiate(this);
-        }
-        else if (_instance != this)
-        {
-            Destroy(gameObject);
-        }
+        else if (_instance != this) Destroy(gameObject);
     }
 
     private void PlayerInput()
@@ -182,5 +158,16 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(DashCooldown);
 
         _isDashing = false;
+    }
+
+    private void PlayerControllerEnable()
+    {
+        _instance = this;
+        if (_instance != null && _instance != this) Destroy(transform.gameObject);
+    }
+
+    private void PlayerControllerTracker()
+    {
+        if (startingPosition != null) transform.position = startingPosition.initialValue;
     }
 }

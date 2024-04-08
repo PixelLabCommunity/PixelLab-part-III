@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,10 +9,8 @@ public class SceneTransition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {
-            playerStorage.initialValue = playerPosition;
-            SceneManager.LoadScene(sceneToLoad);
-        }
+        if (!other.CompareTag("Player")) return;
+        playerStorage.initialValue = playerPosition;
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
