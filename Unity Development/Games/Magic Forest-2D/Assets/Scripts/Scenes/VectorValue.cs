@@ -12,9 +12,5 @@ public class VectorValue : ScriptableObject
         {
             initialValue = player.transform.position;
         }
-        else
-        {
-            Debug.LogWarning("No GameObject with tag 'Player' found.");
-        }
     }
 }
