@@ -12,6 +12,8 @@ TagManager:
   - Orange Scene Portal
   - Blue Scene Portal
   - Scene Portal
+  - UI
+  - DontDestroyIt
   layers:
   - Default
   - TransparentFX
