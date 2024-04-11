@@ -23,15 +23,14 @@ public class Transparent : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            StartCoroutine(FadeAndSetActiveRoutine(ZeroTransparency));
-        }
+        if (other.CompareTag("Player")) StartCoroutine(FadeAndSetActiveRoutine(ZeroTransparency));
     }
-    
+
     private IEnumerator FadeAndSetActiveRoutine(float targetAlpha)
     {
         yield return StartCoroutine(FadeRoutine(targetAlpha));
+        yield return new WaitForSeconds(fadeTime);
+
         gameObject.SetActive(true);
     }
 
