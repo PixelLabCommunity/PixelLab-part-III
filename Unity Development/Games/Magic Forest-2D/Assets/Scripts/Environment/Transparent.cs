@@ -25,9 +25,14 @@ public class Transparent : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.SetActive(true); 
-            StartCoroutine(FadeRoutine(ZeroTransparency));
+            StartCoroutine(FadeAndSetActiveRoutine(ZeroTransparency));
         }
+    }
+    
+    private IEnumerator FadeAndSetActiveRoutine(float targetAlpha)
+    {
+        yield return StartCoroutine(FadeRoutine(targetAlpha));
+        gameObject.SetActive(true);
     }
 
 

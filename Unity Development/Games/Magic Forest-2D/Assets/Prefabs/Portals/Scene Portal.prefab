@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8678020059237373274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 366825638980108108}
+  canvas: {fileID: 0}
   sceneToLoad: Scene2
   playerPosition: {x: -22, y: 2}
   playerStorage: {fileID: 11400000, guid: 7f76e202c9e654d40aa26e01b12d5e99, type: 2}
