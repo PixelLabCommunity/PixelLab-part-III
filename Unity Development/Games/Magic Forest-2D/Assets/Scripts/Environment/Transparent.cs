@@ -19,7 +19,7 @@ public class TransparentDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerController>())
+        if (other.gameObject.CompareTag("Player"))
         {
             if (!gameObject.activeInHierarchy)
             {
@@ -36,13 +36,35 @@ public class TransparentDetection : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerController>())
+        if (other.gameObject.CompareTag("Player"))
         {
-            if (_spriteRenderer)
-                StartCoroutine(FadeRoutine(_spriteRenderer, fadeTime, _spriteRenderer.color.a, 1f));
-            else if (_tilemap) StartCoroutine(FadeRoutine(_tilemap, fadeTime, _tilemap.color.a, 1f));
+            if (_spriteRenderer || _tilemap)
+            {
+                var topObject = GameObject.Find("Top");
+                if (topObject == null)
+                {
+                    Debug.LogWarning("Top GameObject not found.");
+                    return;
+                }
+
+                if (!topObject.activeInHierarchy)
+                {
+                    Debug.Log("Top GameObject is inactive.");
+                    return;
+                }
+
+                if (_spriteRenderer)
+                    StartCoroutine(FadeRoutine(_spriteRenderer, fadeTime, _spriteRenderer.color.a, 1f));
+
+                if (_tilemap) StartCoroutine(FadeRoutine(_tilemap, fadeTime, _tilemap.color.a, 1f));
+            }
+            else
+            {
+                Debug.LogWarning("Neither SpriteRenderer nor Tilemap component found.");
+            }
         }
     }
+
 
     private IEnumerator FadeRoutine(SpriteRenderer spriteRenderer, float fadeTime, float startValue,
         float targetTransparency)
