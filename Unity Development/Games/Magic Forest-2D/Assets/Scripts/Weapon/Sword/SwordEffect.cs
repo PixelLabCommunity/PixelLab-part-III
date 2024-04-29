@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwordEffect : MonoBehaviour
+public class SwordEffect : MonoBehaviour, IWeapon
 {
     private static readonly int Attack1 = Animator.StringToHash("Attack");
     [SerializeField] private GameObject slashEffectPrefab;
@@ -41,11 +41,19 @@ public class SwordEffect : MonoBehaviour
         _playerControls.Enable();
     }
 
+    // Implementing the Attack method from the IWeapon interface
+    public void Attack()
+    {
+        Debug.Log("Sword Attack!"); // Implement sword attack behavior here
+        ActiveWeapon.instance.ToggleIsAttacking(false);
+    }
+
     private void Attack(InputAction.CallbackContext context)
     {
         if (_swordAnimator == null) return;
         _swordAnimator.SetTrigger(Attack1);
         SwordEffectColliderEnable();
+        Attack();
     }
 
     private void SwordEffectColliderEnable()
@@ -56,7 +64,7 @@ public class SwordEffect : MonoBehaviour
 
     private void SwordEffectColliderDisable()
     {
-        if (swordEffectColliderObject != null) // Check if the swordEffectColliderObject is not null before accessing it
+        if (swordEffectColliderObject != null)
             swordEffectColliderObject.gameObject.SetActive(false);
     }
 
@@ -64,8 +72,8 @@ public class SwordEffect : MonoBehaviour
     {
         if (_slashEffect == null) return;
         if (_playerController == null ||
-            _playerController.transform ==
-            null) return; // Check if the _playerController and its transform are not null before accessing them
+            _playerController.transform == null)
+            return;
         var playerScaleX = _playerController.transform.localScale.x;
         var effectScale = _slashEffect.transform.localScale;
         effectScale.x = Mathf.Sign(playerScaleX) * Mathf.Abs(effectScale.x);
@@ -78,8 +86,7 @@ public class SwordEffect : MonoBehaviour
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.Euler(_spawnDown));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        if (swordEffectColliderObject !=
-            null) // Check if the swordEffectColliderObject is not null before accessing it
+        if (swordEffectColliderObject != null)
             swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
 
@@ -89,21 +96,20 @@ public class SwordEffect : MonoBehaviour
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.Euler(_spawnUp));
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        if (swordEffectColliderObject !=
-            null) // Check if the swordEffectColliderObject is not null before accessing it
+        if (swordEffectColliderObject != null)
             swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
 
     private void FlipWeapon()
     {
-        var mousePos = Input.mousePosition;
+        var mousePose = Input.mousePosition;
         if (Camera.main == null) return;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
 
         var activeWeaponTransform = _activeWeapon.transform;
         var localScale = activeWeaponTransform.localScale;
         localScale = new Vector3(
-            mousePos.x < playerScreenPoint.x ? -1 : 1,
+            mousePose.x < playerScreenPoint.x ? -1 : 1,
             localScale.y,
             localScale.z
         );
