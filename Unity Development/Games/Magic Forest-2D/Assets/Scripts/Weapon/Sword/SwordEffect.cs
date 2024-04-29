@@ -102,6 +102,9 @@ public class SwordEffect : MonoBehaviour, IWeapon
 
     private void FlipWeapon()
     {
+        if (_playerController == null || _activeWeapon == null)
+            return;
+
         var mousePose = Input.mousePosition;
         if (Camera.main == null) return;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
@@ -115,4 +118,5 @@ public class SwordEffect : MonoBehaviour, IWeapon
         );
         activeWeaponTransform.localScale = localScale;
     }
+
 }

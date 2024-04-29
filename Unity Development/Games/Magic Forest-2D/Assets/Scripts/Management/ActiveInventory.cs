@@ -39,7 +39,14 @@ public class ActiveInventory : MonoBehaviour
 
     private void ChangeActiveWeapon()
     {
-        Debug.Log(transform.GetChild(_activeSlotIndexNumber).GetComponent<InventorySlot>().GetWeaponInfo().weaponPrefab
-            .name);
+        var activeSlot = transform.GetChild(_activeSlotIndexNumber).GetComponent<InventorySlot>();
+        if (activeSlot != null)
+        {
+            var weaponPrefab = activeSlot.GetWeaponInfo().weaponPrefab;
+            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab);
+        }
     }
+
+    
+    
 }
