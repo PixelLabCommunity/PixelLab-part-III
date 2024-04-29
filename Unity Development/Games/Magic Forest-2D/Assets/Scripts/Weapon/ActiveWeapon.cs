@@ -54,22 +54,17 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         _isAttacking = true;
         (currentActiveWeapon as IWeapon)?.Attack();
     }
-    
+
     public void SetCurrentActiveWeapon(GameObject weaponPrefab)
     {
-        if (weaponPrefab != null)
-        {
-            DestroyCurrentActiveWeapon();
-            currentActiveWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity).GetComponent<MonoBehaviour>();
-        }
+        if (weaponPrefab == null) return;
+        DestroyCurrentActiveWeapon();
+        currentActiveWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity)
+            .GetComponent<MonoBehaviour>();
     }
 
     private void DestroyCurrentActiveWeapon()
     {
-        if (currentActiveWeapon != null)
-        {
-            Destroy(currentActiveWeapon.gameObject);
-        }
+        if (currentActiveWeapon != null) Destroy(currentActiveWeapon.gameObject);
     }
-
 }

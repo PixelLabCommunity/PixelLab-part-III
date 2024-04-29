@@ -41,10 +41,9 @@ public class SwordEffect : MonoBehaviour, IWeapon
         _playerControls.Enable();
     }
 
-    // Implementing the Attack method from the IWeapon interface
     public void Attack()
     {
-        Debug.Log("Sword Attack!"); // Implement sword attack behavior here
+        Debug.Log("Sword Attack!");
         ActiveWeapon.instance.ToggleIsAttacking(false);
     }
 
@@ -118,5 +117,4 @@ public class SwordEffect : MonoBehaviour, IWeapon
         );
         activeWeaponTransform.localScale = localScale;
     }
-
 }
