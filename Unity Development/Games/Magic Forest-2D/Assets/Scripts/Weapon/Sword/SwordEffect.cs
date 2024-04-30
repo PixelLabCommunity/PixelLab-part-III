@@ -59,15 +59,17 @@ public class SwordEffect : MonoBehaviour
 
     private void SlashEffectFlip()
     {
-        if (_slashEffect == null) return;
-        if (_playerController == null ||
-            _playerController.transform == null)
+        if (_slashEffect == null || _playerController == null || _playerController.transform == null)
             return;
-        var playerScaleX = _playerController.transform.localScale.x;
-        var effectScale = _slashEffect.transform.localScale;
-        effectScale.x = Mathf.Sign(playerScaleX) * Mathf.Abs(effectScale.x);
-        _slashEffect.transform.localScale = effectScale;
+
+        var playerScaleX = Mathf.Sign(_playerController.transform.localScale.x);
+
+        if (playerScaleX > 0)
+            _slashEffect.transform.localRotation = Quaternion.Euler(_spawnDown);
+        else
+            _slashEffect.transform.localRotation = Quaternion.Euler(_spawnUp);
     }
+
 
     public void SlashEffectSpawnDown()
     {

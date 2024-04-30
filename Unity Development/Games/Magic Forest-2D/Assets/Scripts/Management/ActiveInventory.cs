@@ -2,25 +2,20 @@ using UnityEngine;
 
 public class ActiveInventory : MonoBehaviour
 {
-    // ReSharper disable once NotAccessedField.Local
-    private int _activeSlotIndexNumber;
+    private int _activeSlotIndexNumber; // Default value
 
     private PlayerControls _playerControls;
 
     private void Awake()
     {
         _playerControls = new PlayerControls();
-        ChangeActiveWeapon();
     }
 
     private void Start()
     {
         _playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());
-    }
-
-    private void OnEnable()
-    {
-        _playerControls.Enable();
+        ChangeActiveWeapon(); // Moved here
+        _playerControls.Enable(); // Enable player controls
     }
 
     private void ToggleActiveSlot(int numberValue)
@@ -32,7 +27,8 @@ public class ActiveInventory : MonoBehaviour
     {
         _activeSlotIndexNumber = indexNumber;
 
-        foreach (Transform inventorySlot in transform) inventorySlot.GetChild(0).gameObject.SetActive(false);
+        foreach (Transform inventorySlot in transform)
+            inventorySlot.GetChild(0).gameObject.SetActive(false);
 
         transform.GetChild(indexNumber).GetChild(0).gameObject.SetActive(true);
         ChangeActiveWeapon();
@@ -40,11 +36,28 @@ public class ActiveInventory : MonoBehaviour
 
     private void ChangeActiveWeapon()
     {
-        var activeSlot = transform.GetChild(_activeSlotIndexNumber).GetComponent<InventorySlot>();
-        if (activeSlot != null)
+        // Ensure that _activeSlotIndexNumber is within valid range
+        if (_activeSlotIndexNumber < 0 || _activeSlotIndexNumber >= transform.childCount)
         {
-            var weaponPrefab = activeSlot.GetWeaponInfo().weaponPrefab;
-            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab);
+            Debug.LogError("Invalid active slot index: " + _activeSlotIndexNumber);
+            return;
         }
+
+        // Get the child at the specified index
+        var activeSlot = transform.GetChild(_activeSlotIndexNumber)?.GetComponent<InventorySlot>();
+
+        // Check if activeSlot is null
+        if (activeSlot == null)
+        {
+            Debug.LogError("Active slot component not found at index: " + _activeSlotIndexNumber);
+            return;
+        }
+
+        // Proceed with changing the active weapon
+        var weaponPrefab = activeSlot.GetWeaponInfo()?.weaponPrefab;
+        if (weaponPrefab != null)
+            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab);
+        else
+            Debug.LogError("Weapon prefab not found in the active slot: " + _activeSlotIndexNumber);
     }
 }

@@ -40,6 +40,7 @@ public class Sword : MonoBehaviour, IWeapon
         if (Camera.main == null) return;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
 
+
         var activeWeaponTransform = _activeWeapon.transform;
         var localScale = activeWeaponTransform.localScale;
         localScale = new Vector3(
@@ -48,5 +49,8 @@ public class Sword : MonoBehaviour, IWeapon
             localScale.z
         );
         activeWeaponTransform.localScale = localScale;
+
+        // Debugging the scale applied
+        Debug.Log("Local Scale: " + localScale);
     }
 }
