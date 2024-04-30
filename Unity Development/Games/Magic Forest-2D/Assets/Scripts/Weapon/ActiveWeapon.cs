@@ -59,8 +59,9 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     {
         if (weaponPrefab == null) return;
         DestroyCurrentActiveWeapon();
-        currentActiveWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity)
-            .GetComponent<MonoBehaviour>();
+        var newWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
+        newWeapon.transform.SetParent(transform); // Set the new weapon prefab as a child of ActiveWeapon
+        currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
     }
 
     private void DestroyCurrentActiveWeapon()

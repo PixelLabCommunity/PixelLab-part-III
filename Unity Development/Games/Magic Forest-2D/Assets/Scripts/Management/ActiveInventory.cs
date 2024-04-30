@@ -10,6 +10,7 @@ public class ActiveInventory : MonoBehaviour
     private void Awake()
     {
         _playerControls = new PlayerControls();
+        ChangeActiveWeapon();
     }
 
     private void Start()
@@ -46,7 +47,4 @@ public class ActiveInventory : MonoBehaviour
             ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab);
         }
     }
-
-    
-    
 }
