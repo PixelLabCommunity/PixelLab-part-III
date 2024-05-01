@@ -15,6 +15,7 @@ TagManager:
   - UI
   - DontDestroyIt
   - PlayerUI
+  - ActiveWeapon
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TrailRenderer playerTrailRenderer;
 
     public VectorValue startingPosition;
+    public GameObject activeWeaponPrefab;
 
     private bool _isDashing;
     private bool _isMoving;
@@ -101,12 +102,16 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerFlipRender()
     {
-        if (_playerSpriteRenderer == null ||
-            Camera.main ==
-            null) return;
+        if (_playerSpriteRenderer == null || Camera.main == null) return;
+
         var mousePosition = Input.mousePosition;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        var playerDirection = mousePosition.x < playerScreenPoint.x ? Vector2.left : Vector2.right;
+
         _playerSpriteRenderer.flipX = mousePosition.x < playerScreenPoint.x;
+
+        // Pass the player direction and the equipped weapon prefab to the ActiveWeapon instance
+        ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab, playerDirection);
     }
 
     private void CreateDust()

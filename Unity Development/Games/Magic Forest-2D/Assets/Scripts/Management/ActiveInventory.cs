@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ActiveInventory : MonoBehaviour
 {
-    private int _activeSlotIndexNumber; // Default value
+    private int _activeSlotIndexNumber;
 
     private PlayerControls _playerControls;
 
@@ -14,8 +14,8 @@ public class ActiveInventory : MonoBehaviour
     private void Start()
     {
         _playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());
-        ChangeActiveWeapon(); // Moved here
-        _playerControls.Enable(); // Enable player controls
+        ChangeActiveWeapon();
+        _playerControls.Enable();
     }
 
     private void ToggleActiveSlot(int numberValue)

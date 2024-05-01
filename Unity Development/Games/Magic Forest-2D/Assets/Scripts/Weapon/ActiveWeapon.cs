@@ -55,25 +55,30 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         (currentActiveWeapon as IWeapon)?.Attack();
     }
 
-    public void SetCurrentActiveWeapon(GameObject weaponPrefab, Vector3 playerDirection)
+    public void SetCurrentActiveWeapon(GameObject weaponPrefab, Vector2 playerDirection)
     {
         if (weaponPrefab == null) return;
 
-        // Check if a weapon is already active
         if (currentActiveWeapon != null)
         {
-            // If a weapon is already active, update its reference
-            currentActiveWeapon.gameObject.SetActive(false); // Disable the current weapon
-            Destroy(currentActiveWeapon.gameObject); // Destroy the game object
+            currentActiveWeapon.gameObject.SetActive(false);
+            DestroyCurrentActiveWeapon();
         }
 
-        // Spawn the new weapon
-        var rotation = playerDirection.x > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
-        var newWeapon = Instantiate(weaponPrefab, transform.position, rotation);
-        newWeapon.transform.SetParent(transform);
-        currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
+        // Find the GameObject with the "ActiveWeapon" tag
+        var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
+        if (activeWeaponObject != null)
+        {
+            var rotation = playerDirection.x > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+            var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
+            newWeapon.transform.SetParent(activeWeaponObject.transform);
+            currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
+        }
+        else
+        {
+            Debug.LogError("No GameObject with the tag 'ActiveWeapon' found.");
+        }
     }
-
 
     private void DestroyCurrentActiveWeapon()
     {
