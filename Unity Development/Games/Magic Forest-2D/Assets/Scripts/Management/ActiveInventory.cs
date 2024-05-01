@@ -36,27 +36,25 @@ public class ActiveInventory : MonoBehaviour
 
     private void ChangeActiveWeapon()
     {
-        // Ensure that _activeSlotIndexNumber is within valid range
         if (_activeSlotIndexNumber < 0 || _activeSlotIndexNumber >= transform.childCount)
         {
             Debug.LogError("Invalid active slot index: " + _activeSlotIndexNumber);
             return;
         }
 
-        // Get the child at the specified index
         var activeSlot = transform.GetChild(_activeSlotIndexNumber)?.GetComponent<InventorySlot>();
 
-        // Check if activeSlot is null
         if (activeSlot == null)
         {
             Debug.LogError("Active slot component not found at index: " + _activeSlotIndexNumber);
             return;
         }
 
-        // Proceed with changing the active weapon
+        var playerDirection = transform.root.localScale.x > 0 ? Vector2.right : Vector2.left;
+
         var weaponPrefab = activeSlot.GetWeaponInfo()?.weaponPrefab;
         if (weaponPrefab != null)
-            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab);
+            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab, playerDirection);
         else
             Debug.LogError("Weapon prefab not found in the active slot: " + _activeSlotIndexNumber);
     }

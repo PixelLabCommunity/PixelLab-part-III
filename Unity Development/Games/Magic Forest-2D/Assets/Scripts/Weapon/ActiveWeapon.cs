@@ -55,14 +55,25 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         (currentActiveWeapon as IWeapon)?.Attack();
     }
 
-    public void SetCurrentActiveWeapon(GameObject weaponPrefab)
+    public void SetCurrentActiveWeapon(GameObject weaponPrefab, Vector3 playerDirection)
     {
         if (weaponPrefab == null) return;
-        DestroyCurrentActiveWeapon();
-        var newWeapon = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
-        newWeapon.transform.SetParent(transform); // Set the new weapon prefab as a child of ActiveWeapon
+
+        // Check if a weapon is already active
+        if (currentActiveWeapon != null)
+        {
+            // If a weapon is already active, update its reference
+            currentActiveWeapon.gameObject.SetActive(false); // Disable the current weapon
+            Destroy(currentActiveWeapon.gameObject); // Destroy the game object
+        }
+
+        // Spawn the new weapon
+        var rotation = playerDirection.x > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+        var newWeapon = Instantiate(weaponPrefab, transform.position, rotation);
+        newWeapon.transform.SetParent(transform);
         currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
     }
+
 
     private void DestroyCurrentActiveWeapon()
     {

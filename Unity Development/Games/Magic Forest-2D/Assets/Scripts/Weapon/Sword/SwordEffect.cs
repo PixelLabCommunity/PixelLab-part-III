@@ -64,10 +64,7 @@ public class SwordEffect : MonoBehaviour
 
         var playerScaleX = Mathf.Sign(_playerController.transform.localScale.x);
 
-        if (playerScaleX > 0)
-            _slashEffect.transform.localRotation = Quaternion.Euler(_spawnDown);
-        else
-            _slashEffect.transform.localRotation = Quaternion.Euler(_spawnUp);
+        _slashEffect.transform.localRotation = Quaternion.Euler(playerScaleX > 0 ? _spawnDown : _spawnUp);
     }
 
 
