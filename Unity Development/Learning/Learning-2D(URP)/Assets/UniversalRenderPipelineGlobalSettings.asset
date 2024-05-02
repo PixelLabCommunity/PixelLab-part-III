@@ -53,6 +53,7 @@ MonoBehaviour:
       - rid: 478723347639959569
       - rid: 478723347639959570
       - rid: 478723347639959571
+      - rid: 415369159562493952
     m_RuntimeSettings:
       m_List: []
   m_AssetVersion: 8
@@ -78,6 +79,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 415369159562493952
+      type: {class: RenderGraphUtilsResources, ns: UnityEngine.Rendering.RenderGraphModule.Util, asm: Unity.RenderPipelines.Core.Runtime}
+      data:
+        m_Version: 0
+        m_CoreCopyPS: {fileID: 4800000, guid: 12dc59547ea167a4ab435097dd0f9add, type: 3}
     - rid: 478723347639959552
       type: {class: RenderGraphSettings, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
