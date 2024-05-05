@@ -69,16 +69,28 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
         if (activeWeaponObject != null)
         {
-            var rotation = playerDirection.x > 0 ? Quaternion.identity : Quaternion.Euler(0, 180, 0);
+            Quaternion rotation;
+            if (playerDirection.x < 0) // Player is facing left
+                rotation = Quaternion.Euler(0, 180, 0); // Flip the weapon
+            else // Player is facing right
+                rotation = Quaternion.identity; // Default rotation
+
             var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
             newWeapon.transform.SetParent(activeWeaponObject.transform);
             currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
+
+            // Flip the weapon's scale based on player's direction
+            var newWeaponTransform = newWeapon.transform;
+            var localScale = newWeaponTransform.localScale;
+            localScale.x *= playerDirection.x < 0 ? -1 : 1; // Flip if facing left
+            newWeaponTransform.localScale = localScale;
         }
         else
         {
             Debug.LogError("No GameObject with the tag 'ActiveWeapon' found.");
         }
     }
+
 
     private void DestroyCurrentActiveWeapon()
     {

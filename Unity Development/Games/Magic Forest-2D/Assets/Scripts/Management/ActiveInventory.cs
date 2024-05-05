@@ -3,7 +3,6 @@ using UnityEngine;
 public class ActiveInventory : MonoBehaviour
 {
     private int _activeSlotIndexNumber;
-
     private PlayerControls _playerControls;
 
     private void Awake()
@@ -51,11 +50,17 @@ public class ActiveInventory : MonoBehaviour
         }
 
         var playerDirection = transform.root.localScale.x > 0 ? Vector2.right : Vector2.left;
+        Debug.Log("Player Direction: " + playerDirection);
 
         var weaponPrefab = activeSlot.GetWeaponInfo()?.weaponPrefab;
         if (weaponPrefab != null)
+        {
+            Debug.Log("Changing active weapon to: " + weaponPrefab.name);
             ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab, playerDirection);
+        }
         else
+        {
             Debug.LogError("Weapon prefab not found in the active slot: " + _activeSlotIndexNumber);
+        }
     }
 }
