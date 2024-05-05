@@ -1,11 +1,9 @@
 using System.Collections;
-using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool FacingLeft { get { return facingLeft; } }
     private const float DashCooldown = 0.25f;
     private const float DashTime = 0.2f;
     private static readonly int MoveX = Animator.StringToHash("moveX");
@@ -21,14 +19,15 @@ public class PlayerController : MonoBehaviour
 
     private bool _isDashing;
     private bool _isMoving;
-    public PlayerController Instance { get; private set; }
 
     private Vector2 _movement;
     private Animator _playerAnimator;
     private PlayerControls _playerControls;
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
-    private bool facingLeft = false;
+    public bool FacingLeft { get; private set; }
+
+    public static PlayerController Instance { get; private set; }
 
     private void Awake()
     {
@@ -114,16 +113,20 @@ public class PlayerController : MonoBehaviour
 
         _playerSpriteRenderer.flipX = mousePosition.x < playerScreenPoint.x;
         ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);*/
-        Vector3 mousePos = Input.mousePosition;
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        var mousePos = Input.mousePosition;
+        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (mousePos.x < playerScreenPoint.x) {
+        if (mousePos.x < playerScreenPoint.x)
+        {
             _playerSpriteRenderer.flipX = true;
-            facingLeft = true;
-        } else {
-            _playerSpriteRenderer.flipX = false;
-            facingLeft = false;
+            FacingLeft = true;
         }
+        else
+        {
+            _playerSpriteRenderer.flipX = false;
+            FacingLeft = false;
+        }
+
         ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);
     }
 

@@ -29,7 +29,7 @@ public class SwordAttackEffect : MonoBehaviour
 
     private void Update()
     {
-        /*SlashEffectFlip();*/
+        SlashEffectFlipUpAndDown();
     }
 
     private void OnEnable()
@@ -56,36 +56,71 @@ public class SwordAttackEffect : MonoBehaviour
             swordAttackEffectColliderObject.gameObject.SetActive(false);
     }
 
-    private void SlashEffectFlip()
+    private void SlashEffectFlipUpAndDown()
     {
         if (_slashEffect == null || _playerController == null || _playerController.transform == null)
             return;
 
-        /*var playerScaleX = Mathf.Sign(_playerController.transform.localScale.x);
-
-        _slashEffect.transform.localRotation = Quaternion.Euler(playerScaleX > 0 ? _spawnDown : _spawnUp);*/
+        // Ensure _slashEffect is not destroyed before accessing it
+        if (_slashEffect != null)
+        {
+            var playerScaleX = Mathf.Sign(_playerController.transform.localScale.x);
+            _slashEffect.transform.localRotation = Quaternion.Euler(playerScaleX > 0 ? _spawnDown : _spawnUp);
+        }
     }
 
 
     public void SlashEffectSpawnDown()
     {
-        /*if (slashEffectSpawnPoint == null) return;
-        _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
-            Quaternion.identity);
+        if (slashEffectSpawnPoint == null) return;
+
+        // Determine if the player is facing left
+        var isFacingLeft = PlayerController.Instance.FacingLeft;
+
+        // Instantiate the slash effect
+        _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position, Quaternion.identity);
         _slashEffect.transform.parent = slashEffectSpawnPoint;
-        _slashEffect.transform.localRotation = Quaternion.Euler(_spawnDown);
+
+        // Flip the slash effect spawn point if the player is facing left
+        if (isFacingLeft)
+        {
+            // Flip the scale on the x-axis
+            var newScale = _slashEffect.transform.localScale;
+            newScale.x *= -1;
+            _slashEffect.transform.localScale = newScale;
+        }
+
+        // Set the rotation of the sword attack effect collider object
         if (swordAttackEffectColliderObject != null)
-            swordAttackEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);*/
+            swordAttackEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
+
 
     public void SlashEffectSpawnUp()
     {
-        /*if (slashEffectSpawnPoint == null) return;
-        _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
-            Quaternion.identity);
+        if (slashEffectSpawnPoint == null) return;
+
+        // Determine if the player is facing left
+        var isFacingLeft = PlayerController.Instance.FacingLeft;
+
+        // Instantiate the slash effect
+        _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position, Quaternion.identity);
         _slashEffect.transform.parent = slashEffectSpawnPoint;
+
+        // Set the rotation for the slash effect
         _slashEffect.transform.localRotation = Quaternion.Euler(_spawnUp);
+
+        // Flip the slash effect spawn point if the player is facing left
+        if (isFacingLeft)
+        {
+            // Flip the scale on the x-axis
+            var newScale = _slashEffect.transform.localScale;
+            newScale.x *= -1;
+            _slashEffect.transform.localScale = newScale;
+        }
+
+        // Set the rotation of the sword attack effect collider object
         if (swordAttackEffectColliderObject != null)
-            swordAttackEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnUp);*/
+            swordAttackEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnUp);
     }
 }

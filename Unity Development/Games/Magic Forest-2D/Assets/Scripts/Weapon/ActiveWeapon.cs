@@ -71,21 +71,17 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
             return;
         }
 
+        // Check if the player is facing left or right
+        var isFacingLeft = _playerController.FacingLeft;
+
         // Find the GameObject with the "ActiveWeapon" tag
         var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
         if (activeWeaponObject != null)
         {
-            var mousePose = Input.mousePosition;
-            if (Camera.main == null)
-            {
-                Debug.LogError("Main camera not found.");
-                return;
-            }
+            // Calculate rotation based on player's facing direction
+            var rotation = isFacingLeft ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
-            var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
-            var playerDirection = mousePose.x < playerScreenPoint.x ? Vector2.left : Vector2.right;
-
-            var rotation = playerDirection.x < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+            // Instantiate weapon with appropriate rotation
             var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
             newWeapon.transform.SetParent(activeWeaponObject.transform);
             currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
@@ -95,6 +91,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
             Debug.LogError("No GameObject with the tag 'ActiveWeapon' found.");
         }
     }
+
 
     private void DestroyCurrentActiveWeapon()
     {
