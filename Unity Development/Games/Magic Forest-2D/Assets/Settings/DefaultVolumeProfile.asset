@@ -65,10 +65,10 @@ MonoBehaviour:
     m_Value: 0
   quality:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.133
   clamp:
     m_OverrideState: 1
     m_Value: 0.05
@@ -182,6 +182,12 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.1
   occlusionOnlyReflectionNormalization:
+    m_OverrideState: 1
+    m_Value: 1
+  intensityMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+  skyOcclusionIntensityMultiplier:
     m_OverrideState: 1
     m_Value: 1
 --- !u!114 &-4383111200985547936
