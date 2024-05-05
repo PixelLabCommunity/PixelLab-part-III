@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4410488204943274227}
   - component: {fileID: 7843983964334954960}
   m_Layer: 0
-  m_Name: Sword Effect
+  m_Name: Sword Attack Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashEffectPrefab: {fileID: 4147875791629511559, guid: 4315605d120fdd94b9e993082e3d5d9a, type: 3}
   slashEffectSpawnPoint: {fileID: 1217119134011693622}
-  swordEffectColliderObject: {fileID: 79693210111769703}
+  swordAttackEffectColliderObject: {fileID: 79693210111769703}
 --- !u!1 &3366226579601040944
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 8102392960196701152}
   - component: {fileID: 6332410452195850398}
   m_Layer: 0
-  m_Name: Sword Effect Collider
+  m_Name: Sword Attack Effect Collider
   m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

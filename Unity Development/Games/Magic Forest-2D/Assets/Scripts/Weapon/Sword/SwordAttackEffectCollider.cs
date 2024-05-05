@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SwordEffectCollider : MonoBehaviour
+public class SwordAttackEffectCollider : MonoBehaviour
 {
     [SerializeField] private int swordDamage = 1;
 

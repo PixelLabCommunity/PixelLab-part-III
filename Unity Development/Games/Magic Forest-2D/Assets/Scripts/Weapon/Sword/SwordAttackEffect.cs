@@ -1,25 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SwordEffect : MonoBehaviour
+public class SwordAttackEffect : MonoBehaviour
 {
     private static readonly int Attack1 = Animator.StringToHash("Attack");
     [SerializeField] private GameObject slashEffectPrefab;
     [SerializeField] private Transform slashEffectSpawnPoint;
-    [SerializeField] private Transform swordEffectColliderObject;
+    [SerializeField] private Transform swordAttackEffectColliderObject;
     private readonly Vector3 _spawnDown = new(0, 0, 0);
     private readonly Vector3 _spawnUp = new(-180, 0, 0);
 
     private PlayerController _playerController;
     private PlayerControls _playerControls;
     private GameObject _slashEffect;
-    private Animator _swordAnimator;
+    private Animator _swordAttackAnimator;
 
     private void Awake()
     {
         _playerController = GetComponentInParent<PlayerController>();
         _playerControls = new PlayerControls();
-        _swordAnimator = GetComponent<Animator>();
+        _swordAttackAnimator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -29,8 +29,7 @@ public class SwordEffect : MonoBehaviour
 
     private void Update()
     {
-        if (_swordAnimator == null) return;
-        SlashEffectFlip();
+        /*SlashEffectFlip();*/
     }
 
     private void OnEnable()
@@ -40,21 +39,21 @@ public class SwordEffect : MonoBehaviour
 
     private void Attack(InputAction.CallbackContext context)
     {
-        if (_swordAnimator == null) return;
-        _swordAnimator.SetTrigger(Attack1);
+        if (_swordAttackAnimator == null) return;
+        _swordAttackAnimator.SetTrigger(Attack1);
         SwordEffectColliderEnable();
     }
 
     private void SwordEffectColliderEnable()
     {
-        if (swordEffectColliderObject != null)
-            swordEffectColliderObject.gameObject.SetActive(true);
+        if (swordAttackEffectColliderObject != null)
+            swordAttackEffectColliderObject.gameObject.SetActive(true);
     }
 
     private void SwordEffectColliderDisable()
     {
-        if (swordEffectColliderObject != null)
-            swordEffectColliderObject.gameObject.SetActive(false);
+        if (swordAttackEffectColliderObject != null)
+            swordAttackEffectColliderObject.gameObject.SetActive(false);
     }
 
     private void SlashEffectFlip()
@@ -62,31 +61,31 @@ public class SwordEffect : MonoBehaviour
         if (_slashEffect == null || _playerController == null || _playerController.transform == null)
             return;
 
-        var playerScaleX = Mathf.Sign(_playerController.transform.localScale.x);
+        /*var playerScaleX = Mathf.Sign(_playerController.transform.localScale.x);
 
-        _slashEffect.transform.localRotation = Quaternion.Euler(playerScaleX > 0 ? _spawnDown : _spawnUp);
+        _slashEffect.transform.localRotation = Quaternion.Euler(playerScaleX > 0 ? _spawnDown : _spawnUp);*/
     }
 
 
     public void SlashEffectSpawnDown()
     {
-        if (slashEffectSpawnPoint == null) return;
+        /*if (slashEffectSpawnPoint == null) return;
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.identity);
         _slashEffect.transform.parent = slashEffectSpawnPoint;
         _slashEffect.transform.localRotation = Quaternion.Euler(_spawnDown);
-        if (swordEffectColliderObject != null)
-            swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
+        if (swordAttackEffectColliderObject != null)
+            swordAttackEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);*/
     }
 
     public void SlashEffectSpawnUp()
     {
-        if (slashEffectSpawnPoint == null) return;
+        /*if (slashEffectSpawnPoint == null) return;
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
             Quaternion.identity);
         _slashEffect.transform.parent = slashEffectSpawnPoint;
         _slashEffect.transform.localRotation = Quaternion.Euler(_spawnUp);
-        if (swordEffectColliderObject != null)
-            swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnUp);
+        if (swordAttackEffectColliderObject != null)
+            swordAttackEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnUp);*/
     }
 }
