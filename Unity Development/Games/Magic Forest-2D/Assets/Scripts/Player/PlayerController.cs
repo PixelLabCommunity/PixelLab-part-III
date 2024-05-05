@@ -1,9 +1,11 @@
 using System.Collections;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool FacingLeft { get { return facingLeft; } }
     private const float DashCooldown = 0.25f;
     private const float DashTime = 0.2f;
     private static readonly int MoveX = Animator.StringToHash("moveX");
@@ -19,15 +21,18 @@ public class PlayerController : MonoBehaviour
 
     private bool _isDashing;
     private bool _isMoving;
+    public PlayerController Instance { get; private set; }
 
     private Vector2 _movement;
     private Animator _playerAnimator;
     private PlayerControls _playerControls;
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
+    private bool facingLeft = false;
 
     private void Awake()
     {
+        Instance = this;
         PlayerControllerEnable();
         _playerControls = new PlayerControls();
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -102,16 +107,24 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerFlipRender()
     {
-        if (_playerSpriteRenderer == null || Camera.main == null) return;
+        /*if (_playerSpriteRenderer == null || Camera.main == null) return;
 
         var mousePosition = Input.mousePosition;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        var playerDirection = mousePosition.x < playerScreenPoint.x ? Vector2.left : Vector2.right;
 
         _playerSpriteRenderer.flipX = mousePosition.x < playerScreenPoint.x;
+        ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);*/
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        // Pass the player direction and the equipped weapon prefab to the ActiveWeapon instance
-        ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab, playerDirection);
+        if (mousePos.x < playerScreenPoint.x) {
+            _playerSpriteRenderer.flipX = true;
+            facingLeft = true;
+        } else {
+            _playerSpriteRenderer.flipX = false;
+            facingLeft = false;
+        }
+        ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);
     }
 
     private void CreateDust()

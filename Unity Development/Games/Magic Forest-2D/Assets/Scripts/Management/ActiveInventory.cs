@@ -56,7 +56,7 @@ public class ActiveInventory : MonoBehaviour
         if (weaponPrefab != null)
         {
             Debug.Log("Changing active weapon to: " + weaponPrefab.name);
-            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab, playerDirection);
+            ActiveWeapon.instance.SetCurrentActiveWeapon(weaponPrefab);
         }
         else
         {

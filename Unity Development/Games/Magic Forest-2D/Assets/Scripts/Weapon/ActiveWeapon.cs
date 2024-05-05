@@ -3,9 +3,8 @@ using UnityEngine;
 public class ActiveWeapon : Singleton<ActiveWeapon>
 {
     [SerializeField] private MonoBehaviour currentActiveWeapon;
-
     private bool _attackButtonDown, _isAttacking;
-
+    private PlayerController _playerController;
     private PlayerControls _playerControls;
 
     public static ActiveWeapon instance { get; private set; }
@@ -20,7 +19,8 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private void Start()
     {
         _playerControls.Combat.Attack.started += _ => StartAttacking();
-        _playerControls.Combat.Attack.canceled += _ => StartAttacking();
+        _playerControls.Combat.Attack.canceled += _ => StopAttacking();
+        _playerController = FindFirstObjectByType<PlayerController>();
     }
 
     private void Update()
@@ -50,12 +50,12 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
     private void Attack()
     {
-        if (!_attackButtonDown && _isAttacking) return;
+        if (!_attackButtonDown || _isAttacking) return;
         _isAttacking = true;
         (currentActiveWeapon as IWeapon)?.Attack();
     }
 
-    public void SetCurrentActiveWeapon(GameObject weaponPrefab, Vector2 playerDirection)
+    public void SetCurrentActiveWeapon(GameObject weaponPrefab)
     {
         if (weaponPrefab == null) return;
 
@@ -65,32 +65,36 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
             DestroyCurrentActiveWeapon();
         }
 
+        if (_playerController == null)
+        {
+            Debug.LogError("PlayerController not found.");
+            return;
+        }
+
         // Find the GameObject with the "ActiveWeapon" tag
         var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
         if (activeWeaponObject != null)
         {
-            Quaternion rotation;
-            if (playerDirection.x < 0) // Player is facing left
-                rotation = Quaternion.Euler(0, 180, 0); // Flip the weapon
-            else // Player is facing right
-                rotation = Quaternion.identity; // Default rotation
+            var mousePose = Input.mousePosition;
+            if (Camera.main == null)
+            {
+                Debug.LogError("Main camera not found.");
+                return;
+            }
 
+            var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
+            var playerDirection = mousePose.x < playerScreenPoint.x ? Vector2.left : Vector2.right;
+
+            var rotation = playerDirection.x < 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
             var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
             newWeapon.transform.SetParent(activeWeaponObject.transform);
             currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
-
-            // Flip the weapon's scale based on player's direction
-            var newWeaponTransform = newWeapon.transform;
-            var localScale = newWeaponTransform.localScale;
-            localScale.x *= playerDirection.x < 0 ? -1 : 1; // Flip if facing left
-            newWeaponTransform.localScale = localScale;
         }
         else
         {
             Debug.LogError("No GameObject with the tag 'ActiveWeapon' found.");
         }
     }
-
 
     private void DestroyCurrentActiveWeapon()
     {

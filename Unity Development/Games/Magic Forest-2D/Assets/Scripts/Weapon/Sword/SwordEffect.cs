@@ -8,7 +8,7 @@ public class SwordEffect : MonoBehaviour
     [SerializeField] private Transform slashEffectSpawnPoint;
     [SerializeField] private Transform swordEffectColliderObject;
     private readonly Vector3 _spawnDown = new(0, 0, 0);
-    private readonly Vector3 _spawnUp = new(180, 0, 0);
+    private readonly Vector3 _spawnUp = new(-180, 0, 0);
 
     private PlayerController _playerController;
     private PlayerControls _playerControls;
@@ -72,8 +72,9 @@ public class SwordEffect : MonoBehaviour
     {
         if (slashEffectSpawnPoint == null) return;
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
-            Quaternion.Euler(_spawnDown));
+            Quaternion.identity);
         _slashEffect.transform.parent = slashEffectSpawnPoint;
+        _slashEffect.transform.localRotation = Quaternion.Euler(_spawnDown);
         if (swordEffectColliderObject != null)
             swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
     }
@@ -82,9 +83,10 @@ public class SwordEffect : MonoBehaviour
     {
         if (slashEffectSpawnPoint == null) return;
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position,
-            Quaternion.Euler(_spawnUp));
+            Quaternion.identity);
         _slashEffect.transform.parent = slashEffectSpawnPoint;
+        _slashEffect.transform.localRotation = Quaternion.Euler(_spawnUp);
         if (swordEffectColliderObject != null)
-            swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnDown);
+            swordEffectColliderObject.transform.rotation = Quaternion.Euler(_spawnUp);
     }
 }
