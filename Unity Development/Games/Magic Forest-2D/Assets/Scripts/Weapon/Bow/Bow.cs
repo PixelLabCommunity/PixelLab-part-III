@@ -5,6 +5,21 @@ public class Bow : MonoBehaviour, IWeapon
     private ActiveWeapon _activeWeapon;
     private PlayerController _playerController;
 
+
+    private void Start()
+    {
+        _activeWeapon = FindFirstObjectByType<ActiveWeapon>();
+        _playerController = FindFirstObjectByType<PlayerController>();
+
+        if (_activeWeapon == null)
+            Debug.LogError(
+                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+
+        if (_playerController == null)
+            Debug.LogError(
+                "PlayerController reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+    }
+
     private void Update()
     {
         FlipWeapon();
@@ -12,7 +27,7 @@ public class Bow : MonoBehaviour, IWeapon
 
     public void Attack()
     {
-        Debug.LogWarning("Bow Attack!");
+        Debug.LogWarning("Staff Attack!");
         ActiveWeapon.instance.ToggleIsAttacking(false);
     }
 
@@ -25,6 +40,7 @@ public class Bow : MonoBehaviour, IWeapon
         if (Camera.main == null) return;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
 
+
         var activeWeaponTransform = _activeWeapon.transform;
         var localScale = activeWeaponTransform.localScale;
         localScale = new Vector3(
@@ -33,5 +49,8 @@ public class Bow : MonoBehaviour, IWeapon
             localScale.z
         );
         activeWeaponTransform.localScale = localScale;
+
+        // Debugging the scale applied
+        Debug.Log("Local Scale: " + localScale);
     }
 }
