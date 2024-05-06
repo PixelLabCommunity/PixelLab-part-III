@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour, IWeapon
 {
+    [SerializeField] private WeaponInfo weaponInfo;
     private ActiveWeapon _activeWeapon;
     private PlayerController _playerController;
 
@@ -29,8 +30,12 @@ public class Bow : MonoBehaviour, IWeapon
 
     public void Attack()
     {
-        Debug.LogWarning("Staff Attack!");
-        ActiveWeapon.instance.ToggleIsAttacking(false);
+        Debug.LogWarning("Bow Attack!");
+    }
+
+    public WeaponInfo GetWeaponInfo()
+    {
+        return weaponInfo;
     }
 
     private void FlipWeapon()

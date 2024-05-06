@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ActiveWeapon : Singleton<ActiveWeapon>
@@ -6,6 +7,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private bool _attackButtonDown, _isAttacking;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
+    private float _timeBetweenAttacks;
 
     public static ActiveWeapon instance { get; private set; }
 
@@ -21,6 +23,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         _playerControls.Combat.Attack.started += _ => StartAttacking();
         _playerControls.Combat.Attack.canceled += _ => StopAttacking();
         _playerController = FindFirstObjectByType<PlayerController>();
+        AttackCooldown();
     }
 
     private void Update()
@@ -33,9 +36,17 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         _playerControls.Enable();
     }
 
-    public void ToggleIsAttacking(bool value)
+    private void AttackCooldown()
     {
-        _isAttacking = value;
+        _isAttacking = true;
+        StopAllCoroutines();
+        StartCoroutine(TimeBetweenAttacksRoutine());
+    }
+
+    private IEnumerator TimeBetweenAttacksRoutine()
+    {
+        yield return new WaitForSeconds(_timeBetweenAttacks);
+        _isAttacking = false;
     }
 
     private void StartAttacking()
@@ -51,7 +62,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private void Attack()
     {
         if (!_attackButtonDown || _isAttacking) return;
-        _isAttacking = true;
+        AttackCooldown();
         (currentActiveWeapon as IWeapon)?.Attack();
     }
 
@@ -85,6 +96,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
             var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
             newWeapon.transform.SetParent(activeWeaponObject.transform);
             currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
+            _timeBetweenAttacks = ((IWeapon)currentActiveWeapon).GetWeaponInfo().weaponCoolDown;
         }
         else
         {
