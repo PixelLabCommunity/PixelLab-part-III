@@ -6,3 +6,8 @@ games creation, learning, optimization and innovation project... part III
 # Magic Forest-2D
 
 ![image](https://github.com/PixelLabCommunity/PixelLab-part-III/assets/812439/62d1d6d6-f641-4588-87e2-949ca4d3ed7a)
+
+# Cosmo-2D
+
+![image](https://github.com/PixelLabCommunity/PixelLab-part-III/assets/812439/0641dba8-4c61-4fed-aff5-ad19ae244a42)
+
