@@ -41,17 +41,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Runtime\Threading\FunctionTestsGroup.compute" />
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Runtime\Threading\FunctionTestsWave.compute" />
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Runtime\Unity.RenderPipelines.Core.Runtime.Tests.asmdef" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Runtime\Threading\FunctionTestsGroup.compute" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Runtime\Threading\FunctionTestsWave.compute" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Runtime\Unity.RenderPipelines.Core.Runtime.Tests.asmdef" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.13f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\6000.0.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.13f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\6000.0.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.13f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\6000.0.0f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

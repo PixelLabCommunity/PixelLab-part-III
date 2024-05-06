@@ -41,19 +41,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\ShaderStripping\DummyPipelineShader.shader" />
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\ShaderStripping\Results\UI_Default_0_0.json" />
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\ShaderStripping\Results\UI_Default_Sprites_Default_5_0.5.json" />
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\ShaderStripping\Results\UI_Default_Sprites_Default_5_0.json" />
-    <None Include="Library\PackageCache\com.unity.render-pipelines.core@16.0.5\Tests\Editor\Unity.RenderPipelines.Core.Editor.Tests.asmdef" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\RenderPipeline\SettingsStrippingResults\no_strippers_active_A_B_C.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\ShaderStripping\DummyPipelineShader.shader" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\ShaderStripping\Results\UI_Default_0_0.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\SimpleDots.shader" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\RenderPipeline\SettingsStrippingResults\KeepAStripper_RemoveAStripper_A_B_C.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\RenderPipeline\SettingsStrippingResults\PrivateCtorAStripper_A_B_C.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\ShaderStripping\Results\UI_Default_Sprites_Default_5_0.5.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\SimpleSpeedTreeDots.shader" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\RenderPipeline\SettingsStrippingResults\no_strippers_active_no_settings.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\RenderPipeline\SettingsStrippingResults\RemoveAStripper_A_B_C.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\ShaderStripping\Results\UI_Default_Sprites_Default_5_0.json" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\Unity.RenderPipelines.Core.Editor.Tests.asmdef" />
+    <None Include="Library\PackageCache\com.unity.render-pipelines.core\Tests\Editor\RenderPipeline\SettingsStrippingResults\WrongStripper_A_B_C.json" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.13f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\6000.0.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.13f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\6000.0.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:\Program Files\Unity Hub\Editor\2023.2.13f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+      <HintPath>D:\Program Files\Unity Hub\Editor\6000.0.0f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
