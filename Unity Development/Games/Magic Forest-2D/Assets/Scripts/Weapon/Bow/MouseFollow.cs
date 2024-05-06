@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class MouseFollow : MonoBehaviour
 {
+    private PlayerController _playerController;
+
+    private void Start()
+    {
+        _playerController = FindFirstObjectByType<PlayerController>();
+    }
+
     private void Update()
     {
         FaceMouse();
@@ -9,12 +16,16 @@ public class MouseFollow : MonoBehaviour
 
     private void FaceMouse()
     {
-        /*if (!gameObject.CompareTag("Bow")) return;*/
+        if (_playerController == null) return;
+
+
         var mousePosition = Input.mousePosition;
         if (Camera.main != null) mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        var direction = transform.position - mousePosition;
-        direction.z = 0;
+        Vector2 direction = transform.position - mousePosition;
+
         transform.right = -direction;
+
+        if (_playerController.facingLeft) transform.Rotate(0f, 180f, 0f);
     }
 }

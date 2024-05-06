@@ -25,13 +25,13 @@ public class PlayerController : MonoBehaviour
     private PlayerControls _playerControls;
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
-    public bool FacingLeft { get; private set; }
+    public bool facingLeft { get; private set; }
 
-    public static PlayerController Instance { get; private set; }
+    public static PlayerController instance { get; private set; }
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
         PlayerControllerEnable();
         _playerControls = new PlayerControls();
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
@@ -113,18 +113,21 @@ public class PlayerController : MonoBehaviour
 
         _playerSpriteRenderer.flipX = mousePosition.x < playerScreenPoint.x;
         ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);*/
-        var mousePos = Input.mousePosition;
-        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        var mousePose = Input.mousePosition;
+        if (Camera.main != null)
+        {
+            var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        if (mousePos.x < playerScreenPoint.x)
-        {
-            _playerSpriteRenderer.flipX = true;
-            FacingLeft = true;
-        }
-        else
-        {
-            _playerSpriteRenderer.flipX = false;
-            FacingLeft = false;
+            if (mousePose.x < playerScreenPoint.x)
+            {
+                _playerSpriteRenderer.flipX = true;
+                facingLeft = true;
+            }
+            else
+            {
+                _playerSpriteRenderer.flipX = false;
+                facingLeft = false;
+            }
         }
 
         ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);

@@ -13,11 +13,13 @@ public class Bow : MonoBehaviour, IWeapon
 
         if (_activeWeapon == null)
             Debug.LogError(
-                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor " +
+                "or set it through code.");
 
         if (_playerController == null)
             Debug.LogError(
-                "PlayerController reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+                "PlayerController reference not found! Make sure to assign it in the Unity Editor " +
+                "or set it through code.");
     }
 
     private void Update()
