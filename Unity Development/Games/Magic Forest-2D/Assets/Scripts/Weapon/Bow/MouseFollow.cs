@@ -3,6 +3,7 @@ using UnityEngine;
 public class MouseFollow : MonoBehaviour
 {
     private PlayerController _playerController;
+    private Vector3 flipBow = new Vector3(0f, 180f, 0f);
 
     private void Start()
     {
@@ -26,6 +27,6 @@ public class MouseFollow : MonoBehaviour
 
         transform.right = -direction;
 
-        if (_playerController.facingLeft) transform.Rotate(0f, 180f, 0f);
+        if (_playerController.facingLeft) transform.Rotate(flipBow);
     }
 }
