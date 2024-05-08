@@ -6,7 +6,7 @@ public class EnemyKnockBack : MonoBehaviour
     [SerializeField] private float knockBackTime = 0.2f;
 
     private Rigidbody2D _rigidbody2D;
-    public bool gettingKnockBack { get; private set; }
+    public bool GettingKnockBack { get; private set; }
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class EnemyKnockBack : MonoBehaviour
 
     public void GetKnockBack(Transform playerPosition, float knockBackPower)
     {
-        gettingKnockBack = true;
+        GettingKnockBack = true;
         var difference = (transform.position - playerPosition.position).normalized * knockBackPower
             * _rigidbody2D.mass;
         _rigidbody2D.AddForce(difference, ForceMode2D.Impulse);
@@ -26,6 +26,6 @@ public class EnemyKnockBack : MonoBehaviour
     {
         yield return new WaitForSeconds(knockBackTime);
         _rigidbody2D.velocity = Vector2.zero;
-        gettingKnockBack = false;
+        GettingKnockBack = false;
     }
 }

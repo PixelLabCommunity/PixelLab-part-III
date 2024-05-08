@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3077058633480752126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1393521506915899456
@@ -125,6 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponInfo: {fileID: 11400000, guid: 6f44299708ec8294fb331d4244021bcd, type: 2}
+  arrowPrefab: {fileID: 3743041063933743361, guid: 7b4f61a5e7ba0c74384d2a25369d9a59, type: 3}
+  arrowSpawnPoint: {fileID: 3077058633480752126}
+  attackCooldown: 0.25
 --- !u!114 &1251196349031036090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +141,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bc8e70dc9848e439db6bf5aa9654ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7037255685331780681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3077058633480752126}
+  m_Layer: 0
+  m_Name: Arrow Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3077058633480752126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037255685331780681}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6892341736893620489}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

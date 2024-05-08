@@ -18,7 +18,7 @@ public class EnemyPathfinding : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_enemyKnockBack.gettingKnockBack || _enemyHealth.stateDying) return;
+        if (_enemyKnockBack.GettingKnockBack || _enemyHealth.StateDying) return;
         _rigidbody2D.MovePosition(_rigidbody2D.position + _moveDir * (moveSpeed * Time.fixedDeltaTime));
     }
 

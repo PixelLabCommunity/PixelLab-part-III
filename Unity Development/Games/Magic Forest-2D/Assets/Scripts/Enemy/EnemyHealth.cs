@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     private int _currentEnemyHealth;
     private EnemyKnockBack _enemyKnockBack;
     private PlayerController _playerController;
-    public bool stateDying { get; private set; }
+    public bool StateDying { get; private set; }
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         StartCoroutine(ResetDamageAnimation());
 
         if (_currentEnemyHealth > 0) return;
-        stateDying = true;
+        StateDying = true;
         _animator.SetBool(Death, true);
     }
 

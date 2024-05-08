@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3257495433086205867}
   - component: {fileID: 6002162594726010313}
   - component: {fileID: 3814331755222301076}
+  - component: {fileID: 5625716977395959389}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,3 +284,17 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &5625716977395959389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743041063933743361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa64d5df0afff5449bc7f822cff0f3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
+  destroyDelay: 3
