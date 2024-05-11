@@ -19,10 +19,16 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Enemy")) return;
-        var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-        enemyHealth.Damage(arrowDamage);
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+            enemyHealth.Damage(arrowDamage);
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("UnDestructible"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void MoveArrow()
