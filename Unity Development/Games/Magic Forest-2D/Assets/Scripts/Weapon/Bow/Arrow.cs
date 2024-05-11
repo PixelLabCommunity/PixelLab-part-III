@@ -4,6 +4,8 @@ public class Arrow : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 22f;
     [SerializeField] private float destroyDelay = 1.5f;
+    [SerializeField] private GameObject destroyVFX;
+    [SerializeField] private float vfxDestroyDelay = 1f;
 
     [SerializeField] private int arrowDamage = 1;
 
@@ -27,6 +29,8 @@ public class Arrow : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("UnDestructible"))
         {
+            var vfxInstance = Instantiate(destroyVFX, transform.position, Quaternion.identity);
+            Destroy(vfxInstance, vfxDestroyDelay);
             Destroy(gameObject);
         }
     }

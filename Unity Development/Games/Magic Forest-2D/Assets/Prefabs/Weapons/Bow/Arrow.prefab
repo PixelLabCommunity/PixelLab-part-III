@@ -298,3 +298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   destroyDelay: 3
+  destroyVFX: {fileID: 3079077246638987100, guid: 1cb598e65c1e028439f7337f54ca68be, type: 3}
+  vfxDestroyDelay: 1
+  arrowDamage: 1
