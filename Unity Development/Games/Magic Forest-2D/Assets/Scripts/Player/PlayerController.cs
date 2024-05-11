@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);
+        ActiveWeapon.Instance.SetCurrentActiveWeapon(activeWeaponPrefab);
     }
 
     private void CreateDust()

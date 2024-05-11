@@ -9,12 +9,12 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private PlayerControls _playerControls;
     private float _timeBetweenAttacks;
 
-    public static ActiveWeapon instance { get; private set; }
+    public static ActiveWeapon Instance { get; private set; }
 
     protected override void Awake()
     {
         base.Awake();
-        instance = this;
+        Instance = this;
         _playerControls = new PlayerControls();
     }
 
