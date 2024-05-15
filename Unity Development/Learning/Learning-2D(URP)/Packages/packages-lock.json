@@ -122,6 +122,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.editorcoroutines": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
       "version": "2.0.5",
       "depth": 1,
@@ -178,6 +185,22 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.muse.animate": {
+      "version": "1.0.0-exp.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.editorcoroutines": "1.0.0",
+        "com.unity.muse.common": "1.0.0-pre.21",
+        "com.unity.nuget.newtonsoft-json": "2.0.1-preview.1",
+        "com.unity.sentis": "1.4.0-pre.3",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.shadergraph": "11.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.muse.chat": {
       "version": "1.0.0-pre.7",
       "depth": 0,
@@ -199,6 +222,26 @@
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.unitywebrequesttexture": "1.0.0",
         "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.muse.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.muse.common": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.muse.texture": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.muse.common": "1.0.0",
+        "com.unity.shadergraph": "14.0.7"
       },
       "url": "https://packages.unity.com"
     },
@@ -317,6 +360,14 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.unity.textmeshpro": {
+      "version": "5.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "2.0.0"
+      }
     },
     "com.unity.timeline": {
       "version": "1.8.6",
