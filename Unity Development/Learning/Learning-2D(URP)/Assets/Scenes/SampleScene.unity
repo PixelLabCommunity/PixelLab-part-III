@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 543802696}
   - component: {fileID: 543802701}
   - component: {fileID: 543802702}
+  - component: {fileID: 543802703}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -437,8 +438,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 543802702}
-        m_TargetAssemblyTypeName: MoveObject, Assembly-CSharp
+      - m_Target: {fileID: 543802703}
+        m_TargetAssemblyTypeName: NewMoveObject, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -463,12 +464,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543802695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e80a2e7b27fc6f74c92801711344726f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &543802703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543802695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135900043330f6b489b94c73c767fc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
