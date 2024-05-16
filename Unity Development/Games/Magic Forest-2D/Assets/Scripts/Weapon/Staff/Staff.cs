@@ -64,35 +64,22 @@ public class Staff : MonoBehaviour, IWeapon
     {
         var mousePosition = Input.mousePosition;
         if (Camera.main == null) return;
+
         var worldMousePosition =
-            Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y,
-                transform.position.z));
-        var direction = worldMousePosition - transform.position;
+            Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
+        var direction = (worldMousePosition - magicLaserSpawnPoint.position).normalized;
 
         var spawnPosition = magicLaserSpawnPoint.position;
-        var spawnRotation = magicLaserSpawnPoint.rotation;
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         if (_playerController.facingLeft)
-        {
-            spawnPosition = magicLaserSpawnPoint.position;
-            spawnRotation = Quaternion.Euler(0f, 180f, 0f) * magicLaserSpawnPoint.rotation;
-        }
+            angle -= 360;
 
-        if (direction.y < 0)
-        {
-            spawnPosition =
-                magicLaserSpawnPoint.position + new Vector3(0f, 0.5f, 0f);
-            spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-        }
-        else if (direction is { y: > 0, x: < 0 } && _playerController.facingLeft)
-        {
-            spawnPosition =
-                magicLaserSpawnPoint.position + new Vector3(0f, -0.5f, 0f);
-            spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
-        }
+        var spawnRotation = Quaternion.Euler(0f, 0f, angle);
 
         Instantiate(magicLaserPrefab, spawnPosition, spawnRotation);
     }
+
 
     private void FlipWeapon()
     {
