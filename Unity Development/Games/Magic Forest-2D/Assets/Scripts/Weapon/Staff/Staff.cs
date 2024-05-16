@@ -29,16 +29,7 @@ public class Staff : MonoBehaviour, IWeapon
     {
         _playerControls.Combat.Attack.started += _ => Attack();
         _lastAttackTime = -attackCooldown;
-
-        if (_activeWeapon == null)
-            Debug.LogError(
-                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor " +
-                "or set it through code.");
-
-        if (_playerController == null)
-            Debug.LogError(
-                "PlayerController reference not found! Make sure to assign it in the Unity Editor " +
-                "or set it through code.");
+        DebugLog();
     }
 
     private void Update()
@@ -102,5 +93,18 @@ public class Staff : MonoBehaviour, IWeapon
 
         // Debugging the scale applied
         Debug.Log("Local Scale: " + localScale);
+    }
+
+    private void DebugLog()
+    {
+        if (_activeWeapon == null)
+            Debug.LogError(
+                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor " +
+                "or set it through code.");
+
+        if (_playerController == null)
+            Debug.LogError(
+                "PlayerController reference not found! Make sure to assign it in the Unity Editor " +
+                "or set it through code.");
     }
 }
