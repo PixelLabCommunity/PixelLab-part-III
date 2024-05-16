@@ -3,22 +3,42 @@ using UnityEngine;
 public class Staff : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
+    [SerializeField] private GameObject magicLaserPrefab;
+    [SerializeField] private Transform magicLaserSpawnPoint;
+    [SerializeField] private float attackCooldown = 1f;
+
+    private readonly int _fireHash = Animator.StringToHash("Fire");
+
     private ActiveWeapon _activeWeapon;
+    private float _lastAttackTime;
     private PlayerController _playerController;
+    private PlayerControls _playerControls;
+    private Animator _staffAnimator;
+
+    private void Awake()
+    {
+        _playerControls = new PlayerControls();
+
+        _activeWeapon = FindFirstObjectByType<ActiveWeapon>();
+        _playerController = FindFirstObjectByType<PlayerController>();
+        _staffAnimator = GetComponent<Animator>();
+    }
 
 
     private void Start()
     {
-        _activeWeapon = FindFirstObjectByType<ActiveWeapon>();
-        _playerController = FindFirstObjectByType<PlayerController>();
+        _playerControls.Combat.Attack.started += _ => Attack();
+        _lastAttackTime = -attackCooldown;
 
         if (_activeWeapon == null)
             Debug.LogError(
-                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor " +
+                "or set it through code.");
 
         if (_playerController == null)
             Debug.LogError(
-                "PlayerController reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+                "PlayerController reference not found! Make sure to assign it in the Unity Editor " +
+                "or set it through code.");
     }
 
     private void Update()
@@ -29,11 +49,49 @@ public class Staff : MonoBehaviour, IWeapon
     public void Attack()
     {
         Debug.LogWarning("Staff Attack!");
+        if (!(Time.time - _lastAttackTime >= attackCooldown)) return;
+        _staffAnimator.SetTrigger(_fireHash);
+        SpawnLaser();
+        _lastAttackTime = Time.time;
     }
 
     public WeaponInfo GetWeaponInfo()
     {
         return weaponInfo;
+    }
+
+    private void SpawnLaser()
+    {
+        var mousePosition = Input.mousePosition;
+        if (Camera.main == null) return;
+        var worldMousePosition =
+            Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y,
+                transform.position.z));
+        var direction = worldMousePosition - transform.position;
+
+        var spawnPosition = magicLaserSpawnPoint.position;
+        var spawnRotation = magicLaserSpawnPoint.rotation;
+
+        if (_playerController.facingLeft)
+        {
+            spawnPosition = magicLaserSpawnPoint.position;
+            spawnRotation = Quaternion.Euler(0f, 180f, 0f) * magicLaserSpawnPoint.rotation;
+        }
+
+        if (direction.y < 0)
+        {
+            spawnPosition =
+                magicLaserSpawnPoint.position + new Vector3(0f, 0.5f, 0f);
+            spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+        }
+        else if (direction is { y: > 0, x: < 0 } && _playerController.facingLeft)
+        {
+            spawnPosition =
+                magicLaserSpawnPoint.position + new Vector3(0f, -0.5f, 0f);
+            spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+        }
+
+        Instantiate(magicLaserPrefab, spawnPosition, spawnRotation);
     }
 
     private void FlipWeapon()

@@ -11,7 +11,7 @@ public class Bow : MonoBehaviour, IWeapon
 
     private ActiveWeapon _activeWeapon;
     private Animator _bowAnimator;
-    private float _lastAttackTime; // Time when the last attack occurred
+    private float _lastAttackTime;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
 
@@ -27,7 +27,7 @@ public class Bow : MonoBehaviour, IWeapon
     private void Start()
     {
         _playerControls.Combat.Attack.started += _ => Attack();
-        _lastAttackTime = -attackCooldown; // Start with the cooldown already elapsed
+        _lastAttackTime = -attackCooldown;
 
         if (_activeWeapon == null)
             Debug.LogError(
@@ -67,7 +67,6 @@ public class Bow : MonoBehaviour, IWeapon
 
     private void SpawnArrow()
     {
-        // Calculate the direction from the bow to the mouse position
         var mousePosition = Input.mousePosition;
         if (Camera.main == null) return;
         var worldMousePosition =
