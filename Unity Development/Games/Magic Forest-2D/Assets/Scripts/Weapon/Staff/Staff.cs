@@ -63,7 +63,7 @@ public class Staff : MonoBehaviour, IWeapon
         var spawnPosition = magicLaserSpawnPoint.position;
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (_playerController.facingLeft)
+        if (_playerController.FacingLeft)
             angle -= 360;
 
         var spawnRotation = Quaternion.Euler(0f, 0f, angle);

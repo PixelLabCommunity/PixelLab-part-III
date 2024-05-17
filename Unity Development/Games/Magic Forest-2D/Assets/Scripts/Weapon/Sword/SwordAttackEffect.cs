@@ -75,7 +75,7 @@ public class SwordAttackEffect : MonoBehaviour
         if (slashEffectSpawnPoint == null) return;
 
         // Determine if the player is facing left
-        var isFacingLeft = PlayerController.instance.facingLeft;
+        var isFacingLeft = PlayerController.Instance.FacingLeft;
 
         // Instantiate the slash effect
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position, Quaternion.identity);
@@ -101,7 +101,7 @@ public class SwordAttackEffect : MonoBehaviour
         if (slashEffectSpawnPoint == null) return;
 
         // Determine if the player is facing left
-        var isFacingLeft = PlayerController.instance.facingLeft;
+        var isFacingLeft = PlayerController.Instance.FacingLeft;
 
         // Instantiate the slash effect
         _slashEffect = Instantiate(slashEffectPrefab, slashEffectSpawnPoint.position, Quaternion.identity);

@@ -68,7 +68,7 @@ public class Bow : MonoBehaviour, IWeapon
         var spawnPosition = arrowSpawnPoint.position;
         var spawnRotation = arrowSpawnPoint.rotation;
 
-        if (_playerController.facingLeft)
+        if (_playerController.FacingLeft)
         {
             spawnPosition = arrowSpawnPoint.position;
             spawnRotation = Quaternion.Euler(0f, 180f, 0f) * arrowSpawnPoint.rotation;
@@ -80,7 +80,7 @@ public class Bow : MonoBehaviour, IWeapon
                 arrowSpawnPoint.position + new Vector3(0f, 0.5f, 0f);
             spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         }
-        else if (direction is { y: > 0, x: < 0 } && _playerController.facingLeft)
+        else if (direction is { y: > 0, x: < 0 } && _playerController.FacingLeft)
         {
             spawnPosition =
                 arrowSpawnPoint.position + new Vector3(0f, -0.5f, 0f);

@@ -20,23 +20,26 @@ public class PlayerController : MonoBehaviour
     private bool _isDashing;
     private bool _isMoving;
 
+    private PlayerKnockBack _knockback;
+
     private Vector2 _movement;
     private Animator _playerAnimator;
     private PlayerControls _playerControls;
     private Rigidbody2D _playerRigidbody2D;
     private SpriteRenderer _playerSpriteRenderer;
-    public bool facingLeft { get; private set; }
+    public bool FacingLeft { get; private set; }
 
-    public static PlayerController instance { get; private set; }
+    public static PlayerController Instance { get; private set; }
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
         PlayerControllerEnable();
         _playerControls = new PlayerControls();
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
         _playerAnimator = GetComponent<Animator>();
         _playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        _knockback = GetComponent<PlayerKnockBack>();
         PlayerControllerTracker();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -55,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_playerRigidbody2D != null)
+        if (_playerRigidbody2D != null && !_knockback.GettingKnockBack)
             Move();
     }
 
@@ -96,7 +99,8 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (_playerRigidbody2D == null) return;
-        _playerRigidbody2D.MovePosition(_playerRigidbody2D.position + _movement * (playerSpeed * Time.deltaTime));
+        _playerRigidbody2D.MovePosition(_playerRigidbody2D.position + _movement *
+            (playerSpeed * Time.deltaTime));
 
         if (_isMoving)
             CreateDust();
@@ -106,13 +110,6 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerFlipRender()
     {
-        /*if (_playerSpriteRenderer == null || Camera.main == null) return;
-
-        var mousePosition = Input.mousePosition;
-        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
-
-        _playerSpriteRenderer.flipX = mousePosition.x < playerScreenPoint.x;
-        ActiveWeapon.instance.SetCurrentActiveWeapon(activeWeaponPrefab);*/
         var mousePose = Input.mousePosition;
         if (Camera.main != null)
         {
@@ -121,12 +118,12 @@ public class PlayerController : MonoBehaviour
             if (mousePose.x < playerScreenPoint.x)
             {
                 _playerSpriteRenderer.flipX = true;
-                facingLeft = true;
+                FacingLeft = true;
             }
             else
             {
                 _playerSpriteRenderer.flipX = false;
-                facingLeft = false;
+                FacingLeft = false;
             }
         }
 

@@ -83,7 +83,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         }
 
         // Check if the player is facing left or right
-        var isFacingLeft = _playerController.facingLeft;
+        var isFacingLeft = _playerController.FacingLeft;
 
         // Find the GameObject with the "ActiveWeapon" tag
         var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
