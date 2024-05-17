@@ -8,9 +8,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float damageRecoveryTime = 1f;
 
     private bool _canTakeDamage = true;
-    private int _currentHealth;
     private PlayerFlash _flash;
     private PlayerKnockBack _knockback;
+    private int CurrentHealth { get; set; }
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        _currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     private void TakeDamage(int damageAmount)
     {
         _canTakeDamage = false;
-        _currentHealth -= damageAmount;
+        CurrentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRoutine());
     }
 
