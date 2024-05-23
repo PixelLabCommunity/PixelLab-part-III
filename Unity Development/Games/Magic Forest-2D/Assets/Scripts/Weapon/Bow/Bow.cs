@@ -41,6 +41,10 @@ public class Bow : MonoBehaviour, IWeapon
         _playerControls.Enable();
     }
 
+    private void OnDisable()
+    {
+        _playerControls.Disable();
+    }
 
     public WeaponInfo GetWeaponInfo()
     {
@@ -51,6 +55,13 @@ public class Bow : MonoBehaviour, IWeapon
     {
         if (!(Time.time - _lastAttackTime >= attackCooldown)) return;
         Debug.LogWarning("Bow Attack!");
+
+        if (_bowAnimator == null)
+        {
+            Debug.LogError("Animator component is null. Ensure it is not destroyed.");
+            return;
+        }
+
         _bowAnimator.SetTrigger(_fireHash);
         SpawnArrow();
         _lastAttackTime = Time.time;
@@ -61,29 +72,22 @@ public class Bow : MonoBehaviour, IWeapon
         var mousePosition = Input.mousePosition;
         if (Camera.main == null) return;
         var worldMousePosition =
-            Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y,
-                transform.position.z));
+            Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, transform.position.z));
         var direction = worldMousePosition - transform.position;
 
         var spawnPosition = arrowSpawnPoint.position;
         var spawnRotation = arrowSpawnPoint.rotation;
 
-        if (_playerController.FacingLeft)
-        {
-            spawnPosition = arrowSpawnPoint.position;
-            spawnRotation = Quaternion.Euler(0f, 180f, 0f) * arrowSpawnPoint.rotation;
-        }
+        if (_playerController.FacingLeft) spawnRotation = Quaternion.Euler(0f, 180f, 0f) * arrowSpawnPoint.rotation;
 
         if (direction.y < 0)
         {
-            spawnPosition =
-                arrowSpawnPoint.position + new Vector3(0f, 0.5f, 0f);
+            spawnPosition = arrowSpawnPoint.position + new Vector3(0f, 0.5f, 0f);
             spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         }
         else if (direction is { y: > 0, x: < 0 } && _playerController.FacingLeft)
         {
-            spawnPosition =
-                arrowSpawnPoint.position + new Vector3(0f, -0.5f, 0f);
+            spawnPosition = arrowSpawnPoint.position + new Vector3(0f, -0.5f, 0f);
             spawnRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
         }
 
@@ -101,11 +105,7 @@ public class Bow : MonoBehaviour, IWeapon
 
         var activeWeaponTransform = _activeWeapon.transform;
         var localScale = activeWeaponTransform.localScale;
-        localScale = new Vector3(
-            mousePose.x < playerScreenPoint.x ? -1 : 1,
-            localScale.y,
-            localScale.z
-        );
+        localScale.x = mousePose.x < playerScreenPoint.x ? -1 : 1;
         activeWeaponTransform.localScale = localScale;
 
         Debug.Log("Local Scale: " + localScale);
@@ -115,12 +115,13 @@ public class Bow : MonoBehaviour, IWeapon
     {
         if (_activeWeapon == null)
             Debug.LogError(
-                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor " +
-                "or set it through code.");
+                "ActiveWeapon reference not found! Make sure to assign it in the Unity Editor or set it through code.");
 
         if (_playerController == null)
             Debug.LogError(
-                "PlayerController reference not found! Make sure to assign it in the Unity Editor " +
-                "or set it through code.");
+                "PlayerController reference not found! Make sure to assign it in the Unity Editor or set it through code.");
+
+        if (_bowAnimator == null)
+            Debug.LogError("Animator component is null! Ensure it is assigned and not destroyed.");
     }
 }

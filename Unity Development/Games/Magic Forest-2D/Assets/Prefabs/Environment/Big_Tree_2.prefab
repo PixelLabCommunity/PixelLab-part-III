@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6423555081387775557}
   m_Layer: 0
   m_Name: Big_Tree_2
-  m_TagString: Untagged
+  m_TagString: UnDestructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

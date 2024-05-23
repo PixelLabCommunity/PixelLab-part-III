@@ -33,6 +33,8 @@ public class Arrow : MonoBehaviour
             Destroy(vfxInstance, vfxDestroyDelay);
             Destroy(gameObject);
         }
+
+        Destroy(gameObject);
     }
 
     private void MoveArrow()
