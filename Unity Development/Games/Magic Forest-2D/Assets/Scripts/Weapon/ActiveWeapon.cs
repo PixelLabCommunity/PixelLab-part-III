@@ -7,6 +7,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private bool _attackButtonDown, _isAttacking;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
+    private SpriteRenderer _spriteRenderer;
     private float _timeBetweenAttacks;
 
     public static ActiveWeapon Instance { get; private set; }
@@ -29,6 +30,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     private void Update()
     {
         Attack();
+        FlipWeapon();
     }
 
     private void OnEnable()
@@ -96,6 +98,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
             var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
             newWeapon.transform.SetParent(activeWeaponObject.transform);
             currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();
+            _spriteRenderer = newWeapon.GetComponent<SpriteRenderer>();
             _timeBetweenAttacks = ((IWeapon)currentActiveWeapon).GetWeaponInfo().weaponCoolDown;
         }
         else
@@ -104,6 +107,13 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         }
     }
 
+    private void FlipWeapon()
+    {
+        if (_playerController == null || _spriteRenderer == null) return;
+
+        var isFacingLeft = _playerController.FacingLeft;
+        _spriteRenderer.flipX = isFacingLeft;
+    }
 
     private void DestroyCurrentActiveWeapon()
     {

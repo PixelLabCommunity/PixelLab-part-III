@@ -14,6 +14,7 @@ public class Bow : MonoBehaviour, IWeapon
     private float _lastAttackTime;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class Bow : MonoBehaviour, IWeapon
         _activeWeapon = FindFirstObjectByType<ActiveWeapon>();
         _playerController = FindFirstObjectByType<PlayerController>();
         _bowAnimator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -34,6 +36,14 @@ public class Bow : MonoBehaviour, IWeapon
     private void Update()
     {
         FlipWeapon();
+    }
+
+    private void FixedUpdate()
+    {
+        if (_playerController.FacingLeft)
+            _spriteRenderer.flipX = true;
+        else
+            _spriteRenderer.flipX = false;
     }
 
     private void OnEnable()
@@ -107,6 +117,9 @@ public class Bow : MonoBehaviour, IWeapon
         var localScale = activeWeaponTransform.localScale;
         localScale.x = mousePose.x < playerScreenPoint.x ? -1 : 1;
         activeWeaponTransform.localScale = localScale;
+
+        // Update SpriteRenderer flipX based on the player's facing direction
+
 
         Debug.Log("Local Scale: " + localScale);
     }
