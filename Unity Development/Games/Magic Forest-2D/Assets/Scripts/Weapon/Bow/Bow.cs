@@ -41,10 +41,7 @@ public class Bow : MonoBehaviour, IWeapon
 
     private void FixedUpdate()
     {
-        if (_playerController.FacingLeft)
-            _spriteRenderer.flipX = true;
-        else
-            _spriteRenderer.flipX = false;
+        _spriteRenderer.flipX = _playerController.FacingLeft;
     }
 
     private void OnEnable()
