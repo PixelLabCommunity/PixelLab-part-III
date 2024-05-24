@@ -18,6 +18,8 @@ TagManager:
   - ActiveWeapon
   - Bow
   - UnDestructible
+  - Staff
+  - Sword
   layers:
   - Default
   - TransparentFX

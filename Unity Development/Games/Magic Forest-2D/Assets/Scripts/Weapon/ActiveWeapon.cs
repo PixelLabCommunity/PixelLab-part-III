@@ -74,6 +74,13 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
 
         if (currentActiveWeapon != null)
         {
+            // Check if the new weapon prefab has the same tag as the current active weapon
+            /*if (currentActiveWeapon.CompareTag(weaponPrefab.tag))
+            {
+                Debug.Log("Same weapon type already active.");
+                return;
+            }*/
+
             currentActiveWeapon.gameObject.SetActive(false);
             DestroyCurrentActiveWeapon();
         }
@@ -84,17 +91,12 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
             return;
         }
 
-        // Check if the player is facing left or right
         var isFacingLeft = _playerController.FacingLeft;
-
-        // Find the GameObject with the "ActiveWeapon" tag
         var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
+
         if (activeWeaponObject != null)
         {
-            // Calculate rotation based on player's facing direction
             var rotation = isFacingLeft ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
-
-            // Instantiate weapon with appropriate rotation
             var newWeapon = Instantiate(weaponPrefab, activeWeaponObject.transform.position, rotation);
             newWeapon.transform.SetParent(activeWeaponObject.transform);
             currentActiveWeapon = newWeapon.GetComponent<MonoBehaviour>();

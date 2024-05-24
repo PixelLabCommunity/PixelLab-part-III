@@ -11,6 +11,7 @@ public class Bow : MonoBehaviour, IWeapon
 
     private ActiveWeapon _activeWeapon;
     private Animator _bowAnimator;
+    private GameObject _bowSpawnObject;
     private float _lastAttackTime;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
@@ -113,14 +114,17 @@ public class Bow : MonoBehaviour, IWeapon
         if (Camera.main == null) return;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
 
+
         var activeWeaponTransform = _activeWeapon.transform;
         var localScale = activeWeaponTransform.localScale;
-        localScale.x = mousePose.x < playerScreenPoint.x ? -1 : 1;
+        localScale = new Vector3(
+            mousePose.x < playerScreenPoint.x ? -1 : 1,
+            localScale.y,
+            localScale.z
+        );
         activeWeaponTransform.localScale = localScale;
 
-        // Update SpriteRenderer flipX based on the player's facing direction
-        _spriteRenderer.flipX = _playerController.FacingLeft;
-
+        // Debugging the scale applied
         Debug.Log("Local Scale: " + localScale);
     }
 
