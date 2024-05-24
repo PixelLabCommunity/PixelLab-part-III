@@ -117,7 +117,7 @@ public class Bow : MonoBehaviour, IWeapon
         localScale = new Vector3(
             mousePose.x < playerScreenPoint.x ? -1 : 1,
             localScale.y,
-            localScale.z
+            localScale.z = 180
         );
         activeWeaponTransform.localScale = localScale;
 

@@ -76,7 +76,7 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
         if (weaponPrefab == null) return;
 
         if (currentActiveWeapon != null) currentActiveWeapon.gameObject.SetActive(false);
-        /*DestroyCurrentActiveWeapon();*/
+        DestroyCurrentActiveWeapon();
         var isFacingLeft = PlayerController.Instance.FacingLeft;
         var activeWeaponObject = GameObject.FindGameObjectWithTag("ActiveWeapon");
 
