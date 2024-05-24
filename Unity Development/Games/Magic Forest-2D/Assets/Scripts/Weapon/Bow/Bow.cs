@@ -11,7 +11,6 @@ public class Bow : MonoBehaviour, IWeapon
 
     private ActiveWeapon _activeWeapon;
     private Animator _bowAnimator;
-    private GameObject _bowSpawnObject;
     private float _lastAttackTime;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
@@ -25,6 +24,9 @@ public class Bow : MonoBehaviour, IWeapon
         _playerController = FindFirstObjectByType<PlayerController>();
         _bowAnimator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Ensure the bow is correctly oriented upon spawning
+        UpdateBowOrientation();
     }
 
     private void Start()
@@ -37,11 +39,7 @@ public class Bow : MonoBehaviour, IWeapon
     private void Update()
     {
         FlipWeapon();
-    }
-
-    private void FixedUpdate()
-    {
-        _spriteRenderer.flipX = _playerController.FacingLeft;
+        FaceMouse();
     }
 
     private void OnEnable()
@@ -107,22 +105,43 @@ public class Bow : MonoBehaviour, IWeapon
         if (_playerController == null || _activeWeapon == null)
             return;
 
-        var mousePose = Input.mousePosition;
-        if (Camera.main == null) return;
-        var playerScreenPoint = Camera.main.WorldToScreenPoint(_playerController.transform.position);
-
-
         var activeWeaponTransform = _activeWeapon.transform;
         var localScale = activeWeaponTransform.localScale;
-        localScale = new Vector3(
-            mousePose.x < playerScreenPoint.x ? -1 : 1,
-            localScale.y,
-            localScale.z = 180
-        );
+
+        if (_playerController.FacingLeft)
+            localScale.x = Mathf.Abs(localScale.x) * -1; // Ensure the weapon is flipped correctly
+        else
+            localScale.x = Mathf.Abs(localScale.x); // Ensure the weapon is not flipped
+
         activeWeaponTransform.localScale = localScale;
 
         // Debugging the scale applied
         Debug.Log("Local Scale: " + localScale);
+    }
+
+    private void FaceMouse()
+    {
+        if (_playerController == null || _spriteRenderer == null) return;
+
+        var mousePosition = Input.mousePosition;
+        if (Camera.main != null) mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = transform.position - mousePosition;
+
+        transform.right = -direction;
+
+        if (_playerController.FacingLeft)
+            _spriteRenderer.flipY = true; // Flip vertically if facing left
+        else
+            _spriteRenderer.flipY = false; // Ensure it is not flipped vertically if facing right
+    }
+
+    private void UpdateBowOrientation()
+    {
+        if (_playerController.FacingLeft)
+            _spriteRenderer.flipX = true;
+        else
+            _spriteRenderer.flipX = false;
     }
 
     private void DebugLog()
