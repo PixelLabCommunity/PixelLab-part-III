@@ -119,7 +119,7 @@ public class Bow : MonoBehaviour, IWeapon
         activeWeaponTransform.localScale = localScale;
 
         // Update SpriteRenderer flipX based on the player's facing direction
-
+        _spriteRenderer.flipX = _playerController.FacingLeft;
 
         Debug.Log("Local Scale: " + localScale);
     }
