@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ActiveInventory : MonoBehaviour
 {
@@ -12,9 +13,23 @@ public class ActiveInventory : MonoBehaviour
 
     private void Start()
     {
-        _playerControls.Inventory.Keyboard.performed += ctx => ToggleActiveSlot((int)ctx.ReadValue<float>());
+        _playerControls.Inventory.Keyboard.performed += OnInventoryKeyPressed;
         ChangeActiveWeapon();
         _playerControls.Enable();
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the input action
+        _playerControls.Inventory.Keyboard.performed -= OnInventoryKeyPressed;
+
+        // Disable PlayerControls to avoid leaks
+        _playerControls.Disable();
+    }
+
+    private void OnInventoryKeyPressed(InputAction.CallbackContext ctx)
+    {
+        ToggleActiveSlot((int)ctx.ReadValue<float>());
     }
 
     private void ToggleActiveSlot(int numberValue)
@@ -24,12 +39,29 @@ public class ActiveInventory : MonoBehaviour
 
     private void ToggleActiveHighlight(int indexNumber)
     {
+        if (this == null || gameObject == null || transform == null)
+        {
+            Debug.LogWarning("Attempted to toggle active highlight on a destroyed object.");
+            return;
+        }
+
         _activeSlotIndexNumber = indexNumber;
 
         foreach (Transform inventorySlot in transform)
-            inventorySlot.GetChild(0).gameObject.SetActive(false);
+            if (inventorySlot.childCount > 0)
+                inventorySlot.GetChild(0).gameObject.SetActive(false);
 
-        transform.GetChild(indexNumber).GetChild(0).gameObject.SetActive(true);
+        if (indexNumber >= 0 && indexNumber < transform.childCount)
+        {
+            var slotTransform = transform.GetChild(indexNumber);
+            if (slotTransform != null && slotTransform.childCount > 0)
+                slotTransform.GetChild(0).gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Invalid index number for active slot: " + indexNumber);
+        }
+
         ChangeActiveWeapon();
     }
 

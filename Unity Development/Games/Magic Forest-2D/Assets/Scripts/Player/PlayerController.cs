@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_playerRigidbody2D != null && !_knockback.GettingKnockBack)
-            Move();
+        /*if (_playerRigidbody2D != null && !_knockback.GettingKnockBack)*/
+        Move();
     }
 
     private void OnEnable()

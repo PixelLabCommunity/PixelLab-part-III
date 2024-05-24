@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class DontDestroyOnLoadUI : MonoBehaviour
 {
-    private void Awake()
-    {
-        var objs = GameObject.FindGameObjectsWithTag("UI");
+    private static DontDestroyOnLoadUI _instance;
 
-        if (objs.Length > 1)
+    private void Start()
+    {
+        if (_instance != null)
+        {
             Destroy(gameObject);
-        else
-            DontDestroyOnLoad(gameObject);
+            return;
+        }
+
+        _instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 }
