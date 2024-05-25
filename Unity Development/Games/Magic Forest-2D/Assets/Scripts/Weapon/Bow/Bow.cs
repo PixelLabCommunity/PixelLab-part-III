@@ -8,10 +8,13 @@ public class Bow : MonoBehaviour, IWeapon
     [SerializeField] private float attackCooldown = 0.25f;
 
     private readonly int _fireHash = Animator.StringToHash("Fire");
+    private readonly int _lookLeftHash = Animator.StringToHash("LookLeft");
 
     private ActiveWeapon _activeWeapon;
     private Animator _bowAnimator;
     private float _lastAttackTime;
+
+    private Vector3 _originalLocalPosition;
     private PlayerController _playerController;
     private PlayerControls _playerControls;
     private SpriteRenderer _spriteRenderer;
@@ -24,6 +27,9 @@ public class Bow : MonoBehaviour, IWeapon
         _playerController = FindFirstObjectByType<PlayerController>();
         _bowAnimator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Store the original local position of the bow
+        _originalLocalPosition = transform.localPosition;
 
         // Ensure the bow is correctly oriented upon spawning
         UpdateBowOrientation();
@@ -38,7 +44,6 @@ public class Bow : MonoBehaviour, IWeapon
 
     private void Update()
     {
-        FlipWeapon();
         FaceMouse();
     }
 
@@ -100,25 +105,6 @@ public class Bow : MonoBehaviour, IWeapon
         Instantiate(arrowPrefab, spawnPosition, spawnRotation);
     }
 
-    private void FlipWeapon()
-    {
-        if (_playerController == null || _activeWeapon == null)
-            return;
-
-        var activeWeaponTransform = _activeWeapon.transform;
-        var localScale = activeWeaponTransform.localScale;
-
-        if (_playerController.FacingLeft)
-            localScale.x = Mathf.Abs(localScale.x) * -1; // Ensure the weapon is flipped correctly
-        else
-            localScale.x = Mathf.Abs(localScale.x); // Ensure the weapon is not flipped
-
-        activeWeaponTransform.localScale = localScale;
-
-        // Debugging the scale applied
-        Debug.Log("Local Scale: " + localScale);
-    }
-
     private void FaceMouse()
     {
         if (_playerController == null || _spriteRenderer == null) return;
@@ -126,22 +112,43 @@ public class Bow : MonoBehaviour, IWeapon
         var mousePosition = Input.mousePosition;
         if (Camera.main != null) mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        Vector2 direction = transform.position - mousePosition;
-
-        transform.right = -direction;
+        Vector2 direction = mousePosition - transform.position;
+        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         if (_playerController.FacingLeft)
-            _spriteRenderer.flipY = true; // Flip vertically if facing left
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 180));
+            transform.localPosition = new Vector3(-Mathf.Abs(_originalLocalPosition.x), _originalLocalPosition.y,
+                _originalLocalPosition.z);
+            _spriteRenderer.flipY = true;
+            _bowAnimator.SetBool(_lookLeftHash, true);
+        }
         else
-            _spriteRenderer.flipY = false; // Ensure it is not flipped vertically if facing right
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            transform.localPosition = new Vector3(Mathf.Abs(_originalLocalPosition.x), _originalLocalPosition.y,
+                _originalLocalPosition.z);
+            _spriteRenderer.flipY = false;
+            _bowAnimator.SetBool(_lookLeftHash, false);
+        }
     }
 
     private void UpdateBowOrientation()
     {
+        _spriteRenderer.flipY = _playerController.FacingLeft;
+        // Adjust the bow's local position based on the facing direction
         if (_playerController.FacingLeft)
-            _spriteRenderer.flipX = true;
+        {
+            transform.localPosition = new Vector3(-Mathf.Abs(_originalLocalPosition.x), _originalLocalPosition.y,
+                _originalLocalPosition.z);
+            _bowAnimator.SetBool(_lookLeftHash, true);
+        }
         else
-            _spriteRenderer.flipX = false;
+        {
+            transform.localPosition = new Vector3(Mathf.Abs(_originalLocalPosition.x), _originalLocalPosition.y,
+                _originalLocalPosition.z);
+            _bowAnimator.SetBool(_lookLeftHash, false);
+        }
     }
 
     private void DebugLog()
