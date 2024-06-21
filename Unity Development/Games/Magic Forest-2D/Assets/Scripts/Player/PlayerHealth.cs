@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(_flash.FlashRoutine());
     }
 
-    private void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount)
     {
         _canTakeDamage = false;
         CurrentHealth -= damageAmount;
