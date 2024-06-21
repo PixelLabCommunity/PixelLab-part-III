@@ -20,6 +20,7 @@ TagManager:
   - UnDestructible
   - Staff
   - Sword
+  - Bullet
   layers:
   - Default
   - TransparentFX
