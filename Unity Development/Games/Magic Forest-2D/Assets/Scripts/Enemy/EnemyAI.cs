@@ -7,6 +7,8 @@ public class EnemyAI : MonoBehaviour
     private const float WaitSeconds = 2f;
     private const float AttackRadius = 5f;
     private const float FireRate = 3f;
+    private const float BulletDisappear = 3f;
+    private const float BulletSpeed = 10f;
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
@@ -70,8 +72,9 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-                yield return null; // Yield to the next frame to keep checking
+                yield return null;
             }
+        // ReSharper disable once IteratorNeverReturns
     }
 
     private bool IsPlayerInRange()
@@ -100,10 +103,10 @@ public class EnemyAI : MonoBehaviour
         if (rb != null && _player != null)
         {
             Vector2 direction = (_player.position - firePoint.position).normalized;
-            rb.velocity = direction * 10f; // Adjust bullet speed here
+            rb.velocity = direction * BulletSpeed;
         }
 
-        Destroy(bullet, 5f); // Destroy bullet after 5 seconds if it doesn't hit anything
+        Destroy(bullet, BulletDisappear);
     }
 
     private enum State
