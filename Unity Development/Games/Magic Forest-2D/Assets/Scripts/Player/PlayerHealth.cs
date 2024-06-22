@@ -25,7 +25,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!other.gameObject.CompareTag("Enemy") || !_canTakeDamage) return;
+        if ((!other.gameObject.CompareTag("Enemy") && !other.gameObject.CompareTag("Bullet")) ||
+            !_canTakeDamage) return;
 
         TakeDamage(1);
         _knockback.GetKnockBack(other.transform, KnockBackPower);

@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
     private const float WaitSeconds = 2f;
     private const float AttackRadius = 5f;
     private const float FireRate = 3f;
-    private const float BulletDisappear = 3f;
+    private const float BulletDisappear = 2f;
     private const float BulletSpeed = 10f;
 
     [SerializeField] private GameObject bulletPrefab;
@@ -99,11 +99,11 @@ public class EnemyAI : MonoBehaviour
         if (firePoint == null || bulletPrefab == null) return;
 
         var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        var rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null && _player != null)
+        var bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
+        if (bulletRigidbody != null && _player != null)
         {
             Vector2 direction = (_player.position - firePoint.position).normalized;
-            rb.velocity = direction * BulletSpeed;
+            bulletRigidbody.velocity = direction * BulletSpeed;
         }
 
         Destroy(bullet, BulletDisappear);
