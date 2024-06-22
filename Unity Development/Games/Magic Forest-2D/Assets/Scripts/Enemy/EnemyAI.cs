@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private bool canUseBullet;
 
     private EnemyPathfinding _enemyPathfinding;
     private Transform _player;
@@ -64,7 +65,7 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator AttackRoutine()
     {
-        while (true)
+        while (canUseBullet)
             if (IsPlayerInRange())
             {
                 FireBullet();
@@ -74,7 +75,6 @@ public class EnemyAI : MonoBehaviour
             {
                 yield return null;
             }
-        // ReSharper disable once IteratorNeverReturns
     }
 
     private bool IsPlayerInRange()
