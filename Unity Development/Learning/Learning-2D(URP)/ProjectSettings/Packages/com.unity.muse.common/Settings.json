@@ -14,7 +14,7 @@
             {
                 "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
                 "key": "Unity.Muse.Common.Preferences.trialDialogShown",
-                "value": "{\"value\":false}"
+                "value": "{\"value\":true}"
             },
             {
                 "type": "Unity.Muse.Common.PreferenceDataWrapper`1[[Unity.Muse.Common.Account.UsageInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
