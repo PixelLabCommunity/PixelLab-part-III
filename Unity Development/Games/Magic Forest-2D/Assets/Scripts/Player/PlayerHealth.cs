@@ -10,12 +10,14 @@ public class PlayerHealth : MonoBehaviour
     private bool _canTakeDamage = true;
     private PlayerFlash _flash;
     private PlayerKnockBack _knockback;
+    private ScreenShakeManager _screenShakeManager;
     private int CurrentHealth { get; set; }
 
     private void Awake()
     {
         _flash = GetComponent<PlayerFlash>();
         _knockback = GetComponent<PlayerKnockBack>();
+        _screenShakeManager = FindFirstObjectByType<ScreenShakeManager>();
     }
 
     private void Start()
@@ -35,6 +37,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        if (_screenShakeManager != null) // Check if _screenShakeManager is not null
+            _screenShakeManager.ShakeScreen();
+        else
+            Debug.LogWarning("ScreenShakeManager is not assigned.");
+
         _canTakeDamage = false;
         CurrentHealth -= damageAmount;
         StartCoroutine(DamageRecoveryRoutine());
