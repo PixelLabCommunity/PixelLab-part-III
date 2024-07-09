@@ -5,6 +5,9 @@ public class Pickup : MonoBehaviour
     [SerializeField] private float pickUpDistance = 5f;
     [SerializeField] private float accelartionRate = .2f;
     [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private GameObject destroyVFX;
+    [SerializeField] private float vfxDestroyDelay = 1f;
+
     private Vector3 _moveDir;
     private Rigidbody2D _rb;
 
@@ -36,6 +39,9 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<PlayerController>()) Destroy(gameObject);
+        if (!other.gameObject.GetComponent<PlayerController>()) return;
+        var vfxInstance = Instantiate(destroyVFX, transform.position, Quaternion.identity);
+        Destroy(vfxInstance, vfxDestroyDelay);
+        Destroy(gameObject);
     }
 }
