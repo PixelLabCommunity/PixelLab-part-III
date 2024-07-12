@@ -6,6 +6,8 @@ public class Destructible : MonoBehaviour
     [SerializeField] private float vfxDestroyDelay = 1f;
     [SerializeField] private GameObject summonCoin;
     [SerializeField] private float coinDestroyDelay = 10f;
+    [SerializeField] private int coinCount = 3;
+    [SerializeField] private Vector2[] coinSpawnOffsets;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,13 +16,16 @@ public class Destructible : MonoBehaviour
             var vfxInstance = Instantiate(destroyVFX, transform.position, Quaternion.identity);
             Destroy(vfxInstance, vfxDestroyDelay);
 
-            for (var i = 0; i < 3; i++)
+            for (var i = 0; i < coinCount; i++)
             {
-                var coinInstance = Instantiate(summonCoin, transform.position, Quaternion.identity);
+                Vector2 spawnPosition = transform.position;
+                if (i < coinSpawnOffsets.Length) spawnPosition += coinSpawnOffsets[i];
+
+                var coinInstance = Instantiate(summonCoin, spawnPosition, Quaternion.identity);
                 Destroy(coinInstance, coinDestroyDelay);
             }
-        }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }
