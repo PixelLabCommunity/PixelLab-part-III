@@ -11,21 +11,19 @@ public class Destructible : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Damage"))
+        if (!other.gameObject.CompareTag("Damage")) return;
+        var vfxInstance = Instantiate(destroyVFX, transform.position, Quaternion.identity);
+        Destroy(vfxInstance, vfxDestroyDelay);
+
+        for (var i = 0; i < coinCount; i++)
         {
-            var vfxInstance = Instantiate(destroyVFX, transform.position, Quaternion.identity);
-            Destroy(vfxInstance, vfxDestroyDelay);
+            Vector2 spawnPosition = transform.position;
+            if (i < coinSpawnOffsets.Length) spawnPosition += coinSpawnOffsets[i];
 
-            for (var i = 0; i < coinCount; i++)
-            {
-                Vector2 spawnPosition = transform.position;
-                if (i < coinSpawnOffsets.Length) spawnPosition += coinSpawnOffsets[i];
-
-                var coinInstance = Instantiate(summonCoin, spawnPosition, Quaternion.identity);
-                Destroy(coinInstance, coinDestroyDelay);
-            }
-
-            Destroy(gameObject);
+            var coinInstance = Instantiate(summonCoin, spawnPosition, Quaternion.identity);
+            Destroy(coinInstance, coinDestroyDelay);
         }
+
+        Destroy(gameObject);
     }
 }

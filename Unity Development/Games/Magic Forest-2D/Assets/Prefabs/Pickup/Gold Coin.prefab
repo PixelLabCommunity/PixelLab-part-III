@@ -189,8 +189,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11706a79940767c4aa5d0ed874502c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpDistance: 5
+  pickUpDistance: 4
   accelartionRate: 0.5
   moveSpeed: 2
   destroyVFX: {fileID: 3079077246638987100, guid: 2290d3674b394e74e83cd786489496b8, type: 3}
   vfxDestroyDelay: 1
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.1131916
+      value: -0.0048047733
+      inSlope: -1.6450777
+      outSlope: -1.6450777
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.081218235
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  heightY: 1.5
+  popDuration: 0.5
