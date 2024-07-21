@@ -25,7 +25,7 @@ public class EnemyKnockBack : MonoBehaviour
     private IEnumerator KnockRoutine()
     {
         yield return new WaitForSeconds(knockBackTime);
-        _rigidbody2D.velocity = Vector2.zero;
+        _rigidbody2D.linearVelocity = Vector2.zero;
         GettingKnockBack = false;
     }
 }

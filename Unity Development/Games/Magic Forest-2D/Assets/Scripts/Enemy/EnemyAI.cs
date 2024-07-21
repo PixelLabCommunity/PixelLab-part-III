@@ -103,7 +103,7 @@ public class EnemyAI : MonoBehaviour
         if (bulletRigidbody != null && _player != null)
         {
             Vector2 direction = (_player.position - firePoint.position).normalized;
-            bulletRigidbody.velocity = direction * BulletSpeed;
+            bulletRigidbody.linearVelocity = direction * BulletSpeed;
         }
 
         Destroy(bullet, BulletDisappear);
