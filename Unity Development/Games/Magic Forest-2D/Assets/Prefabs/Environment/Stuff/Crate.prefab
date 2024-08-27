@@ -141,3 +141,5 @@ MonoBehaviour:
   vfxDestroyDelay: 1
   summonCoin: {fileID: 5736788286176661850, guid: 612745da5741e694ba46f8dc42449004, type: 3}
   coinDestroyDelay: 10
+  coinCount: 3
+  coinSpawnOffsets: []
